@@ -1,0 +1,13 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,大丸福岡天神店 | ウィーンの森,福岡県,福岡市,中央区天神1-4-1博多大丸東館エルガーラ6F,天神南駅徒歩1分,092-762-7350,"平日11:00～22:00
+土日祝11:00～22:00",https://shop.ufs.co.jp/ufs/spot/detail?code=2512,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,55席
+1,大丸京都店 | ウィーンの森,京都,府京都市,下京区四条通高倉西入立売西町79大丸京都店5F,烏丸駅徒歩4分,075-241-7417,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1013,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,52席
+2,熊本鶴屋店 | ウィーンの森,熊本県,熊本市,中央区手取本町6-1鶴屋百貨店4F,水道町駅徒歩2分,096-327-3564,"平日・日10:00～19:00
+金土10:00～19:30",https://shop.ufs.co.jp/ufs/spot/detail?code=2804,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,60席
+3,近鉄生駒店 | ウィーンの森,奈良県,生駒市,谷田町1600近鉄百貨店生駒店4F,生駒駅徒歩3分以内,0743-71-6135,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1104,FALSE,TRUE,TRUE,TRUE,43.068275,141.352445,52席
+4,下関大丸店 | ウィーンの森,山口県,下関市,竹崎町4-4-10下関大丸3F,下関駅徒歩2分,0832-31-8068,"平日10:00～19:30
+土日祝10:00～19:30",https://shop.ufs.co.jp/ufs/spot/detail?code=2402,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,50席
+5,いよてつ高島屋店 | ウィーンの森,愛媛県,松山市,湊町5-1-1いよてつ高島屋2F,松山市駅前駅徒歩3分以内,089-986-3508,"平日10:00～19:30
+土日祝10:00～19:30",https://shop.ufs.co.jp/ufs/spot/detail?code=3006,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,72席

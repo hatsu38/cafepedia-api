@@ -1,0 +1,23 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,高田馬場駅前店 | Cafe Miyama,東京都,新宿区,高田馬場2-17-4菊月ビルB1F,JR高田馬場駅東口徒歩1分,03-5292-5772,"平日 ：7：30-23：00
+土曜日：8：00-23：00
+日祝日：8：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/74,TRUE,TRUE,TRUE,TRUE,35.713488,139.705418,98席(禁煙:38席/喫煙:60席)
+1,渋谷センター街店 | Cafe Miyama,東京都,渋谷区,宇田川町25-3プリンスビル2F,JR渋谷駅ハチ公口徒歩１分センター街中程,03-3463-0452,全日：8：00-23：30,https://www.ginza-renoir.co.jp/shopsearch/shops/view/17,TRUE,TRUE,TRUE,FALSE,35.6603353,139.6991746,
+2,渋谷公園通り店 | Cafe Miyama,東京都,渋谷区,宇田川町19-5東京山手教会B1F,JR渋谷駅ハチ公口徒歩3分公園通り中程,03-3770-2081,"平日 ：8：00-23：00
+金曜日：8：00-23：30
+土曜日：9：00-23：30
+日祝日：9：00-23：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/93,TRUE,TRUE,TRUE,FALSE,35.6617,139.699566,72席(禁煙:37席/喫煙:35席)
+3,渋谷東口駅前店 | Cafe Miyama,東京都,渋谷区,渋谷3-19-1オミビルB1F,"JR渋谷駅東口より徒歩4分、地下鉄渋谷駅16b出口より徒歩2分
+ 
+ 明治通りを挟み渋谷警察署向かい角オミビルB1F",03-3498-1324,"平日 ：7：30-23：00
+土曜日：7：30-23：00
+日祝日：9：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/47,TRUE,TRUE,TRUE,FALSE,35.657699,139.702697,78席(禁煙:78席/喫煙:0席)
+4,新宿南口駅前店 | Cafe Miyama,東京都,渋谷区,代々木2-8-5新宿南口ビルB1F,JR新宿南口徒歩3分ルミネ1角から甲州街道渡り地下１階,03-3379-5676,"平日 ：7：30-23：30
+土曜日：8：00-23：30
+日祝日：8：00-23：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/82,TRUE,TRUE,TRUE,FALSE,35.688437,139.699239,74席(禁煙:32席/喫煙:42席)
+5,中野ブロードウェイ店 | Cafe Miyama,東京都,中野区,中野5-52-15-153中野ブロードウェイ1F,JR中野駅北口徒歩3分ブロードウェイ入口左手,03-3385-7366,"平日 ：7：30-22：00
+土曜日：8：00-22：00
+日祝日：8：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/84,TRUE,TRUE,TRUE,FALSE,35.708759,139.665567,48席(禁煙:24席/喫煙:24席)
+6,目黒東口駅前店 | Cafe Miyama,東京都,品川区,上大崎2-12-1野田ビル1F,JR目黒駅東口徒歩１分ドコモショップ斜め前,03-3446-5284,"平日 ：7：30-23：00
+土曜日：7：30-23：00
+日祝日：8：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/33,TRUE,TRUE,TRUE,FALSE,35.6349255,139.7163693,81席(禁煙:45席/喫煙:36席)

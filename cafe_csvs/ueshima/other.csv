@@ -1,0 +1,18 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,ＣＯＦＦＥＥ ＳＴＹＬＥ ,神奈川県,横浜市,西区南幸1-5-1,横浜駅徒歩6分,045-534-5613,10:00～22:00,https://shop.ufs.co.jp/ufs/spot/detail?code=3311,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,
+1,CAFE NORTH GATE 52,東京都,大田区,羽田空港3-4-2第二ターミナルビル3F,羽田空港第２ビル駅徒歩2分,03-5757-6147,"平日6:00～20:30
+土日祝6:00～20:30",https://shop.ufs.co.jp/ufs/spot/detail?code=348,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,52席
+2,CAFE １０８,東京都,大田区,羽田空港2-6-5国際線旅客ターミナルビル3F制限区域,天空橋駅徒歩18分,03-6428-0689,"平日6:00～23:00
+土日祝6:00～23:00",https://shop.ufs.co.jp/ufs/spot/detail?code=359,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,5席
+3,横浜高島屋店 | Belle Sympathique Café,神奈川県,横浜市,西区南幸1丁目6番31号横浜高島屋4F,横浜駅徒歩4分,045-311-1335,10:00～20:00,https://shop.ufs.co.jp/ufs/spot/detail?code=0526,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,30席
+4,WELLBE CAFE 25°,東京都,渋谷区,千駄ヶ谷5丁目24－2新宿髙島屋8F,代々木駅徒歩3分,03-5361-1523,10:00～20:00,https://shop.ufs.co.jp/ufs/spot/detail?code=00357,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,フリースペース
+5,西武池袋本店 | ガーデンカフェ,東京都,豊島区,南池袋1-28-1西武池袋本館B2FＴＨＥＧＡＲＤＥＮ内,池袋駅徒歩4分,03-5949-5860,"平日・土曜10:00～22:00
+日祝10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=350,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,14席
+6,天満屋広島アルパーク店 | 珈琲讃歌,広島県,広島市,西区井口明神1-16-1天満屋広島アルパーク店1F,商工センター入口駅徒歩5分,082-501-1526,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1909,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,"47席
+(禁煙:29/喫煙:18)"
+7,そごう千葉店 | パルパティオカフェ,千葉県,千葉市,中央区新町1000そごう千葉店2F,京成千葉駅徒歩3分以内,,平日 10:00～20:00土日祝 10:00～20:00,https://shop.ufs.co.jp/ufs/spot/detail?code=243,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,38席
+8,そごう千葉店 | タッスドール,千葉県,千葉市,中央区新町1000番地そごう千葉店B1F,京成千葉駅徒歩3分以内,043-238-5348,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=213,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,4席
+9,ダイニング－エルパティオ,兵庫県,神戸市,中央区港島南町2-1-1神戸中央市民病院2F,南公園駅徒歩8分,078-303-7557,"平日8:00～20:00
+土日祝8:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1422,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,72席

@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: cafepedia_api_development
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'] || 5432 %>
+  username: <%= ENV['DATABASE_USER'] || '' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
+
+test:
+  <<: *default
+  database: cafepedia_api_test
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'] || 5432 %>
+  username: <%= ENV['DATABASE_USER'] || '' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
+
+production:
+  <<: *default
+  database: <%= Rails.application.credentials.rds[:name] %>
+  username: <%= Rails.application.credentials.rds[:user_name] %>
+  password: <%= Rails.application.credentials.rds[:password] %>
+  host: <%= Rails.application.credentials.rds[:host] %>
+  port: <%= Rails.application.credentials.rds[:port] %>

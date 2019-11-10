@@ -1,0 +1,15 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,西武東戸塚店 | カフェノバール,神奈川県,横浜市,戸塚区品濃町537-1東戸塚西武1F,東戸塚駅徒歩2分,045-827-0520,"月～土10:00～20:30
+日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3305,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,売店のみ
+1,西武池袋本店 | カフェノバール,東京都,豊島区,南池袋1-28-1西武池袋本店地下1F,池袋駅徒歩4分,03-5949-2048,"月～土10:00～21:00
+日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3301,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,売店のみ
+2,西武所沢店 | カフェノバール,埼玉県,所沢市,日吉町12-1所沢西武B1F,所沢駅徒歩1分,04-2927-3414,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3303,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,8席
+3,西武渋谷店 | カフェノバール,東京都,渋谷区,宇田川町21-1渋谷西武A館地下1F,渋谷駅徒歩7分,03-3463-0191,"月～土10:00～21:00
+日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3302,FALSE,TRUE,TRUE,TRUE,43.068275,141.352445,売店のみ
+4,西神そごう店 | カフェノバール,兵庫県,神戸市,西区糀台5-9-4西神そごう1F,西神中央駅徒歩3分以内,078-992-8458,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3308,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,10席
+5,神戸そごう店 | カフェノバール,兵庫県,神戸市,中央区小野柄通8-1-8神戸そごうB1F,三宮駅徒歩2分,078-221-7786,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3307,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,12席
+6,高槻西武店 | カフェノバール,大阪府,高槻市,白梅町4-1高槻西武B1F,高槻駅徒歩3分,072-682-4451,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3309,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,8席

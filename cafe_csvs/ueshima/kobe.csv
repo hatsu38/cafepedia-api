@@ -1,0 +1,7 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,福岡岩田屋店 | 神戸カプチーノ倶楽部,福岡県,福岡市,中央区天神２－５－３５ＮＴＴビル岩田屋Ｚサイド5F,西鉄福岡駅徒歩2分,092-725-5144,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=2510,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,38席
+1,そごう千葉店 | 神戸カプチーノ倶楽部,千葉県,千葉市,中央区新町1000番地そごう千葉店5F,京成千葉駅徒歩3分以内,043-245-8302,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=226,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,59席
+2,ＪＲ京都伊勢丹店 | 神戸カプチーノ倶楽部,京都,府京都市,下京区烏丸通塩小路下ル東塩小路町901ＪＲ京都伊勢丹店11F,京都駅徒歩2分,075-352-6259,"平日10:00～22:00
+土日祝10:00～22:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1020,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,50席

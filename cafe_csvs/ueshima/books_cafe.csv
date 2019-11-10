@@ -1,0 +1,11 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,タカシマヤゲートタワーモール店 | ブックス＆カフェ,愛知県,名古屋市,中村区名駅一丁目1番3号ﾀｶｼﾏﾔｹﾞｰﾄﾀﾜｰ8F,名古屋駅徒歩1分,052-566-6802,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=821,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,67席
+1,札幌ステラプレイス店 | ブックス＆カフェ,北海道,札幌市,中央区北５条西2-5札幌ステラプレイスイーストビル５F,札幌駅徒歩3分,011-209-5172,"平日10:00～21:00
+土日祝10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=117,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,50席
+2,そごう大宮店 | ブックス＆カフェ,埼玉県,さいたま市,大宮区桜木町1-6-2そごう大宮店8F,大宮駅徒歩2分,048-631-2181,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=313,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,63席
+3,そごう千葉店 | ブックス＆カフェ,千葉県,千葉市,中央区新町1000番地そごう千葉店9F,京成千葉駅徒歩3分以内,043-204-1620,"平日10:00～20:00
+土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=235,FALSE,TRUE,TRUE,TRUE,43.068275,141.352445,43席
+4,羽田空港店 | ブックス＆カフェ,東京都,大田区,羽田空港2-6-5国際線旅客ターミナルビル3F制限区域内,天空橋駅徒歩18分,03-5755-9193,"平日6:30～22:00
+土日祝6:30～22:00",https://shop.ufs.co.jp/ufs/spot/detail?code=361,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,本屋さんと併設

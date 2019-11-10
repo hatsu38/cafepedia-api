@@ -1,0 +1,11 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,自由が丘本店 | MELLOW BROWN COFFEE,東京都,世田谷区,奥沢2-12-10,奥沢駅徒歩3分,03-5726-9805,"平日08:00～21:00
+土日祝08:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=362,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,60席
+1,広島空港店 | MELLOW BROWN COFFEE,広島県,三原市,本郷町善入寺字平岩64-31広島空港ビル2F,河内駅徒歩61分,0848-86-8188,"平日6:30～21:00
+土日祝6:30～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1807,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,78席
+2,さいたま新都心店 | MELLOW BROWN COFFEE,埼玉県,さいたま市,大宮区吉敷町4-263-1コクーンシティコクーン22F,さいたま新都心駅徒歩4分,048-788-1159,"平日10:00～21:00
+土日祝10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=363,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,91席
+3,イオンモール京都桂川店 | MELLOW BROWN COFFEE,京都,府京都市,南区久世高田町376イオンモール京都桂川店2F,洛西口駅徒歩6分,075-754-6289,"平日10:00～22:00
+土日祝10:00～22:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1026,FALSE,TRUE,TRUE,TRUE,43.068275,141.352445,62席
+4,イオンモール岡山店 | MELLOW BROWN COFFEE,岡山県,岡山市,北区下石井1-2-1イオンモール岡山1F,岡山駅前駅徒歩5分,086-206-7027,"平日10:00～21:00
+土日祝10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1611,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,55席

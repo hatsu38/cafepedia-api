@@ -1,0 +1,5 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+0,横浜ワールドポーターズ店 | テ ニナス,神奈川県,横浜市,中区新港２-２-１横浜ワールドポーターズ１Ｆ,馬車道駅徒歩6分以上,045-222-2131,"平日:10:30 - 21:00
+土曜日:10:30 - 21:00
+日祝:10:30 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/03008735/,FALSE,FALSE,TRUE,FALSE,35.4539965,139.6384009,"56席
+(禁煙:42/喫煙:14)"

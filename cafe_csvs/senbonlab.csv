@@ -1,0 +1,4 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon
+0,Senbon Lab.,京都府,京都市,上京区千本通一条上る泰童片原町663番地10,"千本今出川（バス停）/ 徒歩4分
+千本中立売（バス停）/ 徒歩4分",075-468-1263,"11:30〜18:00
+定休日：毎週月曜日(但し、月曜日が祝日・休日の場合は水曜日にお休みと致します。)",https://www.senbonlab.com/,TRUE,TRUE,FALSE,FALSE,35.027379,135.742231

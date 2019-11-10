@@ -1,0 +1,10 @@
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+0,大丸梅田店 | カフェラ,大阪府,大阪市,北区梅田3-1-1大丸梅田店4F,大阪駅徒歩3分以内,06-6456-3316,"日～木10:00～20:30
+金・土10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1126,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,88席
+1,大丸神戸店 | カフェラ,兵庫県,神戸市,中央区明石町40大丸神戸店1F,旧居留地・大丸前駅徒歩3分以内,078-392-7227,"平日9:45～21:00
+土日祝9:45～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1417,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,64席
+2,大丸心斎橋店 | カフェラ,大阪府,大阪市,中央区心斎橋筋1-8-3大丸心斎橋店2F,心斎橋駅徒歩3分以内,06-6244-6957,"平日10:00～20:30
+土日祝10:00～20:30",https://shop.ufs.co.jp/ufs/spot/detail?code=1122,TRUE,FALSE,TRUE,FALSE,43.06765,141.349401,38席
+3,熊本鶴屋店 | カフェラ,熊本県,熊本市,中央区手取本町6-1鶴屋百貨店2F,水道町駅徒歩2分,096-278-7202,"平日・日祝10:00～18:30
+土曜10:00～18:30",https://shop.ufs.co.jp/ufs/spot/detail?code=3610,FALSE,TRUE,TRUE,TRUE,43.068275,141.352445,72席
+4,そごう広島店 | カフェラ,広島県,広島市,中区基町6-27そごう広島店2F,紙屋町西駅徒歩3分以内,082-512-7540,7:30～21:00(土日祝14:00～17:00全席禁煙),https://shop.ufs.co.jp/ufs/spot/detail?code=1901,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,114席
