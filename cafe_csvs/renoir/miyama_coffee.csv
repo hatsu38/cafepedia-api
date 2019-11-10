@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,グランエミオ大泉学園店 | ミヤマ珈琲,東京都,練馬区,東大泉1-28-1グランエミオ大泉学園内1F,西武池袋線大泉学園駅より徒歩で1分,03-5935-6359,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/97,TRUE,TRUE,TRUE,FALSE,35.749914,139.587562,77席(禁煙:49席/喫煙:28席)
 1,熊本光の森店 | ミヤマ珈琲,熊本県,熊本市,北区武蔵ケ丘5-23ー10,周辺の店舗はありません。,096-339-5500,"平日 ：8：00-22：00
 土曜日：7：00-22：00

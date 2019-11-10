@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,六本木テレ朝通り店 | 上島珈琲店,東京都,港区,西麻布3-2-1北辰不動産ビル1F,六本木駅徒歩5分,03-5785-1218,"平日7:30～21:00
 土日祝11:00～19:00",https://shop.ufs.co.jp/ufs/spot/detail?code=4016,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,"46席
 (禁煙:38/喫煙:8)"

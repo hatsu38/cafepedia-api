@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,アスティ岐阜店 | エクセルシオール カフェ,岐阜県,岐阜市,橋本町１-１０ＪＲ岐阜駅構内アスティ岐阜２Ｆ,岐阜駅徒歩1分以上,058-262-3064,"平日:07:00 - 22:00
 土曜日:07:00 - 22:00
 日祝:07:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/05000247/,TRUE,TRUE,TRUE,FALSE,35.409372,136.7579021,"88席

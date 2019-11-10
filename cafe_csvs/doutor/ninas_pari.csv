@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,静岡マルイ店 | ニナス パリ,静岡県,静岡市,葵区御幸町６-１０静岡マルイ２Ｆ,新静岡駅徒歩2分以上,054-663-9832,"平日:10:00 - 19:30
 土曜日:10:00 - 19:30
 日祝:10:00 - 19:30",http://sasp.mapion.co.jp/b/doutor/info/03008894/,TRUE,TRUE,TRUE,FALSE,34.9740662,138.3878357,

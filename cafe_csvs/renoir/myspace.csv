@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,ニュー秋葉原店 | マイ・スペース,東京都,千代田区,外神田1-16-10ニュー秋葉原センタービル地下1階,JR秋葉原駅電気街口出てワシントンホテル方面徒歩1分,03-3251-0210,"月-土：9：00-22：00
 日祭日：9：00-21：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/2048,TRUE,TRUE,TRUE,FALSE,35.697417,139.772689,81席(禁煙:51席/喫煙:30席)
 1,ニュー新宿３丁目店 | マイ・スペース ,東京都,新宿区,新宿3-4-1東新宿ビル地下2階,都営地下鉄新宿3丁目駅徒歩0分,03-3355-1299,全日：9：00-22：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/2121,TRUE,TRUE,TRUE,FALSE,35.690739,139.7055,

@@ -13,7 +13,7 @@ AllCops:
     - vendor/**/*
     - node_modules/**/*
     - db/schema.rb
-    - db/seeds.rb
+    # - db/seeds.rb
 
 ##################### Style ##################################
 PercentLiteralDelimiters:

@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,明石駅前店 | カフェプラザ,兵庫県,明石市,大明石町１－６－１パピオスあかし１階,山陽明石駅徒歩3分以内,789645252,7:30~21:00,https://shop.ufs.co.jp/ufs/spot/detail?code=1510,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,48席
 1,名谷店 | カフェプラザ,兵庫県,神戸市,須磨区中落合2-2-1須磨パティオ専門店街1番館1F,名谷駅徒歩1分,078-792-5655,"平日7:30～21:00
 土日祝7:30～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1403,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,58席

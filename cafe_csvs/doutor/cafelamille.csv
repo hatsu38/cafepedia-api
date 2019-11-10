@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,横浜ジョイナス クラシック店 | オーセンティック カフェラミル,神奈川県,横浜市,西区南幸１-５新相鉄ビルＢ１,横浜駅徒歩6分以上,045-311-7513,"平日:09:00 - 22:00
 土曜日:09:00 - 22:00
 日祝:09:00 - 22:00",http://sasp.mapion.co.jp/b/doutor/info/03008877/,FALSE,FALSE,TRUE,FALSE,35.464602,139.620497,"70席

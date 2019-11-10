@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,大丸梅田店 | カフェラ,大阪府,大阪市,北区梅田3-1-1大丸梅田店4F,大阪駅徒歩3分以内,06-6456-3316,"日～木10:00～20:30
 金・土10:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1126,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,88席
 1,大丸神戸店 | カフェラ,兵庫県,神戸市,中央区明石町40大丸神戸店1F,旧居留地・大丸前駅徒歩3分以内,078-392-7227,"平日9:45～21:00

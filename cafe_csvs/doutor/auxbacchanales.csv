@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,ラ クラス店 | オーバカナル・ブラッスリー,神奈川県,横浜市,港北区新横浜２-１００-４５キュービックプラザ新横浜１０Ｆ,新横浜駅徒歩1分以上,045-478-7020,"平日:11:00 - 23:00
 土曜日:11:00 - 23:00
 日祝:11:00 - 23:00",http://sasp.mapion.co.jp/b/doutor/info/03005912/,FALSE,FALSE,FALSE,FALSE,35.5077607,139.6172015,"72席

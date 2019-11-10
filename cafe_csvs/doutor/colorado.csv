@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,浦和店 | カフェ コロラド,埼玉県,さいたま市,浦和区高砂２‐２‐２２,浦和駅徒歩4分以上,048-831-0781,"平日:08:00 - 21:00
 土曜日:08:00 - 21:00
 日祝:-",http://sasp.mapion.co.jp/b/doutor/info/07000273/,TRUE,FALSE,TRUE,FALSE,35.8572825,139.6538677,"41席

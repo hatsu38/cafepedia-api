@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,福井西武店 | カフェメルカード,福井県,福井市,中央1-9-20福井西武店新館B1F,福井駅前駅徒歩1分,0776-30-2280,"平日10:00～19:30
 土日祝10:00～19:30",https://shop.ufs.co.jp/ufs/spot/detail?code=905,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,52席
 1,博多大丸店 | カフェメルカード,福岡県,福岡市,中央区天神1-4-1博多大丸本館B2F,天神南駅徒歩1分,092-762-7361,"平日10:00～20:00

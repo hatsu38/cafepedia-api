@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng
 0,札幌北野店 | スターバックス,北海道,札幌市,清田区北野6条5丁目6-36,大谷地駅／４出口 徒歩23分,011-888-0035,07:00〜24:00,http://www.starbucks.co.jp/store/search/detail.php?id=1431,TRUE,TRUE,FALSE,FALSE,43.0154093,141.4515481
 1,イオンモール札幌平岡店 | スターバックス,北海道,札幌市,清田区平岡三条5丁目3-1イオンモール札幌平岡,北広島インターチェンジより 約4.2km,011-889-5098,09:00〜22:00,http://www.starbucks.co.jp/store/search/detail.php?id=751,TRUE,FALSE,FALSE,FALSE,42.997239,141.458711
 2,札幌石山店 | スターバックス,北海道,札幌市,南区石山2条9丁目7-50アクロスプラザ札幌南,メモ：・石山通り,011-594-2640,07:00〜24:00,http://www.starbucks.co.jp/store/search/detail.php?id=793,TRUE,TRUE,FALSE,FALSE,42.9604697,141.3147652

@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,西武東戸塚店 | カフェノバール,神奈川県,横浜市,戸塚区品濃町537-1東戸塚西武1F,東戸塚駅徒歩2分,045-827-0520,"月～土10:00～20:30
 日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3305,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,売店のみ
 1,西武池袋本店 | カフェノバール,東京都,豊島区,南池袋1-28-1西武池袋本店地下1F,池袋駅徒歩4分,03-5949-2048,"月～土10:00～21:00

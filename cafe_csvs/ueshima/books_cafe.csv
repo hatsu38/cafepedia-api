@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,タカシマヤゲートタワーモール店 | ブックス＆カフェ,愛知県,名古屋市,中村区名駅一丁目1番3号ﾀｶｼﾏﾔｹﾞｰﾄﾀﾜｰ8F,名古屋駅徒歩1分,052-566-6802,"平日10:00～20:00
 土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=821,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,67席
 1,札幌ステラプレイス店 | ブックス＆カフェ,北海道,札幌市,中央区北５条西2-5札幌ステラプレイスイーストビル５F,札幌駅徒歩3分,011-209-5172,"平日10:00～21:00

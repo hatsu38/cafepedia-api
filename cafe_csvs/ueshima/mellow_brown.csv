@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,自由が丘本店 | MELLOW BROWN COFFEE,東京都,世田谷区,奥沢2-12-10,奥沢駅徒歩3分,03-5726-9805,"平日08:00～21:00
 土日祝08:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=362,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,60席
 1,広島空港店 | MELLOW BROWN COFFEE,広島県,三原市,本郷町善入寺字平岩64-31広島空港ビル2F,河内駅徒歩61分,0848-86-8188,"平日6:30～21:00

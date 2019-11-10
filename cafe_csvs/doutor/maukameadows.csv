@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lon,lat,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lng,lat,chair
 0,アトレ大井町店 | カフェ マウカメドウズ ,東京都,品川区,大井町１-２-１アトレ大井町５Ｆ,大井町駅徒歩2分以上,03-5709-7348,"平日:10:00 - 21:00
 土曜日:10:00 - 21:00
 日祝:10:00 - 21:00",http://sasp.mapion.co.jp/b/doutor/info/06062002/,FALSE,TRUE,FALSE,FALSE,35.606418,139.734806,"56席

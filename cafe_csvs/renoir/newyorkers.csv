@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,高田馬場1丁目店 | NEW YORKER'S Cafe,東京都,新宿区,高田馬場1-33-13千年ビル1F,JR高田馬場駅東口徒歩2分ビッグボックス裏1階,03-3208-9037,"平日 ：7：00-22：30
 土曜日：7：00-22：30
 日祝日：7：30-22：30",https://www.ginza-renoir.co.jp/shopsearch/shops/view/79,TRUE,TRUE,TRUE,TRUE,35.7114143,139.7039415,54席(禁煙:36席/喫煙:18席)

@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,ニュー八重洲北口店 | Cafeルノアール,東京都,中央区,八重洲1-7-4矢満登ビル1F,東京駅八重洲北口から外堀通りを渡り、八重洲北口通りに入り日興コーディアル証券の並び,03-3274-7788,"平日 ：7：30-23：00
 金曜日：7：30-23：30
 土曜日：8：00-23：00

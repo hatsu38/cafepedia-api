@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,ＣＯＦＦＥＥ ＳＴＹＬＥ ,神奈川県,横浜市,西区南幸1-5-1,横浜駅徒歩6分,045-534-5613,10:00～22:00,https://shop.ufs.co.jp/ufs/spot/detail?code=3311,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,
 1,CAFE NORTH GATE 52,東京都,大田区,羽田空港3-4-2第二ターミナルビル3F,羽田空港第２ビル駅徒歩2分,03-5757-6147,"平日6:00～20:30
 土日祝6:00～20:30",https://shop.ufs.co.jp/ufs/spot/detail?code=348,FALSE,FALSE,TRUE,FALSE,43.06765,141.349401,52席

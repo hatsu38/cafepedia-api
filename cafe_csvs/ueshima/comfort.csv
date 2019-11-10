@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,府中フォーリス店 | カフェコンフォート,東京都,府中市,宮町1-41-1,府中競馬正門前駅徒歩7分,042-310-9278,"平日10:00～20:00
 土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=522,FALSE,TRUE,TRUE,TRUE,43.061315,141.354068,38席
 1,神戸さんちか店 | カフェコンフォート,兵庫県,神戸市,中央区三宮町1-10-1さんちかタウン内,三宮駅徒歩2分,078-391-5677,"平日7:30～21:00

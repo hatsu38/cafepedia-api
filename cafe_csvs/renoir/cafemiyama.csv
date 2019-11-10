@@ -1,4 +1,4 @@
-id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lon,chair
+id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
 0,高田馬場駅前店 | Cafe Miyama,東京都,新宿区,高田馬場2-17-4菊月ビルB1F,JR高田馬場駅東口徒歩1分,03-5292-5772,"平日 ：7：30-23：00
 土曜日：8：00-23：00
 日祝日：8：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/74,TRUE,TRUE,TRUE,TRUE,35.713488,139.705418,98席(禁煙:38席/喫煙:60席)
