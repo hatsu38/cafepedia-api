@@ -4,7 +4,7 @@ require 'csv'
 
 require 'csv'
 
-path = './app/frontend/packs/images/'
+path = '/images/'
 mainshop_array = [
   {
     name: 'スターバックス',
