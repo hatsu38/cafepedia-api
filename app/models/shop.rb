@@ -2,6 +2,7 @@
 
 class Shop < ApplicationRecord
   belongs_to :main_shop
+  has_many :comments
 
   with_options presence: true do
     validates :name
@@ -30,6 +31,7 @@ class Shop < ApplicationRecord
     cafe_lists.map do |cafe|
       cafe['distance'] = Calculate.distance(cafe['lat'], cafe['lng'], lat, lng)
     end
+
     cafe_lists.sort_by { |cafe| cafe['distance'] }
   end
 end

@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'rails-i18n'
 gem 'activeadmin'
 gem 'devise'
 gem 'kaminari'
