@@ -12,11 +12,12 @@ class Api::ShopsController < ApplicationController
     shop = Shop.find(params[:id]).attributes
     shop['distance'] = Calculate.distance(shop['lat'], shop['lng'], lat, lng)
     @shop = shop
+    @main_shop = Shop.includes(:main_shop).where(id: shop['id']).pluck("main_shops.name", "main_shops.eng_name", "main_shops.image")
   end
 
   def search
     cafe_lists = Shop.cafe_list_calculated_distance(params)
     @shops = Kaminari.paginate_array(cafe_lists).page(params[:page]).per(30)
-    @main_shops = Shop.includes(:main_shop).where(id: @shops.map{|c| c['id']}).pluck(:id, "main_shops.name", "main_shops.eng_name", "main_shops.image")
+    @main_shop = Shop.includes(:main_shop).where(id: @shops.map{|c| c['id']}).pluck(:id, "main_shops.name", "main_shops.eng_name", "main_shops.image")
   end
 end
