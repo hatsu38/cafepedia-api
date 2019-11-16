@@ -15,19 +15,24 @@ class Shop < ApplicationRecord
     validates :is_open
   end
 
-  scope :narrow_facility, ->(params) {
+  scope :have_socket, ->(params) {
     where(socket: true) if params[:socket].present?
+  }
+  scope :have_wifi, ->(params) {
     where(wifi: true) if params[:wifi].present?
+  }
+  scope :have_smoking, ->(params) {
     where(smoking: true) if params[:smoking].present?
   }
 
   def self.cafe_list_calculated_distance(params)
     lat = params[:lat] || 35.6589568
     lng = params[:lng] || 139.7219328
-    cafe_lists = includes(:main_shop)
-      .where(is_open: true)
-      .narrow_facility(params)
-      .map(&:attributes)
+    cafe_lists = where(is_open: true)
+                  .have_socket(params)
+                  .have_wifi(params)
+                  .have_smoking(params)
+                  .map(&:attributes)
     cafe_lists.map do |cafe|
       cafe['distance'] = Calculate.distance(cafe['lat'], cafe['lng'], lat, lng)
     end
