@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_232944) do
+ActiveRecord::Schema.define(version: 2019_11_13_105221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,19 @@ ActiveRecord::Schema.define(version: 2019_11_04_232944) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "name", default: "名無しさん", null: false
+    t.string "content", null: false
+    t.boolean "is_complete", default: false, null: false
+    t.bigint "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_comments_on_shop_id"
+  end
+
   create_table "main_shops", force: :cascade do |t|
     t.string "name", null: false
+    t.string "eng_name", null: false
     t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,5 +82,6 @@ ActiveRecord::Schema.define(version: 2019_11_04_232944) do
     t.index ["main_shop_id"], name: "index_shops_on_main_shop_id"
   end
 
+  add_foreign_key "comments", "shops"
   add_foreign_key "shops", "main_shops"
 end

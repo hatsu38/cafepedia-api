@@ -1,0 +1,337 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+  activerecord:
+    models:
+      pharmacist_news/article: '記事'
+      landing_page: 'ランディングページ'
+      mail_magazine/template: 'メルマガテンプレート'
+      friend_invitation_campaign_config: '友人紹介キャンペーン設定'
+      uploaded_image: 'アップロードされた画像'
+    attributes:
+      pharmacist_news/article:
+        title: '記事タイトル'
+        body: '記事本文'
+        newly_block_title: '新着一覧用タイトル'
+        newly_block_description: '新着一覧用リード文'
+        html_meta_description: 'HTMLタグ description'
+        html_meta_keywords: 'HTMLタグ keyword'
+        thumbnail_image_url: '画像URL'
+        public_scope_type: 外部公開タイプ
+        public_scope_types:
+          full_open: '全公開'
+          tag_border: '一部公開(タグ制御)'
+          fixed_border: '一部公開(旧仕様)'
+      pharmacist_news/series:
+        code: 'コード'
+        title: 'タイトル'
+        display_order: '表示順'
+      free_input_links_genre_tag:
+        tagname: 'タグ名'
+      free_input_link:
+        free_input_links_genre_tags_id: 'ジャンルタグ'
+        title: 'タイトル'
+        description: 'リード文'
+        link_url: 'リンクURL'
+        display_order: '表示順'
+      landing_page:
+        publish_from: '公開開始日時'
+        publish_to: '公開終了日時'
+        path: 'URLのパス'
+        member_only: '会員限定フラグ'
+        title: 'タイトル'
+        meta_keywords: 'metaタグのkeywords'
+        meta_description: 'metaタグのdescription'
+        eop_page: 'eop-page'
+        eop_contents: 'eop-contents'
+        header_logged_out: 'ログアウト時ヘッダーHTML'
+        footer_logged_out: 'ログアウト時フッターHTML'
+        body: '本文HTML'
+      mail_magazine/template:
+        name: '名前'
+      friend_invitation_campaign_config:
+        path_string: 'URLに使う文字列'
+        promotion_code_prefix: 'プロモーションコードに使う文字列'
+        for_doctor: '医師から薬剤師？'
+        start_time: '開始日時'
+        end_time: '終了日時'
+      pharmacy_student/pharmacy_student_unique_check_info:
+        tel_no: '電話番号'
+        university_id: '大学名'
+      examination_quiz_setting:
+        sequence: 'sequence'
+        exam_number: '過去問試験回数'
+        start_date: '開催開始日'
+        end_date: '開催終了日'
+        yml: '各クイズの設定(YAML形式)'
+      uploaded_image:
+        name: '名前'
+        file: 'ファイル情報'
+  activemodel:
+    models:
+      mail_magazine/template: 'メルマガテンプレート'
+    attributes:
+      mail_magazine/template:
+        name: '名前'
+      admin/study_contents/bundle_product:
+        price: '値段（税込み）'
+        store_product_id: 'ストア側商品ID'
+        inputed_course_ids: '講座ID'
+
+    errors:
+      models:
+        pharmacist_news/article:
+          attributes:
+            title:
+              blank: 'は必須です。'
+            body:
+              blank: 'は必須です。'
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: を受諾してください
+      blank: を入力してください
+      present: は入力しないでください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      equal_to: は%{count}にしてください
+      even: は偶数にしてください
+      exclusion: は予約されています
+      greater_than: は%{count}より大きい値にしてください
+      greater_than_or_equal_to: は%{count}以上の値にしてください
+      inclusion: は一覧にありません
+      invalid: は不正な値です
+      less_than: は%{count}より小さい値にしてください
+      less_than_or_equal_to: は%{count}以下の値にしてください
+      model_invalid: "バリデーションに失敗しました: %{errors}"
+      not_a_number: は数値で入力してください
+      not_an_integer: は整数で入力してください
+      odd: は奇数にしてください
+      required: を入力してください
+      taken: はすでに登録されています
+      too_long: は%{count}文字以内で入力してください
+      too_short: は%{count}文字以上で入力してください
+      wrong_length: は%{count}文字で入力してください
+      other_than: は%{count}以外の値にしてください
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: バイト
+          gb: ギガバイト
+          kb: キロバイト
+          mb: メガバイト
+          tb: テラバイト
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: と
+      two_words_connector: と
+      words_connector: と
+  time:
+    am: 午前
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"
+    pm: 午後
+  errors:
+    format: ! '%{attribute}%{message}'
+    messages:
+      accepted: を受諾してください。
+      blank: を入力してください。
+      present: は入力しないでください。
+      confirmation: と%{attribute}の入力が一致しません。
+      empty: を入力してください。
+      equal_to: は%{count}にしてください。
+      even: は偶数にしてください。
+      exclusion: は予約されています。
+      greater_than: は%{count}より大きい値にしてください。
+      greater_than_or_equal_to: は%{count}以上の値にしてください。
+      inclusion: は一覧にありません。
+      invalid: は不正な値です。
+      less_than: は%{count}より小さい値にしてください。
+      less_than_or_equal_to: は%{count}以下の値にしてください。
+      not_a_number: は数値で入力してください。
+      not_an_integer: は整数で入力してください。
+      odd: は奇数にしてください。
+      record_invalid: バリデーションに失敗しました。 %{errors}
+      restrict_dependent_destroy: ! '%{record}が存在しているので削除できません。'
+      taken: はすでに登録されています。
+      too_long: は%{count}文字以内で入力してください。
+      too_short: は%{count}文字以上で入力してください。
+      wrong_length: は%{count}文字で入力してください。
+      other_than: "は%{count}以外の値にしてください。"
+  views:
+    pagination:
+      previous: "« 前ページ"
+      next: "次ページ »"
+      truncate: "..."

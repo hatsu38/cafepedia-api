@@ -19,7 +19,9 @@ json.set! :shops do
     json.is_open shop['is_open']
     json.lat shop['lat']
     json.lng shop['lng']
-    json.image MainShop.find(shop['main_shop_id']).image
+    json.image @main_shops.find{|n| n[0] == shop['id']}[3]
+    json.main_shop_name @main_shops.find{|n| n[0] == shop['id']}[1]
+    json.main_shop_eng_name @main_shops.find{|n| n[0] == shop['id']}[2]
     if shop['distance'] > 1
       json.distance "#{shop['distance'].round(2)}km"
     else
