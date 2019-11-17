@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::ShopsController < ApplicationController
-  PER = 30
+  PER = 15
   def index
     @shops = Shop.includes(:main_shop).where(is_open: true).page(params[:page]).per(PER)
   end
@@ -17,7 +17,7 @@ class Api::ShopsController < ApplicationController
 
   def search
     cafe_lists = Shop.cafe_list_calculated_distance(params)
-    @shops = Kaminari.paginate_array(cafe_lists).page(params[:page]).per(30)
+    @shops = Kaminari.paginate_array(cafe_lists).page(params[:page]).per(PER)
     @main_shops = Shop.includes(:main_shop).where(id: @shops.map{|c| c['id']}).pluck(:id, "main_shops.name", "main_shops.eng_name", "main_shops.image")
   end
 end

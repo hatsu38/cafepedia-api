@@ -19,9 +19,6 @@ ENV LANG ja_JP.UTF-8
 RUN update-locale LANG=ja_JP.UTF-8
 RUN ln -s /usr/bin/cronolog /usr/local/sbin/cronolog
 
-ARG RAILS_ENV
-ENV RAILS_ENV ${RAILS_ENV}
-
 ENV APP_ROOT /app
 WORKDIR $APP_ROOT
 
