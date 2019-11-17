@@ -29,3 +29,4 @@ json.set! :shops do
     end
   end
 end
+json.shop_num @shops.total_count
