@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :create]
     end
     get '/search', to: 'shops#search', as: 'search'
+    get '/stations/search', to: 'stations#search', as: 'stations_search'
   end
   root to: 'api/shops#search', defaults: { format: :json }
   get '/health_check', to: 'health_check#index'

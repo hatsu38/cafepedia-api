@@ -79,6 +79,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    brakeman (4.7.1)
     builder (3.2.3)
     byebug (11.0.1)
     coderay (1.1.2)
@@ -275,6 +276,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bootsnap (>= 1.4.2)
+  brakeman
   byebug
   devise
   foreman

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Api::CommentsController < ApplicationController
   protect_from_forgery except: [:create]
   PER = 3
   def index
     shop = Shop.find_by(id: params[:shop_id])
-    @comments = shop.presence ? shop.comments.order(id: :desc).page(params[:page]).per(PER): nil
+    @comments = shop.presence ? shop.comments.order(id: :desc).page(params[:page]).per(PER) : nil
   end
 
   def create

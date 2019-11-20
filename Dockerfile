@@ -26,11 +26,11 @@ ADD Gemfile Gemfile.lock package.json yarn.lock $APP_ROOT/
 
 RUN gem install bundler:2.0.2
 
-RUN bundle install
+RUN RAILS_ENV=production bundle install
 
 ADD . $APP_ROOT
 
-RUN bundle exec rails assets:precompile
+RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 EXPOSE 3000
 CMD ["rails","server","-b","0.0.0.0"]

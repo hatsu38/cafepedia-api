@@ -3,11 +3,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails-i18n'
 gem 'activeadmin'
 gem 'devise'
 gem 'kaminari'
 gem 'rack-cors'
+gem 'rails-i18n'
 
 ruby '2.6.5'
 
@@ -37,10 +37,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'foreman'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rubocop'
-  gem 'foreman'
+  gem 'brakeman'
 end
 
 group :development do

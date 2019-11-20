@@ -2,8 +2,6 @@
 
 require 'csv'
 
-require 'csv'
-
 path = '/images/'
 mainshop_array = [
   {
@@ -236,4 +234,14 @@ mainshop_array.each_with_index do |shop, _idx|
       lng: data['lng']
     )
   end
+end
+
+CSV.foreach('./cafe_csvs/eki.csv', headers: true) do |data|
+  kanji_name = data['kanji'].include?('(') ? data['kanji'].sub!(/\(.*/m, '') : data['kanji']
+  Station.create!(
+    kanji_name: kanji_name,
+    kana_name: data['kana']
+  )
+rescue StandardError
+  next
 end
