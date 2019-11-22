@@ -41,6 +41,11 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem 'rubocop-thread_safety'
+  gem 'simplecov'
   gem 'brakeman'
 end
 
@@ -51,6 +56,17 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'ci_reporter_rspec'
+  gem 'factory_bot_rails'
+  gem 'database_rewinder'
+  gem 'shoulda-matchers'
+  gem 'brakeman'
+  gem 'rubycritic'
+  gem 'capybara'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

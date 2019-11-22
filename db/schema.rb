@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_083534) do
   create_table "comments", force: :cascade do |t|
     t.string "name", default: "名無しさん", null: false
     t.string "content", null: false
-    t.boolean "is_complete", default: false, null: false
+    t.boolean "is_complete", default: false
     t.bigint "shop_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
