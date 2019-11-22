@@ -8,7 +8,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.6.5-buster
-      - image: circleci/postgres:11.5
         environment:
           RAILS_ENV: test
           POSTGRES_DB: cafepedia_api_test
@@ -16,6 +15,7 @@ jobs:
           DATABASE_PASSWORD: ""
           DATABASE_HOST: 127.0.0.1
           DATABASE_PORT: 5432
+      - image: circleci/postgres:11.5
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
