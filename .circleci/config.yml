@@ -8,11 +8,11 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.6.5-buster
-      - image: circleci/postgres:11.5-alpine
+      - image: circleci/postgres:11.5
         environment:
           RAILS_ENV: test
           POSTGRES_DB: cafepedia_api_test
-          DATABASE_USER: root
+          DATABASE_USER: postgres
           DATABASE_PASSWORD: ""
           DATABASE_HOST: 127.0.0.1
           DATABASE_PORT: 5432
