@@ -25,6 +25,7 @@ describe Station, type: :model do
           create(:station, kana_name: 'しぶやえき', kanji_name: '渋谷駅')
         ]
       end
+
       it { is_expected.to match([stations.last]) }
     end
   end

@@ -1,277 +1,113 @@
-# target_version:
-#   rubocop v0.70.0 # TODO: update rubocop version
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
-# 自動生成されるものはチェック対象から除外する
 AllCops:
-  TargetRubyVersion: 2.6.3
-  DisplayCopNames: true
+  # Include gemspec and Rakefile
+  Include:
+    - 'app/**/*.rb'
+    - 'spec/**/*.rb'
+    - 'lib/**/*.rb'
   Exclude:
-    - bin/**/*
-    - config/**/*
-    - spec/*_helper.rb
-    - tmp/**/*
-    - vendor/**/*
-    - node_modules/**/*
-    - db/schema.rb
-    # - db/seeds.rb
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'app/views/**/*'
+    - 'front/**/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'coverage/**/*'
+    - 'spec/*_helper.rb'
+    - ',/**/*'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.5
 
-##################### Style ##################################
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: ()
-    '%i': '[]'
-    '%I': '[]'
-    '%r': '{}'
-    '%w': '[]'
-    '%W': '[]'
+Rails:
+  Enabled: true
 
-# レキシカルスコープの扱いが alias_method の方が自然。
-# https://ernie.io/2014/10/23/in-defense-of-alias/ のように
-# 問題になる場合は自分で緩める。
-Style/Alias:
-  EnforcedStyle: prefer_alias_method
+AsciiComments:
+  Enabled: false
 
-# redirect_to xxx and return のイディオムを維持したい
-Style/AndOr:
-  EnforcedStyle: conditionals
+Metrics/ClassLength:
+  Max: 200
 
-# 日本語のコメントを許可する
+Metrics/CyclomaticComplexity:
+  Max: 5
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 80
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/admin/**'
+
 Style/AsciiComments:
   Enabled: false
 
-# do .. end から更にメソッドチェーンすると見づらいので
-# auto-correct せず、自分で修正する
-# spec 内は見た目が綺麗になるので許可
-Style/BlockDelimiters:
-  AutoCorrect: false
-  Exclude:
-    - "spec/**/*"
-
-# option 等、明示的にハッシュにした方が分かりやすい場合もある
-Style/BracesAroundHashParameters:
+# Respect RubyMine formatter
+Layout/CaseIndentation:
   Enabled: false
 
-# scope が違うとか親 module の存在確認が必要とかデメリットはあるが、
-# namespace 付きのクラスはかなり頻繁に作るので簡単に書きたい。
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-# Style/CollectionMethods 自体は無効になっているのだが、
-#   https://github.com/bbatsov/rubocop/issues/1084
-#   https://github.com/bbatsov/rubocop/issues/1334
-# Performance/Detect がこの設定値を見るので PreferredMethods だけ変更しておく。
-#
-# デフォルト値から変えたのは
-#   find -> detect
-#     ActiveRecord の find と間違えやすいため
-#   reduce -> inject
-#     detect, reject, select と並べたときに韻を踏んでいるため。
-#     collect -> map を維持しているのは文字数が圧倒的に少ないため。
-Style/CollectionMethods:
-  PreferredMethods:
-    detect: "detect"
-    find: "detect"
-    inject: "inject"
-    reduce: "inject"
-
-# ドキュメントの無い public class を許可する
 Style/Documentation:
   Enabled: false
 
-# !! のイディオムは積極的に使う
-Style/DoubleNegation:
-  Enabled: false
+Layout/DotPosition:
+  EnforcedStyle: trailing
 
-# 明示的に else で nil を返すのは分かりやすいので許可する
-Style/EmptyElse:
-  EnforcedStyle: empty
-
-# いずれかに揃えるのならば `sprintf` や `format` より String#% が好きです
-Style/FormatString:
-  EnforcedStyle: percent
-
-# if 文の中に 3 行程度のブロックを書くぐらいは許容した方が現実的
-# NOTE: https://github.com/bbatsov/rubocop/commit/29945958034db13af9e8ff385ec58cb9eb464596
-#       の影響で、if 文の中身が 1 行の場合に警告されるようになっている。
-#       Style/IfUnlessModifier の設定見てくれないかなぁ？ (v0.70.0)
 Style/GuardClause:
-  MinBodyLength: 5
-
-# rake タスクの順序の hash は rocket を許可する
-Style/HashSyntax:
-  Exclude:
-    - "**/*.rake"
-    - "Rakefile"
-
-# 平たくしてしまうと条件のグルーピングが脳内モデルとズレやすい
-Style/IfInsideElse:
   Enabled: false
 
-# 条件式の方を意識させたい場合には後置の if/unless を使わない方が分かりやすい
 Style/IfUnlessModifier:
   Enabled: false
 
-# end.some_method とチェインするのはダサい
-# Style/BlockDelimiters と相性が悪いけど、頑張ってコードを修正してください
-Style/MethodCalledOnDoEndBlock:
-  Enabled: true
-
-# 1_000_000 と区切り文字が 2 個以上必要になる場合のみ _ 区切りを必須にする
-Style/NumericLiterals:
-  MinDigits: 7
-
-# 正規表現にマッチさせた時の特殊変数の置き換えは Regex.last_match ではなく
-# 名前付きキャプチャを使って参照したいので auto-correct しない
-Style/PerlBackrefs:
-  AutoCorrect: false
-
-# 特に model 内において、ローカル変数とメソッド呼び出しの区別をつけた方が分かりやすい場合が多い
-Style/RedundantSelf:
+# Name reduce block params |a, e|.
+Style/SingleLineBlockParams:
   Enabled: false
 
-# Exception.new(arg) を渡す raise を許可
-Style/RaiseArgs:
+# Respect RubyMine formatter
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
-# 受け取り側で multiple assignment しろというのを明示
-Style/RedundantReturn:
-  AllowMultipleReturnValues: true
+# Cannot deal with AR#eager_load
+Style/SymbolProc:
+  Enabled: false
 
-# spec 内は見た目が綺麗になるので許可
-Style/Semicolon:
-  Exclude:
-    - "spec/**/*"
+# Final newline missing.
+Layout/TrailingBlankLines:
+  Enabled: false
 
 # 式展開しないときにはsingleを使う
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
-# auto-correct 時に Style/StringLiterals とカニバって無限ループになる (v0.28.0)
-Style/StringLiteralsInInterpolation:
+TrivialAccessors:
+  Enabled: true
+  ExactNameMatch: true
+
+Layout/SpaceInsideBlockBraces:
   Enabled: false
 
-# いくらなんでも inject { |a, e| } は短すぎるので分かりやすい名前をつけたい
-Style/SingleLineBlockParams:
+Style/MultilineBlockChain:
   Enabled: false
 
-# fail/raiseを使い分けなくてもよい
-Style/SignalException:
+Style/NumericLiterals:
   Enabled: false
 
-Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
-
-Style/TrailingCommaInArrayLiteral:
-  EnforcedStyleForMultiline: comma
-
-# scope 等は複数行でも lambda ではなく ->{} で揃えた方が見た目が綺麗
-Style/Lambda:
-  EnforcedStyle: literal
-
-##################### Lint ##################################
-
-# * 同名のメソッドがある場合にローカル変数に `_` を付ける
-# * 一時変数として `_` を付ける
-# というテクニックは頻出する
-Lint/UnderscorePrefixedVariableName:
+Style/FrozenStringLiteralComment:
   Enabled: false
 
-# 子クラスで実装させるつもりのメソッドで引っかかるので
-Lint/UnusedMethodArgument:
+Layout/AlignArray:
   Enabled: false
 
-# 条件文の中での代入を許可
-Lint/AssignmentInCondition:
+# Do not prefix writer method names with set_
+Naming/AccessorMethodName:
   Enabled: false
 
-##################### Metrics ##################################
 
-# 30まではギリギリ許せる範囲だったけど
-# リリースごとに 3 ずつぐらい下げていきます。20まで下げたい。
-Metrics/AbcSize:
-  Max: 30
-
-# 6 は強すぎるので緩める
-Metrics/CyclomaticComplexity:
-  Max: 10
-
-# * 警告 120文字
-# * 禁止 160文字
-# のイメージ
-Metrics/LineLength:
-  Max: 160
-  Exclude:
-    - "db/migrate/*.rb"
-
-# 20 行超えるのは migration ファイル以外滅多に無い
-Metrics/MethodLength:
-  Max: 20
-  Exclude:
-    - "db/migrate/*.rb"
-
-# 分岐の数。ガード句を多用しているとデフォルト 7 だと厳しい
-Metrics/PerceivedComplexity:
-  Max: 8
-
-# FIXME: この設定はprogramモデルのリファクタリングを実施する際に削除する
-Metrics/ClassLength:
-  Enabled: false
-
-# Gemfile, Guardfile は DSL 的で基本的に複雑にはならないので除外
-# routes は巨大な block 不可避なので除外
-Metrics/BlockLength:
-  Exclude:
-    - "**/*.rake"
-    - "config/routes.rb"
-    - "Gemfile"
-    - "Rakefile"
-    - "spec/**/*.rb"
-
-Metrics/ParameterLists:
-  Max: 6
-
-##################### Layout #################################
-
-# special_inside_parentheses (default) と比べて
-# * 横に長くなりづらい
-# * メソッド名の長さが変わったときに diff が少ない
-Layout/IndentFirstArrayElement:
-  EnforcedStyle: consistent
-
-# ({ と hash を開始した場合に ( の位置にインデントさせる
-# そもそも {} が必要ない可能性が高いが Style/BracesAroundHashParameters はチェックしないことにしたので
-Layout/IndentFirstHashElement:
-  EnforcedStyle: consistent
-
-Layout/DotPosition:
-  EnforcedStyle: leading
-
-# メソッド呼び出しの行から1段階インデントする
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-# private/protected は一段深くインデントする
-Layout/IndentationConsistency:
-  Enabled: false
-
-# メソッドチェインする場合のインデント設定
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
-# ブロックの直前にはスペースを入れる
-Layout/SpaceBeforeBlockBraces:
-  EnforcedStyle: space
-
-Style/EmptyMethod:
-  EnforcedStyle: expanded
-
-##################### Naming #################################
-
-# has_ から始まるメソッドは許可する
-Naming/PredicateName:
-  NamePrefixBlacklist:
-    - "is_"
-    - "have_"
-  NamePrefix:
-    - "is_"
-    - "have_"
