@@ -34,6 +34,11 @@ AsciiComments:
 Metrics/ClassLength:
   Max: 200
 
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - 'app/controllers/concerns/calculate.rb'
+
 Metrics/CyclomaticComplexity:
   Max: 5
 
