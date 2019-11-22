@@ -8,7 +8,14 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.6.5-buster
-
+      - image: circleci/postgres:11.5-alpine
+        environment:
+          RAILS_ENV: test
+          POSTGRES_DB: cafepedia_api_test
+          DATABASE_USER: postgres
+          DATABASE_PASSWORD: ""
+          DATABASE_HOST: postgres
+          DATABASE_PORT: 5432
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -48,20 +55,17 @@ jobs:
       - run:
           name: run tests
           command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-              circleci tests split --split-by=timings)"
+            bundle exec rspec
 
-            bundle exec rspec \
-              --format progress \
-              --format RspecJunitFormatter \
-              --out /tmp/test-results/rspec.xml \
-              --format progress \
-              $TEST_FILES
+      # run rubocop!
+      - run:
+          name: run rubocop
+          command: |
+            bundle exec rubocop
 
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+      # BrakeMan
+      - run:
+          name: run brakeman
+          command: |
+            bundle exec brakeman -A
+
