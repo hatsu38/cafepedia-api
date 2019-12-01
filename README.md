@@ -1,5 +1,7 @@
 # Cafepedia API
 
+BaseURL：https://api.cafepeda.jp/
+
 ## Overview
 #### 日本全国にあるカフェチェーン店の一覧/カフェ詳細を返します
 |path|parameter|Description|
