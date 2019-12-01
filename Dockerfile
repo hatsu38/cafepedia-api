@@ -30,6 +30,7 @@ RUN RAILS_ENV=production bundle install
 
 ADD . $APP_ROOT
 
+RUN RAILS_ENV=production bundle exec rake assets:clobber
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 EXPOSE 3000
