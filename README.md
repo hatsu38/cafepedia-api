@@ -2,6 +2,11 @@
 
 BaseURL：https://api.cafepeda.jp/
 
+## Relation
+Infrastructure：https://github.com/hatsu38/cafepedia-api-aws
+
+Frontend：https://github.com/hatsu38/cafepedia-frontend
+
 ## Overview
 #### 日本全国にあるカフェチェーン店の一覧/カフェ詳細を返します
 |path|parameter|Description|
