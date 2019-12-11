@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :shops, only: [:index,:show] do
       resources :comments, only: [:index, :create]
     end
+    resources :main_shops, only: [:index]
     get '/search', to: 'shops#search', as: 'search'
     get '/stations/search', to: 'stations#search', as: 'stations_search'
   end
