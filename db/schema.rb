@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_083534) do
+ActiveRecord::Schema.define(version: 2019_12_15_075441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,27 @@ ActiveRecord::Schema.define(version: 2019_11_20_083534) do
     t.index ["shop_id"], name: "index_comments_on_shop_id"
   end
 
+  create_table "congrestion_infos", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "main_shops", force: :cascade do |t|
     t.string "name", null: false
     t.string "eng_name", null: false
     t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shop_congrestion_infos", force: :cascade do |t|
+    t.bigint "shop_id"
+    t.bigint "congrestion_info_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["congrestion_info_id"], name: "index_shop_congrestion_infos_on_congrestion_info_id"
+    t.index ["shop_id"], name: "index_shop_congrestion_infos_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -88,5 +103,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_083534) do
   end
 
   add_foreign_key "comments", "shops"
+  add_foreign_key "shop_congrestion_infos", "congrestion_infos"
+  add_foreign_key "shop_congrestion_infos", "shops"
   add_foreign_key "shops", "main_shops"
 end

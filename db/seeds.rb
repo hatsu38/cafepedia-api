@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# # frozen_string_literal: true
 
 require 'csv'
 
@@ -245,3 +245,6 @@ CSV.foreach('./cafe_csvs/eki.csv', headers: true) do |data|
 rescue StandardError
   next
 end
+CongrestionInfo.create(name: '混んでる')
+CongrestionInfo.create(name: 'やや混んでる')
+CongrestionInfo.create(name: '空いてる')
