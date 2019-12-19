@@ -27,10 +27,7 @@ module Api
       @main_shops = Shop.
                     includes(:main_shop).
                     where(id: @shops.map { |c| c['id'] }).
-                    pluck(:id,
-                          'main_shops.name',
-                          'main_shops.eng_name',
-                          'main_shops.image')
+                    pluck(:id, 'main_shops.name', 'main_shops.eng_name', 'main_shops.image')
     end
   end
 end

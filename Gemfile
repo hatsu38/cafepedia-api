@@ -9,6 +9,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'rack-cors'
 gem 'rails-i18n'
+gem 'bullet'
 
 ruby '2.6.5'
 
