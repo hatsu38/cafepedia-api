@@ -22,6 +22,7 @@ json.set! :shops do
     json.image @main_shops.find { |n| n[0] == shop['id'] }[3]
     json.main_shop_name @main_shops.find { |n| n[0] == shop['id'] }[1]
     json.main_shop_eng_name @main_shops.find { |n| n[0] == shop['id'] }[2]
+    json.congrestion_info ShopCongrestionInfo.where(shop_id: shop['id']).same_about_time_post.group(:congrestion_info_id).order("count_all DESC").try(:count).try(:first).try(:first)
     if shop['distance'] > 1
       json.distance "#{shop['distance'].round(2)}km"
     else
