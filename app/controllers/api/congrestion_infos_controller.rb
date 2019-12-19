@@ -3,9 +3,11 @@
 module Api
   class CongrestionInfosController < ApplicationController
     def create
-      shop = Shop.find_by(id: params[:shop_id])
-      info = CongrestionInfo.find_by(id: params[:congrestion_infos][:id])
-      ShopCongrestionInfo.create!(shop: shop, congrestion_info: info)
+      ShopCongrestionInfo.create!(shop_id: params[:shop_id], congrestion_info_id: params[:congrestion_infos][:id])
+    end
+
+    def destroy
+      ShopCongrestionInfo.create!(shop_id: params[:shop_id], congrestion_info_id: params[:id])
     end
   end
 end
