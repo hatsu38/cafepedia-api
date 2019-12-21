@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   namespace :api, {format: 'json'} do
     resources :shops, only: [:index,:show] do
       resources :comments, only: [:index, :create]
-      resources :congrestion_infos, only: [:create, :destroy]
+      resources :congrestion_infos, only: [:create]
     end
+    resources :shop_congrestion_infos, only: [:destroy]
     resources :main_shops, only: [:index]
     get '/search', to: 'shops#search', as: 'search'
     get '/stations/search', to: 'stations#search', as: 'stations_search'
