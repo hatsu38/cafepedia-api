@@ -111,6 +111,7 @@ GEM
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    database_cleaner (1.7.0)
     database_rewinder (0.9.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -414,6 +415,7 @@ DEPENDENCIES
   byebug
   capybara
   ci_reporter_rspec
+  database_cleaner
   database_rewinder
   devise
   factory_bot_rails
