@@ -66,6 +66,7 @@ group :test do
   gem 'rspec-rails'
   gem 'ci_reporter_rspec'
   gem 'factory_bot_rails'
+  gem 'database_cleaner'
   gem 'database_rewinder'
   gem 'shoulda-matchers'
   gem 'brakeman'
