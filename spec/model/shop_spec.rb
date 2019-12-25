@@ -23,5 +23,6 @@ describe Shop, type: :model do
   describe 'Associations' do
     it { is_expected.to belong_to(:main_shop).class_name('MainShop') }
     it { is_expected.to have_many(:comments) }
+    it { is_expected.to have_many(:congrestion_infos).through(:shop_congrestion_infos) }
   end
 end
