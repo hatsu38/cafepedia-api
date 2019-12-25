@@ -14,6 +14,7 @@ jobs:
           DATABASE_PASSWORD: ""
           DATABASE_HOST: 127.0.0.1
           DATABASE_PORT: 5432
+          TZ: Asia/Tokyo
       - image: circleci/postgres:11.5
     working_directory: ~/repo
 
