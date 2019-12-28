@@ -11,7 +11,7 @@ class ShopCongrestionInfo < ApplicationRecord
     )
   }
 
-  # 現在とお同じ曜日に投稿された投稿を取得
+  # 現在と同じ曜日に投稿された投稿を取得
   scope :same_about_day_of_week_post, lambda {
     where('extract(dow from created_at) = ?', Time.zone.now.wday)
   }
