@@ -1,0 +1,13 @@
+config/master.key
+spec/
+tmp/
+!tmp/pids/
+node_modules/
+vendor/assets/
+
+.env
+.envrc
+# intelliJ
+.idea/
+*.iml
+railways.cache
