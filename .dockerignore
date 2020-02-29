@@ -1,4 +1,4 @@
-config/master.key
+# config/master.key
 spec/
 tmp/
 !tmp/pids/
