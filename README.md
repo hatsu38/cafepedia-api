@@ -1,9 +1,12 @@
 # Cafepedia API
 
-BaseURL：https://api.cafepeda.jp/
+<!-- 旧URL -->
+<!-- BaseURL：https://api.cafepedia.jp/ -->
+BaseURL：https://cafepedia-api.herokuapp.com/
 
 ## Relation
-Infrastructure：https://github.com/hatsu38/cafepedia-api-aws
+<!-- 旧構成 -->
+<!-- Infrastructure：https://github.com/hatsu38/cafepedia-api-aws -->
 
 Frontend：https://github.com/hatsu38/cafepedia-frontend
 
@@ -25,3 +28,25 @@ Frontend：https://github.com/hatsu38/cafepedia-frontend
 |path|parameter|Description|
 |:-|:-|:-|
 |/api/stations/search| ・word(=string)<br /> ・page(=int)| wordを含む駅名を10件返します |
+
+
+### デプロイ方法
+```
+# herokuにログイン
+$ heroku login
+
+# herokuのコンテナレジストリにログイン
+heroku container:login
+
+# イメージを作成してコンテナレジストリにpush
+heroku container:push web
+
+# DBセットアップ(必要に応じて)
+heroku run rails db:migrate
+
+# イメージをherokuへデプロイ
+heroku container:release web
+
+# 実際にアクセスして/usersを確認してみる
+heroku open
+```
