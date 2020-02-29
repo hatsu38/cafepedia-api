@@ -21,8 +21,11 @@ test:
 
 production:
   <<: *default
-  database: <%= Rails.application.credentials.rds[:name] %>
-  username: <%= Rails.application.credentials.rds[:user_name] %>
-  password: <%= Rails.application.credentials.rds[:password] %>
-  host: <%= Rails.application.credentials.rds[:host] %>
-  port: <%= Rails.application.credentials.rds[:port] %>
+  # database: <%= Rails.application.credentials.rds[:name] %>
+  # username: <%= Rails.application.credentials.rds[:user_name] %>
+  # password: <%= Rails.application.credentials.rds[:password] %>
+  # host: <%= Rails.application.credentials.rds[:host] %>
+  # port: <%= Rails.application.credentials.rds[:port] %>
+  username: postgres
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: cafepedia_api_production
