@@ -46,7 +46,22 @@ heroku run rails db:migrate
 
 # イメージをherokuへデプロイ
 heroku container:release web
+```
 
-# 実際にアクセスして/usersを確認してみる
+### その他Herokuでよく使うコマンド
+```
+# 実際にアクセス
 heroku open
+
+# サーバーに入る
+heroku run bash
+
+# RAILS_ENVをProduction環境に変更する
+heroku config:add RAILS_ENV=production
+
+# herokuに.envを送信する
+# プラグイン追加
+heroku plugins:install heroku-config
+# .envを送信
+heroku config:push
 ```
