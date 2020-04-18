@@ -68,8 +68,19 @@ jobs:
           command: |
             bundle exec brakeman -A
   build:
-    machine:
-      image: circleci/classic:edge
+    docker:
+    - image: circleci/ruby:2.6.5-buster
+      environment:
+        RAILS_ENV: test
+        POSTGRES_DB: cafepedia_api_test
+        DATABASE_USER: postgres
+        DATABASE_PASSWORD: ""
+        DATABASE_HOST: 127.0.0.1
+        DATABASE_PORT: 5432
+        TZ: Asia/Tokyo
+    - image: circleci/postgres:11.5
+    working_directory: ~/repo
+
     steps:
       - checkout
       - run:
