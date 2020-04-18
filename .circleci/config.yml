@@ -70,14 +70,6 @@ jobs:
   build:
     machine:
       image: circleci/classic:edge
-      environment:
-        RAILS_ENV: test
-        POSTGRES_DB: cafepedia_api_test
-        DATABASE_USER: postgres
-        DATABASE_PASSWORD: ""
-        DATABASE_HOST: 127.0.0.1
-        DATABASE_PORT: 5432
-        TZ: Asia/Tokyo
     steps:
       - checkout
       - run:
