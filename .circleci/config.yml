@@ -67,9 +67,49 @@ jobs:
           name: run brakeman
           command: |
             bundle exec brakeman -A
-
+  build:
+    machine:
+      image: circleci/classic:edge
+      environment:
+        RAILS_ENV: test
+        POSTGRES_DB: cafepedia_api_test
+        DATABASE_USER: postgres
+        DATABASE_PASSWORD: ""
+        DATABASE_HOST: 127.0.0.1
+        DATABASE_PORT: 5432
+        TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - run:
+          name: docker-compose build
+          command: docker-compose build
+      - run:
+          name: docker-compose up
+          command: docker-compose up -d
+      - run:
+          name: sleep for waiting launch db
+          command: sleep 1
+      - run:
+          name: "before_test: setup db"
+          command: docker-compose run app bundle exec rails db:create db:migrate
+      - run:
+          name: rspec
+          command: docker-compose run app bundle exec rspec
+      - run:
+          name: rubocop
+          command: docker-compose run app bundle exec rubocop --extra-details --display-style-guide --parallel --display-cop-names
+      - run:
+          name: rubocop-thread_safety
+          command: docker-compose run app bundle exec rubocop -r rubocop-thread_safety --only ThreadSafety,Style/GlobalVars,Style/ClassVars,Style/MutableConstant --display-cop-names --extra-details --display-style-guide
+      - run:
+          name: brakeman
+          command: docker-compose run app bundle exec brakeman -A
+      - run:
+          name: docker-compose down
+          command: docker-compose down
 workflows:
   version: 2
   build:
     jobs:
       - test
+      - build
