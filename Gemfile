@@ -9,7 +9,6 @@ gem 'devise'
 gem 'kaminari'
 gem 'rack-cors'
 gem 'rails-i18n'
-gem 'bullet'
 
 ruby '2.6.5'
 
@@ -51,6 +50,7 @@ group :development, :test do
   gem 'rubocop-thread_safety'
   gem 'simplecov'
   gem 'brakeman'
+  gem 'bullet'
 end
 
 group :development do

@@ -11,3 +11,4 @@ vendor/assets/
 .idea/
 *.iml
 railways.cache
+/coverage

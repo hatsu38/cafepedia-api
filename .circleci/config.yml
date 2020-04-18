@@ -56,8 +56,12 @@ jobs:
       - run:
           name: run rubocop
           command: |
-            bundle exec rubocop
+            bundle exec rubocop --extra-details --display-style-guide --parallel --display-cop-names
 
+      - run:
+          name: run rubocop-thread_safety
+          command: |
+            bundle exec rubocop -r rubocop-thread_safety --only ThreadSafety,Style/GlobalVars,Style/ClassVars,Style/MutableConstant --display-cop-names --extra-details --display-style-guide
       # BrakeMan
       - run:
           name: run brakeman
