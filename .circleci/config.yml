@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/ruby:2.6.5-buster
         environment:
@@ -68,3 +68,8 @@ jobs:
           command: |
             bundle exec brakeman -A
 
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
