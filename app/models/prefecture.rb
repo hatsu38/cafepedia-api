@@ -1,8 +1,7 @@
-class Prefecture < JpPrefecture::Prefecture
-  alias_method :id, :code
+class Prefecture < ActiveYaml::Base
+  include ActiveHash::Associations
+  set_root_path 'config/divisions'
+  set_filename 'prefecture'
 
-  def self.where(options)
-    ids = Array(options[:id]).map(&:to_s).select(&:present?)
-    self.all.select { |pref| ids.include?(pref.id.to_s) }.compact
-  end
+  has_many :shops, dependent: :destroy
 end

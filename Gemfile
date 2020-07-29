@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'jp_prefecture' # 都道府県データ
+gem 'active_hash'
 gem 'sentry-raven'
 gem 'therubyracer'
 gem 'activeadmin'

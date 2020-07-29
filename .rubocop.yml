@@ -63,9 +63,6 @@ Layout/CaseIndentation:
 Style/Documentation:
   Enabled: false
 
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
 Style/GuardClause:
   Enabled: false
 
