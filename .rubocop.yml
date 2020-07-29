@@ -85,7 +85,7 @@ Style/SymbolProc:
   Enabled: false
 
 # Final newline missing.
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: false
 
 # 式展開しないときにはsingleを使う
@@ -108,7 +108,7 @@ Style/NumericLiterals:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: false
 
 # Do not prefix writer method names with set_
