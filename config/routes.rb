@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :shop_congrestion_infos, only: [:destroy]
     resources :main_shops, only: [:index]
+    resources :prefecture, only: [:index, :show]
     get '/search', to: 'shops#search', as: 'search'
     get '/stations/search', to: 'stations#search', as: 'stations_search'
   end
