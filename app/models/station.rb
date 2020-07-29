@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: stations
+#
+#  id         :bigint           not null, primary key
+#  kana_name  :string           not null
+#  kanji_name :string           not null
+#
 class Station < ApplicationRecord
   validates :kana_name, presence: true
   validates :kanji_name, presence: true
