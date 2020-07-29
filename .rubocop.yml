@@ -40,7 +40,7 @@ Metrics/AbcSize:
     - 'app/controllers/concerns/calculate.rb'
 
 Metrics/CyclomaticComplexity:
-  Max: 5
+  Max: 6
 
 Metrics/LineLength:
   Max: 120
