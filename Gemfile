@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "sentry-raven"
 gem 'therubyracer'
 gem 'activeadmin'
 gem 'devise'
@@ -35,8 +36,6 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem "sentry-raven"
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -51,6 +50,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'brakeman'
   gem 'bullet'
+  gem "annotate" # Add Column Info To model file
 end
 
 group :development do

@@ -12,7 +12,6 @@ describe Station, type: :model do
 
     it { is_expected.to validate_presence_of(:kana_name) }
     it { is_expected.to validate_presence_of(:kanji_name) }
-    it { is_expected.to validate_uniqueness_of(:kanji_name) }
   end
 
   describe 'Methods' do
