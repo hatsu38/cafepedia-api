@@ -18,6 +18,14 @@ Frontend：https://github.com/hatsu38/cafepedia-frontend
 |/api/shops/:id| |idのカフェ詳細情報を返します|
 |/api/search| ・socket(=boolean) <br/> ・wifi(=boolean) <br /> ・smoking(=boolean) <br /> ・station_name(=string) <br /> ・lat(=float) <br /> ・lng(=float) <br /> ・page(=int) |paramsにヒットするカフェをlat,lngに近い順にソートして30件返します|
 
+#### 都道府県とそのカフェの一部を返す
+|path|parameter|Description|
+|:-|:-|:-|
+|/api/prefectures| |都道府県一覧とカフェ5つを返します|
+|/api/prefectures/:id| |idの都道府県とそのカフェ一覧を返します|
+|/api/areas/ | |地方一覧を返します|
+|/api/areas/:area | |地方名にマッチした都道府県一覧とそのカフェを返します|
+
 #### お店のコメントを返します/投稿できます
 |path|parameter|Description|
 |:-|:-|:-|
@@ -41,11 +49,11 @@ heroku container:login
 # イメージを作成してコンテナレジストリにpush
 heroku container:push web
 
-# DBセットアップ(必要に応じて)
-heroku run rails db:migrate
-
 # イメージをherokuへデプロイ
 heroku container:release web
+
+# DBセットアップ(必要に応じて)
+heroku run rails db:migrate
 ```
 
 ### その他Herokuでよく使うコマンド

@@ -19,14 +19,14 @@ WORKDIR $APP_ROOT
 
 ADD Gemfile Gemfile.lock package.json yarn.lock $APP_ROOT/
 
-RUN gem update --system && gem install bundler:2.0.2
+RUN gem update --system && gem install bundler:1.17.3
 
 RUN RAILS_ENV=production bundle install
 
 ADD . $APP_ROOT
 
-RUN RAILS_ENV=production bundle exec rake assets:clobber
-RUN RAILS_ENV=production bundle exec rails assets:precompile
+# RUN RAILS_ENV=production bundle exec rake assets:clobber
+# RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 EXPOSE 3000
 CMD ["rails","server","-b","0.0.0.0"]

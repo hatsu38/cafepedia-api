@@ -3,7 +3,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "sentry-raven"
+gem 'active_hash'
+gem 'sentry-raven'
 gem 'therubyracer'
 gem 'activeadmin'
 gem 'devise'
@@ -50,7 +51,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'brakeman'
   gem 'bullet'
-  gem "annotate" # Add Column Info To model file
+  gem 'annotate' # Add Column Info To model file
 end
 
 group :development do

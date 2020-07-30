@@ -11,7 +11,7 @@ describe Shop, type: :model do
     subject { build(:shop) }
 
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:prefecture) }
+    it { is_expected.to validate_presence_of(:prefecture_name) }
     it { is_expected.to validate_presence_of(:city) }
     it { is_expected.to validate_presence_of(:other_address) }
     it { is_expected.to validate_presence_of(:access) }
