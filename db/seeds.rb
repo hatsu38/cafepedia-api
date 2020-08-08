@@ -1,4 +1,4 @@
-# # frozen_string_literal: true
+# frozen_string_literal: true
 
 require 'csv'
 
@@ -238,7 +238,7 @@ end
 
 CSV.foreach('./cafe_csvs/eki.csv', headers: true) do |data|
   kanji_name = data['kanji'].include?('(') ? data['kanji'].sub!(/\(.*/m, '') : data['kanji']
-  Station.create!(
+  Station.find_or_create_by!(
     kanji_name: kanji_name,
     kana_name: data['kana']
   )
@@ -247,7 +247,21 @@ rescue StandardError
 end
 
 if CongrestionInfo.count < 3
-  CongrestionInfo.create(name: '混んでる')
-  CongrestionInfo.create(name: 'やや混んでる')
-  CongrestionInfo.create(name: '空いてる')
+  CongrestionInfo.find_or_create_by!(name: '混んでる')
+  CongrestionInfo.find_or_create_by!(name: 'やや混んでる')
+  CongrestionInfo.find_or_create_by!(name: '空いてる')
 end
+
+Shop.access_station("駅").each do |shop|
+  station_names = shop.access.match(/.*?駅/)
+  next if station_names.nil?
+
+  station = Station.find_by(kanji_name: station_names[0])
+  next if station.nil?
+
+  ShopStation.find_or_create_by!(
+    shop_id: shop.id,
+    station_id: station.id
+  )
+end
+

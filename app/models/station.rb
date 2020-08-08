@@ -11,6 +11,8 @@
 class Station < ApplicationRecord
   validates :kana_name, presence: true
   validates :kanji_name, presence: true
+  has_many :shop_stations, dependent: :destroy
+  has_many :shops, through: :shop_stations
 
   def self.search(word)
     where('kanji_name LIKE :word OR

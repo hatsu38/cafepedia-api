@@ -41,6 +41,9 @@ class Shop < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :shop_congrestion_infos, dependent: :destroy
   has_many :congrestion_infos, through: :shop_congrestion_infos
+  has_many :shop_stations, dependent: :destroy
+  has_many :stations, through: :shop_stations
+
   belongs_to_active_hash :prefecture
 
   with_options presence: true do
@@ -54,27 +57,35 @@ class Shop < ApplicationRecord
     validates :is_open
   end
 
-  scope :have_socket, lambda { |params|
+  scope :params_have_socket, lambda { |params|
     where(socket: true) if params[:socket].present?
   }
-  scope :have_wifi, lambda { |params|
+  scope :params_have_wifi, lambda { |params|
     where(wifi: true) if params[:wifi].present?
   }
-  scope :have_smoking, lambda { |params|
+  scope :params_have_smoking, lambda { |params|
     where(smoking: true) if params[:smoking].present?
   }
-  scope :access_station, lambda { |params|
+  scope :params_access_station, lambda { |params|
     where(['access LIKE ?', "%#{params[:station_name]}%"]) if params[:station_name].present?
+  }
+
+  scope :have_scocket, -> { where(socket: true) }
+  scope :have_wifi, -> { where(wifi: true) }
+  scope :have_smoking, -> { where(smoking: true) }
+
+  scope :access_station, lambda { |word|
+    where(['access LIKE ?', "%#{word}%"])
   }
 
   def self.cafe_list_calculated_distance(params)
     lat = params[:lat] || 35.6589568
     lng = params[:lng] || 139.7219328
     cafe_lists = where(is_open: true)
-                 .access_station(params)
-                 .have_socket(params)
-                 .have_wifi(params)
-                 .have_smoking(params)
+                 .access_station(params[:socket])
+                 .params_have_socket(params)
+                 .params_have_wifi(params)
+                 .params_have_smoking(params)
                  .map(&:attributes)
     cafe_lists.map do |cafe|
       cafe['distance'] = Calculate.distance(cafe['lat'], cafe['lng'], lat, lng)
