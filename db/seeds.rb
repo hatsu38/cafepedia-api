@@ -219,7 +219,7 @@ mainshop_array.each do |shop|
   CSV.foreach(shop[:csv], headers: true) do |data|
     main_shop.shops.find_or_create_by!(
       name: data['name'],
-      prefecture: data['prefecture'],
+      prefecture_name: data['prefecture'],
       city: data['city'],
       other_address: data['other_address'],
       access: data['access'],
