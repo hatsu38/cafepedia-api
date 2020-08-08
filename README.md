@@ -39,6 +39,19 @@ Frontend：https://github.com/hatsu38/cafepedia-frontend
 
 
 ### デプロイ方法
+新：
+```
+# herokuにログイン
+$ heroku login
+
+# Masterブランチをデプロイ
+git push heroku master
+
+# DBセットアップ(必要に応じて)
+heroku run rails db:migrate
+```
+
+旧：Docker
 ```
 # herokuにログイン
 $ heroku login
