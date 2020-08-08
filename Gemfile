@@ -11,6 +11,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'rack-cors'
 gem 'rails-i18n'
+gem 'order_as_specified' #Whre句の結果順にOrderする
 
 ruby '2.6.5'
 
@@ -55,6 +56,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rack-mini-profiler', require: false # パフォーマンス計測
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'

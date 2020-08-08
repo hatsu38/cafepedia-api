@@ -10,8 +10,13 @@ Rails.application.routes.draw do
     resources :main_shops, only: [:index]
     resources :prefectures, only: [:index, :show]
     resources :areas, only: [:index, :show], param: :area
+    resources :stations, only: [:index, :show]
+    resources :popular_stations, only: [:index]
+    resources :search_stations, only: [:index]
+
+    # TODO: SearchのControllerを作りREST Fullにする
     get '/search', to: 'shops#search', as: 'search'
-    get '/stations/search', to: 'stations#search', as: 'stations_search'
+
   end
   root to: 'api/shops#search', defaults: { format: :json }
   get '/health_check', to: 'health_check#index'

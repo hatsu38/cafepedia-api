@@ -1,18 +1,19 @@
 require 'rails_helper'
 
 describe 'Api::StationsController', type: :request do
-  describe 'Get Seach' do
+  describe 'Get Index' do
+    it '200' do
+      get api_stations_path
+      expect(response.status).to eq 200
+    end
+  end
+
+  describe 'Get Show' do
     let!(:station) { create(:station) }
 
     it '200' do
-      get api_stations_search_path(word: 'kana')
+      get api_station_path(station)
       expect(response.status).to eq 200
-    end
-
-    it '駅名を取得' do
-      get api_stations_search_path(word: 'kana')
-      json = JSON.parse(response.body)
-      expect(json['stations'][0]['kanji_name']).to eq(station.kanji_name)
     end
   end
 end
