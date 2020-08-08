@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# # frozen_string_literal: true
 
 require 'csv'
 
@@ -211,7 +211,7 @@ mainshop_array = [
 ]
 
 mainshop_array.each_with_index do |shop, _idx|
-  main_shop = MainShop.find_or_create_by(
+  main_shop = MainShop.find_or_create_by!(
                 name: shop[:name],
                 eng_name: shop[:eng_name],
                 image: shop[:image]
