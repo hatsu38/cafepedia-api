@@ -210,7 +210,7 @@ mainshop_array = [
   },
 ]
 
-mainshop_array.each_with_index do |shop, _idx|
+mainshop_array.each do |shop|
   main_shop = MainShop.find_or_create_by!(
                 name: shop[:name],
                 eng_name: shop[:eng_name],
