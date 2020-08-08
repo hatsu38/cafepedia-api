@@ -10,6 +10,7 @@ describe 'Api::StationsController', type: :request do
 
   describe 'Get Show' do
     let!(:station) { create(:station) }
+
     it '200' do
       get api_station_path(station)
       expect(response.status).to eq 200

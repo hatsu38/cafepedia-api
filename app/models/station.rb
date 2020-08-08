@@ -22,6 +22,6 @@ class Station < ApplicationRecord
 
   def self.popular(limit = 50)
     ids = ShopStation.group(:station_id).order('count_all desc').count.keys[0..limit]
-    self.where(id: ids).order_as_specified(id: ids)
+    where(id: ids).order_as_specified(id: ids)
   end
 end
