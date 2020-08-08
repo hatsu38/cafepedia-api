@@ -11,6 +11,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'rack-cors'
 gem 'rails-i18n'
+gem 'order_as_specified' #Whre句の結果順にOrderする
 
 ruby '2.6.5'
 
