@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
     # TODO: SearchのControllerを作りREST Fullにする
     get '/search', to: 'shops#search', as: 'search'
-    get '/stations/search', to: 'stations#search', as: 'stations_search'
+
   end
   root to: 'api/shops#search', defaults: { format: :json }
   get '/health_check', to: 'health_check#index'
