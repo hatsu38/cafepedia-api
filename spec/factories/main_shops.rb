@@ -15,4 +15,11 @@ FactoryBot.define do
     sequence(:eng_name) { |n| "カフェ#{n}_eng" }
     sequence(:image) { |n| "#{n}.png" }
   end
+
+  trait :with_many_shops do
+    after(:build) do |main_shop|
+      shops = create_list(:shop, MainShop::OVER_HAVE_SHOPS)
+      main_shop.shops << shops
+    end
+  end
 end

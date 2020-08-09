@@ -24,7 +24,7 @@ class MainShop < ApplicationRecord
 
   def self.popular
     over_have_shop_ids = Shop.group(:main_shop_id)
-                             .having("count(*) > #{OVER_HAVE_SHOPS}")
+                             .having("count(*) >= #{OVER_HAVE_SHOPS}")
                              .order('count_all desc')
                              .count
                              .keys
