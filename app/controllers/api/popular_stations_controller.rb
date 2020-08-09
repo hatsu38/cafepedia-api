@@ -3,7 +3,7 @@ module Api
     PER = 30
 
     def index
-      @stations = Station.popular.joins(:shops).page(params[:page]).per(params[:per] || PER)
+      @stations = Station.popular.eager_load(:shops).page(params[:page]).per(params[:per] || PER)
     end
   end
 end
