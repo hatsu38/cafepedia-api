@@ -3,7 +3,7 @@
 module Api
   class PopularMainShopsController < ApplicationController
     def index
-      @main_shops = MainShop.popular
+      @main_shops = MainShop.popular.preload(:shops)
     end
   end
 end
