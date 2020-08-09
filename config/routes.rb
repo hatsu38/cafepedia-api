@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :congrestion_infos, only: [:create]
     end
     resources :shop_congrestion_infos, only: [:destroy]
-    resources :main_shops, only: [:index]
+    resources :main_shops, only: [:index, :show]
     resources :popular_main_shops, only: [:index]
     resources :prefectures, only: [:index, :show]
     resources :areas, only: [:index, :show], param: :area

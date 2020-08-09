@@ -10,4 +10,4 @@ json.set! :comments do
                   :created_at
   end
 end
-json.page_num @comments.total_pages
+json.page_num @comments&.total_pages
