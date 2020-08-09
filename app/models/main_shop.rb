@@ -23,7 +23,11 @@ class MainShop < ApplicationRecord
   end
 
   def self.popular
-    over_have_shop_ids = Shop.group(:main_shop_id).having("count(*) > #{OVER_HAVE_SHOPS}").order('count_all desc').count.keys
+    over_have_shop_ids = Shop.group(:main_shop_id)
+                             .having("count(*) > #{OVER_HAVE_SHOPS}")
+                             .order('count_all desc')
+                             .count
+                             .keys
     where(id: over_have_shop_ids).order_as_specified(id: over_have_shop_ids)
   end
 end
