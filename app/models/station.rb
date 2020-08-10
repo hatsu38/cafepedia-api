@@ -19,10 +19,12 @@ class Station < ApplicationRecord
   has_many :near_station_reloations,
            foreign_key: :main_station_id,
            class_name: 'NearStationRelationship',
+           inverse_of: :main_station,
            dependent: :destroy
   has_many :main_station_reloations,
            foreign_key: :near_station_id,
            class_name: 'NearStationRelationship',
+           inverse_of: :near_station,
            dependent: :destroy
   has_many :near_stations, through: :near_station_reloations
   has_many :main_stations, through: :main_station_reloations
