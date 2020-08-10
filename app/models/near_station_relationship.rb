@@ -15,8 +15,8 @@
 #  index_near_station_relationships_on_near_station_id  (near_station_id)
 #
 class NearStationRelationship < ApplicationRecord
-  belongs_to :main_station, class_name: "Station"
-  belongs_to :near_station, class_name: "Station"
+  belongs_to :main_station, class_name: 'Station'
+  belongs_to :near_station, class_name: 'Station'
 
   validates :main_station_id, presence: true
   validates :near_station_id, presence: true
