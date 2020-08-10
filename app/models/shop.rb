@@ -56,6 +56,7 @@ class Shop < ApplicationRecord
     validates :lng
     validates :is_open
   end
+  validates :name, uniqueness: true
 
   scope :params_have_socket, lambda { |params|
     where(socket: true) if params[:socket].present?

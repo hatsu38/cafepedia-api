@@ -112,4 +112,5 @@ Layout/ArrayAlignment:
 Naming/AccessorMethodName:
   Enabled: false
 
-
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false

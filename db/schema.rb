@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_095530) do
+ActiveRecord::Schema.define(version: 2020_08_10_020243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 2020_08_08_095530) do
     t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "near_station_relationships", force: :cascade do |t|
+    t.integer "main_station_id", null: false
+    t.integer "near_station_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["main_station_id", "near_station_id"], name: "index_main_station_and_near_station", unique: true
+    t.index ["main_station_id"], name: "index_near_station_relationships_on_main_station_id"
+    t.index ["near_station_id"], name: "index_near_station_relationships_on_near_station_id"
   end
 
   create_table "shop_congrestion_infos", force: :cascade do |t|

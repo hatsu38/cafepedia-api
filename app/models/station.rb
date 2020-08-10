@@ -10,14 +10,27 @@
 #
 class Station < ApplicationRecord
   extend OrderAsSpecified
+
   validates :kana_name, presence: true
   validates :kanji_name, presence: true
+
   has_many :shop_stations, dependent: :destroy
   has_many :shops, through: :shop_stations
+  has_many :near_station_reloations,
+           foreign_key: :main_station_id,
+           class_name: 'NearStationRelationship',
+           inverse_of: :main_station,
+           dependent: :destroy
+  has_many :main_station_reloations,
+           foreign_key: :near_station_id,
+           class_name: 'NearStationRelationship',
+           inverse_of: :near_station,
+           dependent: :destroy
+  has_many :near_stations, through: :near_station_reloations
+  has_many :main_stations, through: :main_station_reloations
 
   def self.search(word)
-    where('kanji_name LIKE :word OR
-      kana_name LIKE :word', word: "%#{word}%")
+    where('kanji_name LIKE :word OR kana_name LIKE :word', word: "%#{word}%")
   end
 
   def self.popular(limit = 50)

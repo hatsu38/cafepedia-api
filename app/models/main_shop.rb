@@ -22,6 +22,10 @@ class MainShop < ApplicationRecord
     validates :image
   end
 
+  validates :name, uniqueness: true
+  validates :eng_name, uniqueness: true
+  validates :image, uniqueness: true
+
   def self.popular
     over_have_shop_ids = Shop.group(:main_shop_id)
                              .having("count(*) >= #{OVER_HAVE_SHOPS}")
