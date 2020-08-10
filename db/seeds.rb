@@ -211,12 +211,16 @@ mainshop_array = [
 ]
 
 mainshop_array.each do |shop|
-  main_shop = MainShop.find_or_create_by!(
-                name: shop[:name],
-                eng_name: shop[:eng_name],
-                image: shop[:image]
-              )
+  main_shop = MainShop.find_by(name: shop[:name])
+  unless main_shop
+    main_shop = MainShop.find_or_create_by!(
+                  name: shop[:name],
+                  eng_name: shop[:eng_name],
+                  image: shop[:image]
+                )
+  end
   CSV.foreach(shop[:csv], headers: true) do |data|
+    next if main_shop.shops.find_by(name: data['name'])
     main_shop.shops.find_or_create_by!(
       name: data['name'],
       prefecture_name: data['prefecture'],
