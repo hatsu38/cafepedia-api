@@ -8,7 +8,7 @@
 #  access          :text
 #  business_hour   :text
 #  chair           :string
-#  city            :string           not null
+#  city_name       :string           not null
 #  hp              :string
 #  iccard          :boolean          default(FALSE)
 #  is_open         :boolean          default(TRUE), not null
@@ -49,7 +49,7 @@ class Shop < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :prefecture_name
-    validates :city
+    validates :city_name
     validates :other_address
     validates :access
     validates :lat

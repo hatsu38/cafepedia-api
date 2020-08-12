@@ -4,7 +4,7 @@ json.set! :shop do
   json.id @shop['id']
   json.name @shop['name']
   json.prefecture @shop['prefecture_name']
-  json.city @shop['city']
+  json.city @shop['city_name']
   json.other_address @shop['other_address']
   json.access @shop['access']
   json.tel @shop['tel']

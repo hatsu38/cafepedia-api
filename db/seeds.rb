@@ -211,7 +211,7 @@ mainshop_array = [
 ]
 
 mainshop_array.each do |shop|
-  main_shop = MainShop.find_by(name: shop[:name]) || MainShop.find_by(eng_name: shop[:eng_name]) 
+  main_shop = MainShop.find_by(name: shop[:name]) || MainShop.find_by(eng_name: shop[:eng_name])
   unless main_shop
     main_shop = MainShop.find_or_create_by!(
                   name: shop[:name],
@@ -224,7 +224,7 @@ mainshop_array.each do |shop|
     main_shop.shops.find_or_create_by!(
       name: data['name'],
       prefecture_name: data['prefecture'],
-      city: data['city'],
+      city_name: data['city'],
       other_address: data['other_address'],
       access: data['access'],
       tel: data['tel'],

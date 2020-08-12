@@ -6,7 +6,7 @@
 #  access          :text
 #  business_hour   :text
 #  chair           :string
-#  city            :string           not null
+#  city_name       :string           not null
 #  hp              :string
 #  iccard          :boolean          default(FALSE)
 #  is_open         :boolean          default(TRUE), not null
@@ -36,7 +36,7 @@ FactoryBot.define do
   factory :shop do
     sequence(:name) { |n| "カフェ#{n}店" }
     sequence(:prefecture_name) { |n| "#{n}県" }
-    sequence(:city) { |n| "#{n}区" }
+    sequence(:city_name) { |n| "#{n}区" }
     sequence(:other_address) { |n| "#{n}丁目#{n + 1}番地" }
     sequence(:access) { |n| "徒歩#{n}分" }
     sequence(:lat) { |n| n.to_s }
