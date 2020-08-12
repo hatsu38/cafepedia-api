@@ -21,15 +21,18 @@
 #  wifi            :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  city_id         :bigint
 #  main_shop_id    :bigint
 #  prefecture_id   :integer          default(0), not null
 #
 # Indexes
 #
+#  index_shops_on_city_id       (city_id)
 #  index_shops_on_main_shop_id  (main_shop_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (city_id => cities.id)
 #  fk_rails_...  (main_shop_id => main_shops.id)
 #
 FactoryBot.define do
