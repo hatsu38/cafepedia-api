@@ -15,6 +15,7 @@
 #
 class City < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :shops
   belongs_to_active_hash :prefecture
 
   validates :city_code, uniqueness: true

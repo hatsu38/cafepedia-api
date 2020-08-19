@@ -40,12 +40,13 @@
 class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  belongs_to :main_shop
   has_many :comments, dependent: :destroy
   has_many :shop_congrestion_infos, dependent: :destroy
   has_many :congrestion_infos, through: :shop_congrestion_infos
   has_many :shop_stations, dependent: :destroy
   has_many :stations, through: :shop_stations
+  belongs_to :main_shop
+  belongs_to :city
 
   belongs_to_active_hash :prefecture
 
