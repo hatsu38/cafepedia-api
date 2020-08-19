@@ -1,9 +1,8 @@
 namespace :data_mainttenance do
   desc "市区町村と都道府県,ショップと紐付け"
   task set_city_references: :environment do
+    require 'open-uri'
     Prefecture.all.each do |prefecture|
-      puts "======"
-      puts puts "~~~~#{prefecture.name}~~~~"
       cities = get_cities_json(prefecture)
       cities.each do |city|
         finded_city = City.find_by(city_code: city["cityCode"])
@@ -22,20 +21,14 @@ namespace :data_mainttenance do
 
   def get_cities_json(prefecture)
     count = 0
-    uri = URI("https://opendata.resas-portal.go.jp/api/v1/cities")
+    base_url = "https://opendata.resas-portal.go.jp/api/v1/cities?"
     params = { prefCode: prefecture.id }
-    uri.query = URI.encode_www_form(params)
-
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = uri.scheme === "https"
-
+    url = base_url + URI.encode_www_form(params)
     headers = { "X-API-KEY" => Rails.application.credentials.x_api_key }
 
-    response = http.get(uri.path, headers)
-
     begin
-      response = http.get(uri.path, headers)
-      response.is_a?(Net::HTTPSuccess) ? JSON.parse(response.body)["result"] : nil
+      res = open(url, headers)
+      res.status.include?("200") ? JSON.parse(res.read)["result"] : nil
     rescue => error
       return nil if count > 3
       sleep(10)
