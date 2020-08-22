@@ -4,7 +4,7 @@ module Api
   class ShopsController < ApplicationController
     PER = 15
     def index
-      @shops = Shop.includes(:main_shop).where(is_open: true).page(params[:page]).per(params[:per] || PER)
+      @shops = Shop.includes(:main_shop).open.page(params[:page]).per(params[:per] || PER)
     end
 
     def show

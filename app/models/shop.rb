@@ -79,6 +79,7 @@ class Shop < ApplicationRecord
   scope :have_scocket, -> { where(socket: true) }
   scope :have_wifi, -> { where(wifi: true) }
   scope :have_smoking, -> { where(smoking: true) }
+  scope :open, -> { where(is_open: true) }
 
   scope :access_station, lambda { |word|
     where(['access LIKE ?', "%#{word}%"])
@@ -87,7 +88,7 @@ class Shop < ApplicationRecord
   def self.cafe_list_calculated_distance(params)
     lat = params[:lat] || 35.6589568
     lng = params[:lng] || 139.7219328
-    cafe_lists = where(is_open: true)
+    cafe_lists = open
                  .access_station(params[:socket])
                  .params_have_socket(params)
                  .params_have_wifi(params)

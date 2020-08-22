@@ -5,14 +5,16 @@ module Api::V1::Prefectures::Cities
     PER = 20
     def index
       @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-      @city = City.where(prefecture_id: @prefecture.id).find_by(city_code: params[:city_code])
-      @shops = Shop.where(prefecture_id: @prefecture.id).eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+      @city = @prefecture.cities.find_by(city_code: params[:city_code])
+      @shops = @city.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
       @main_shops = MainShop.eager_load(:shops)
     end
 
     def show
-      @main_shop = MainShop.find(params[:id])
-      @shops = @main_shop.shops.where(is_open: true).page(params[:page]).per(params[:per] || PER)
+      @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
+      @city = @prefecture.cities.find_by(city_code: params[:city_code])
+      @main_shop = MainShop.find_by(eng_name: params[:eng_name])
+      @shops = @city.shops.open.where(main_shop_id: @main_shop.id).page(params[:page]).per(params[:per] || PER)
     end
   end
 end

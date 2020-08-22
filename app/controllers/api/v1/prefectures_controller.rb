@@ -7,7 +7,7 @@ module Api::V1
 
     def show
       @prefecture = Prefecture.find_by(name_e: params[:name_e])
-      @shops = @prefecture.shops.page(params[:page]).per(params[:per] || PER)
+      @shops = @prefecture.shops.open.page(params[:page]).per(params[:per] || PER)
     end
   end
 end

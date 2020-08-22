@@ -9,7 +9,7 @@ module Api
 
     def show
       @main_shop = MainShop.find(params[:id])
-      @shops = @main_shop.shops.where(is_open: true).page(params[:page]).per(params[:per] || PER)
+      @shops = @main_shop.shops.open.page(params[:page]).per(params[:per] || PER)
     end
   end
 end
