@@ -9,7 +9,7 @@ module Api
     def show
       @station = Station.find(params[:id])
       @near_stations = @station.near_stations
-      @shops = @station.shops.where(is_open: true).page(params[:page]).per(params[:per] || PER)
+      @shops = @station.shops.open.page(params[:page]).per(params[:per] || PER)
     end
   end
 end

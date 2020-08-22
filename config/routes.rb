@@ -15,6 +15,16 @@ Rails.application.routes.draw do
     resources :popular_stations, only: [:index]
     resources :search_stations, only: [:index]
     resources :search_shops, only: [:index]
+
+    namespace :v1 do
+      resources :prefectures, only: [:index, :show], param: :name_e do
+        resources :cities, only: [:index, :show], param: :code, module: :prefectures  do
+          resources :main_shops, only: [:index, :show], param: :eng_name, module: :cities do
+            resources :shops, only: [:index, :show], module: :main_shops
+          end
+        end
+      end
+    end
   end
   root to: 'api/shops#search', defaults: { format: :json }
   resources :health_check, only: [:index]

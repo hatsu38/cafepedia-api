@@ -8,7 +8,7 @@
 #  access          :text
 #  business_hour   :text
 #  chair           :string
-#  city            :string           not null
+#  city_name       :string           not null
 #  hp              :string
 #  iccard          :boolean          default(FALSE)
 #  is_open         :boolean          default(TRUE), not null
@@ -23,38 +23,43 @@
 #  wifi            :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  city_id         :bigint
 #  main_shop_id    :bigint
 #  prefecture_id   :integer          default(0), not null
 #
 # Indexes
 #
+#  index_shops_on_city_id       (city_id)
 #  index_shops_on_main_shop_id  (main_shop_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (city_id => cities.id)
 #  fk_rails_...  (main_shop_id => main_shops.id)
 #
 class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  belongs_to :main_shop
   has_many :comments, dependent: :destroy
   has_many :shop_congrestion_infos, dependent: :destroy
   has_many :congrestion_infos, through: :shop_congrestion_infos
   has_many :shop_stations, dependent: :destroy
   has_many :stations, through: :shop_stations
+  belongs_to :main_shop
+  belongs_to :city
 
   belongs_to_active_hash :prefecture
 
   with_options presence: true do
     validates :name
     validates :prefecture_name
-    validates :city
+    validates :city_name
     validates :other_address
     validates :access
     validates :lat
     validates :lng
     validates :is_open
+    validates :prefecture_id
   end
   validates :name, uniqueness: true
 
@@ -74,6 +79,7 @@ class Shop < ApplicationRecord
   scope :have_scocket, -> { where(socket: true) }
   scope :have_wifi, -> { where(wifi: true) }
   scope :have_smoking, -> { where(smoking: true) }
+  scope :open, -> { where(is_open: true) }
 
   scope :access_station, lambda { |word|
     where(['access LIKE ?', "%#{word}%"])
@@ -82,7 +88,7 @@ class Shop < ApplicationRecord
   def self.cafe_list_calculated_distance(params)
     lat = params[:lat] || 35.6589568
     lng = params[:lng] || 139.7219328
-    cafe_lists = where(is_open: true)
+    cafe_lists = open
                  .access_station(params[:socket])
                  .params_have_socket(params)
                  .params_have_wifi(params)

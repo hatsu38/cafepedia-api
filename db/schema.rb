@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_020243) do
+ActiveRecord::Schema.define(version: 2020_08_12_055206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2020_08_10_020243) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "code", null: false
+    t.integer "prefecture_id", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_cities_on_code", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -96,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_020243) do
   create_table "shops", force: :cascade do |t|
     t.string "name", null: false
     t.string "prefecture_name", null: false
-    t.string "city", null: false
+    t.string "city_name", null: false
     t.string "other_address", null: false
     t.text "access"
     t.string "tel"
@@ -114,6 +123,8 @@ ActiveRecord::Schema.define(version: 2020_08_10_020243) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "prefecture_id", default: 0, null: false
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_shops_on_city_id"
     t.index ["main_shop_id"], name: "index_shops_on_main_shop_id"
   end
 
@@ -127,5 +138,6 @@ ActiveRecord::Schema.define(version: 2020_08_10_020243) do
   add_foreign_key "shop_congrestion_infos", "shops"
   add_foreign_key "shop_stations", "shops"
   add_foreign_key "shop_stations", "stations"
+  add_foreign_key "shops", "cities"
   add_foreign_key "shops", "main_shops"
 end

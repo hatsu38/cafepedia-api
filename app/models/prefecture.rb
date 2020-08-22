@@ -4,4 +4,5 @@ class Prefecture < ActiveYaml::Base
   set_filename 'prefecture'
 
   has_many :shops, dependent: :destroy
+  has_many :cities, dependent: :destroy
 end

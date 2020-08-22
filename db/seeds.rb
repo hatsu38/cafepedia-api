@@ -211,7 +211,7 @@ mainshop_array = [
 ]
 
 mainshop_array.each do |shop|
-  main_shop = MainShop.find_by(name: shop[:name]) || MainShop.find_by(eng_name: shop[:eng_name]) 
+  main_shop = MainShop.find_by(name: shop[:name]) || MainShop.find_by(eng_name: shop[:eng_name])
   unless main_shop
     main_shop = MainShop.find_or_create_by!(
                   name: shop[:name],
@@ -221,10 +221,11 @@ mainshop_array.each do |shop|
   end
   CSV.foreach(shop[:csv], headers: true) do |data|
     next if main_shop.shops.find_by(name: data['name'])
+    prefecture = Prefecture.find_by_name(data['prefecture'])
     main_shop.shops.find_or_create_by!(
       name: data['name'],
-      prefecture_name: data['prefecture'],
-      city: data['city'],
+      prefecture_name: prefecture.name,
+      city_name: data['city'],
       other_address: data['other_address'],
       access: data['access'],
       tel: data['tel'],
@@ -235,7 +236,8 @@ mainshop_array.each do |shop|
       smoking: data['smoking'],
       iccard: data['iccard'],
       lat: data['lat'],
-      lng: data['lng']
+      lng: data['lng'],
+      prefecture_id: prefecture.id
     )
   end
 end
