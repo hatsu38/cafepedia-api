@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::ShopCongrestionInfosController', type: :request do
+describe Api::ShopCongrestionInfosController, type: :request do
   describe 'Delete Shop Congrestion Info' do
     describe 'Work' do
       let!(:shop_congrestion_info) { create(:shop_congrestion_info) }

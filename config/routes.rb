@@ -8,11 +8,9 @@ Rails.application.routes.draw do
     end
     resources :shop_congrestion_infos, only: [:destroy]
     resources :main_shops, only: [:index, :show]
-    resources :popular_main_shops, only: [:index]
     resources :prefectures, only: [:index, :show]
     resources :areas, only: [:index, :show], param: :area
     resources :stations, only: [:index, :show]
-    resources :popular_stations, only: [:index]
     resources :search_stations, only: [:index]
     resources :search_shops, only: [:index]
 
@@ -23,6 +21,10 @@ Rails.application.routes.draw do
             resources :shops, only: [:index, :show], module: :main_shops
           end
         end
+      end
+      namespace :popular do
+        resources :stations, only: [:index]
+        resources :main_shops, only: [:index]
       end
     end
   end
