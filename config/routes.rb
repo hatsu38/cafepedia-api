@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     namespace :v1, {format: 'json'} do
       resources :prefectures, only: [:index, :show], param: :name_e do
         resources :cities, only: [:index, :show], param: :city_code, module: :prefectures  do
-          resources :main_shops, only: [:index, :show], param: :eng_name  do
-            resource :shops, only: [:index,:show]
+          resources :main_shops, only: [:index, :show], param: :eng_name, module: :cities do
+            resource :shops, only: [:index,:show], module: :main_shops
           end
         end
       end

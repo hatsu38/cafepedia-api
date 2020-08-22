@@ -1,1 +1,1 @@
-json.prefectures @prefectures, partial: "api/prefectures/prefecture", as: :prefecture
+json.prefectures @prefectures, partial: "api/v1/commons/prefecture", as: :prefecture
