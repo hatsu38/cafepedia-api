@@ -19,6 +19,11 @@ test:
   username: <%= ENV['DATABASE_USER'] || '' %>
   password: <%= ENV['DATABASE_PASSWORD'] || '' %>
 
+staging:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: cafepedia_api_staging
+
 production:
   <<: *default
   # database: <%= Rails.application.credentials.rds[:name] %>
