@@ -68,7 +68,7 @@ mainshop_array = [
     csv: "#{csv_root}doutor/colorado.csv",
   },
   {
-    name: 'エクセルシオール|ドトールコーヒー',
+    name: 'エクセルシオール',
     eng_name: 'execelsior',
     image: "#{path}doutor/execelsior_logo.jpg",
     csv: "#{csv_root}doutor/execelsior.csv",
