@@ -37,6 +37,8 @@
 #
 FactoryBot.define do
   factory :shop do
+    association :main_shop
+    association :city
     sequence(:name) { |n| "カフェ#{n}店" }
     sequence(:prefecture_name) { |n| "#{n}県" }
     sequence(:city_name) { |n| "#{n}区" }
@@ -45,6 +47,6 @@ FactoryBot.define do
     sequence(:lat) { |n| n.to_s }
     sequence(:lng) { |n| n.to_s }
     sequence(:is_open) { true }
-    main_shop
+    prefecture { Prefecture.all.sample }
   end
 end

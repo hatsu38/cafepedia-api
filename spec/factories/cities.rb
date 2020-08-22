@@ -13,11 +13,14 @@
 #
 #  index_cities_on_code  (code) UNIQUE
 #
-class City < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :shops, dependent: :nullify
-  belongs_to_active_hash :prefecture
 
-  validates :code, uniqueness: true
-  validates :name, presence: true
+FactoryBot.define do
+  factory :city do
+    sequence(:id) { |n| n }
+    sequence(:code) { |n| "#{n}#{n + 1}#{n + 2}#{n + 3}" }
+    sequence(:name) { |n| "#{n}区" }
+    sequence(:prefecture_id) { true }
+    prefecture { Prefecture.all.sample }
+  end
 end
+
