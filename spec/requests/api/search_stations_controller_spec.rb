@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::SearchStationsController', type: :request do
+describe Api::SearchStationsController, type: :request do
   describe 'Get Index' do
     it '200 with word' do
       get api_search_stations_path(word: 'kana')

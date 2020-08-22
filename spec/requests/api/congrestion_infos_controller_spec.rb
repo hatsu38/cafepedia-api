@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::CongrestionInfosController', type: :request do
+describe Api::CongrestionInfosController, type: :request do
   describe 'Post Shop Congrestion Info' do
     describe 'Work' do
       let!(:shop) { create(:shop) }

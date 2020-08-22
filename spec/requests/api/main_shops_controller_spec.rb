@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::MainShopsController', type: :request do
+describe Api::MainShopsController, type: :request do
   describe 'Get Index' do
     let!(:main_shop) { create(:main_shop) }
 

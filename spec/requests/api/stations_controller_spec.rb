@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::StationsController', type: :request do
+describe Api::StationsController, type: :request do
   describe 'Get Index' do
     it '200' do
       get api_stations_path

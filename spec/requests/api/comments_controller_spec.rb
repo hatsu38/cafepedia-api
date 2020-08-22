@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::CommentsController', type: :request do
+describe Api::CommentsController, type: :request do
   describe 'Get Index' do
     let!(:comment) { create(:comment) }
 

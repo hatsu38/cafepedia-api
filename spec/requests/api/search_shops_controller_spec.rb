@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::SearchShopsController', type: :request do
+describe Api::SearchShopsController, type: :request do
   describe 'Get Search' do
     let!(:shop) { create(:shop) }
 
