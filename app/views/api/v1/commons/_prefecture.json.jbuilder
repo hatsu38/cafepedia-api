@@ -1,5 +1,5 @@
 json.id prefecture.id
-json.prefecture_name prefecture.name
+json.name prefecture.name
 json.ellipsis_name prefecture.ellipsis_name
 json.name_e prefecture.name_e
 json.name_h prefecture.name_h
