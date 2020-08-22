@@ -29,5 +29,4 @@ Station.all.find_each do |station|
       near_station_id: near_station.id
     )
   end
-  sleep(0.5)
 end
