@@ -3,7 +3,7 @@
 # Table name: cities
 #
 #  id            :bigint           not null, primary key
-#  city_code     :string           not null
+#  code          :string           not null
 #  name          :string           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
@@ -11,14 +11,14 @@
 #
 # Indexes
 #
-#  index_cities_on_city_code  (city_code) UNIQUE
+#  index_cities_on_code  (code) UNIQUE
 #
 class City < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :shops
   belongs_to_active_hash :prefecture
 
-  validates :city_code, uniqueness: true
+  validates :code, uniqueness: true
   validates :name, presence: true
 
 end

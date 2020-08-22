@@ -9,7 +9,7 @@ module Api::V1::Prefectures
     end
 
     def show
-      @city = @prefecture.cities.find_by(city_code: params[:city_code])
+      @city = @prefecture.cities.find_by(code: params[:code])
       @shops = @city.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
     end
 

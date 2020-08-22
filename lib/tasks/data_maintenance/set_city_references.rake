@@ -5,9 +5,9 @@ namespace :data_mainttenance do
     Prefecture.all.each do |prefecture|
       cities = get_cities_json(prefecture)
       cities.each do |city|
-        finded_city = City.find_by(city_code: city["cityCode"])
+        finded_city = City.find_by(code: city["cityCode"])
         if finded_city.nil?
-          finded_city = City.find_or_create_by!(name: city["cityName"], city_code: city["cityCode"], prefecture_id: prefecture.id)
+          finded_city = City.find_or_create_by!(name: city["cityName"], code: city["cityCode"], prefecture_id: prefecture.id)
         else
           finded_city.update!(name: city["cityName"], prefecture_id: prefecture.id)
         end

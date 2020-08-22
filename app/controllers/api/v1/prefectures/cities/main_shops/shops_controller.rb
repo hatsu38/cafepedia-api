@@ -15,7 +15,7 @@ module Api::V1::Prefectures::Cities::MainShops
 
     def set_commons_instance
       @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-      @city = @prefecture.cities.find_by(city_code: params[:city_city_code])
+      @city = @prefecture.cities.find_by(code: params[:city_code])
       @main_shop = MainShop.find_by(eng_name: params[:main_shop_eng_name])
     end
   end

@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2020_08_12_055206) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
-    t.string "city_code", null: false
+    t.string "code", null: false
     t.integer "prefecture_id", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["city_code"], name: "index_cities_on_city_code", unique: true
+    t.index ["code"], name: "index_cities_on_code", unique: true
   end
 
   create_table "comments", force: :cascade do |t|

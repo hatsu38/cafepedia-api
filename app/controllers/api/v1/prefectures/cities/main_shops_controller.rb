@@ -19,7 +19,7 @@ module Api::V1::Prefectures::Cities
 
     def set_address
       @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-      @city = @prefecture.cities.find_by(city_code: params[:city_city_code])
+      @city = @prefecture.cities.find_by(code: params[:city_code])
     end
   end
 end
