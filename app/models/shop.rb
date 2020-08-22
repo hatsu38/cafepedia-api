@@ -46,7 +46,7 @@ class Shop < ApplicationRecord
   has_many :shop_stations, dependent: :destroy
   has_many :stations, through: :shop_stations
   belongs_to :main_shop
-  belongs_to :city
+  belongs_to :city, optional: true
 
   belongs_to_active_hash :prefecture
 

@@ -569,7 +569,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ7:00〜18:00
 日曜：カフェ7:00〜18:00
 祝日：カフェ7:00〜18:00",https://www.pronto.co.jp/shop/detail?shopid=0X00319368,TRUE,TRUE,TRUE,FALSE,35.1672337,136.8848141,77席
-165,四条烏丸店byJEUGIA | PRONTO,京都,府京都市,下京区四条通東洞院長刀鉾町33番地京都フコク生命四条烏丸ビル,烏丸駅徒歩2分以上,075-221-2542,"平日：カフェ7:30〜17:30
+165,四条烏丸店byJEUGIA | PRONTO,京都府,京都市,下京区四条通東洞院長刀鉾町33番地京都フコク生命四条烏丸ビル,烏丸駅徒歩2分以上,075-221-2542,"平日：カフェ7:30〜17:30
 土曜：カフェ7:30〜17:30
 日曜：カフェ7:30〜17:30
 祝日：カフェ7:30〜17:30",https://www.pronto.co.jp/shop/detail?shopid=PR00004032,TRUE,TRUE,FALSE,FALSE,35.0038395,135.7609778,81席
@@ -1002,7 +1002,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ9:00〜22:00
 日曜：カフェ9:00〜22:00
 祝日：カフェ9:00〜22:00",https://www.pronto.co.jp/shop/detail?shopid=S000004659,FALSE,FALSE,TRUE,FALSE,34.9759514,138.3885799,69席
-300,espressamenteilly 京都駅店 | PRONTO,京都,府京都市,下京区東塩小路高倉町８−３,京都駅徒歩3分以上,075-693-4310,"平日：カフェ7:00〜22:30
+300,espressamenteilly 京都駅店 | PRONTO,京都府,京都市,下京区東塩小路高倉町８−３,京都駅徒歩3分以上,075-693-4310,"平日：カフェ7:00〜22:30
 土曜：カフェ7:00〜22:30
 日曜：カフェ7:00〜22:30
 祝日：カフェ7:00〜22:30",https://www.pronto.co.jp/shop/detail?shopid=0X00109652,FALSE,FALSE,TRUE,FALSE,34.9847749,135.7598053,43席
