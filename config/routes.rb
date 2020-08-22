@@ -16,11 +16,11 @@ Rails.application.routes.draw do
     resources :search_stations, only: [:index]
     resources :search_shops, only: [:index]
 
-    namespace :v1, {format: 'json'} do
+    namespace :v1 do
       resources :prefectures, only: [:index, :show], param: :name_e do
         resources :cities, only: [:index, :show], param: :city_code, module: :prefectures  do
           resources :main_shops, only: [:index, :show], param: :eng_name, module: :cities do
-            resource :shops, only: [:index,:show], module: :main_shops
+            resources :shops, only: [:index, :show], module: :main_shops
           end
         end
       end
