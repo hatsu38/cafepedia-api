@@ -21,6 +21,7 @@ module Api
           def set_address
             @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
             @city = @prefecture.cities.find_by(code: params[:city_code])
+            @stations = @city.stations.popular_as_parts(limit: 15, station_ids: @city.stations.pluck(:id))
           end
         end
       end
