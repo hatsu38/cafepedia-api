@@ -5,4 +5,5 @@ class Prefecture < ActiveYaml::Base
 
   has_many :shops, dependent: :destroy
   has_many :cities, dependent: :destroy
+  has_many :stations, dependent: :destroy
 end

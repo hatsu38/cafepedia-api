@@ -1,4 +1,3 @@
-
 Shop.access_station("駅").each do |shop|
   station_names = shop.access.match(/.*?駅/)
   next if station_names.nil?
