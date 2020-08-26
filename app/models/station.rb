@@ -48,13 +48,7 @@ class Station < ApplicationRecord
     where('kanji_name LIKE :word OR kana_name LIKE :word', word: "%#{word}%")
   end
 
-  def self.popular_as_parts(limit: 20, station_ids: [])
-    ids = ShopStation.where(station_id: station_ids).group(:station_id).order('count_all desc').count.keys[0..limit]
-    where(id: ids).order_as_specified(id: ids)
-  end
-
-  def self.popular_in_whole(limit: 50)
-    ids = ShopStation.group(:station_id).order('count_all desc').count.keys[0..limit]
-    where(id: ids).order_as_specified(id: ids)
+  def self.popular(limit: 20)
+    left_joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 end

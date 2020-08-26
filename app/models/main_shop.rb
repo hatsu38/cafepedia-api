@@ -26,12 +26,7 @@ class MainShop < ApplicationRecord
   validates :eng_name, uniqueness: true
   validates :image, uniqueness: true
 
-  def self.popular
-    over_have_shop_ids = Shop.group(:main_shop_id)
-                             .having("count(*) >= #{OVER_HAVE_SHOPS}")
-                             .order('count_all desc')
-                             .count
-                             .keys
-    where(id: over_have_shop_ids).order_as_specified(id: over_have_shop_ids)
+  def self.popular(limit: 20)
+    left_joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 end
