@@ -100,4 +100,8 @@ class Shop < ApplicationRecord
 
     cafe_lists.sort_by { |cafe| cafe['distance'] }
   end
+
+  def full_address
+    self.prefecture_name + self.city_name + self.other_address
+  end
 end

@@ -1,26 +1,31 @@
-def get_cities_json(prefecture)
-  count = 0
-  base_url = "https://opendata.resas-portal.go.jp/api/v1/cities?"
-  params = { prefCode: prefecture.id }
-  url = base_url + URI.encode_www_form(params)
-  headers = { "X-API-KEY" => Rails.application.credentials.x_api_key }
+datas = CSV.read('./db/datas/postalcodes/postalcodes.csv')
 
-  begin
-    res = open(url, headers)
-    res.status.include?("200") ? JSON.parse(res.read)["result"] : nil
-  rescue => error
-    return nil if count > 3
-    sleep(5)
-    count += 1
-    get_cities_json(prefecture)
+# 市区町村コードでユニークする
+cities_by_uniqed_city_code = datas[1..-1].uniq { |data| data[4] }
+
+# 必要なデータのIndexをとる
+city_code_index = datas[0].find_index("市区町村コード")
+city_name_index = datas[0].find_index("市区町村名")
+prefecutre_code_index = datas[0].find_index("都道府県コード")
+
+cities = []
+cities_by_uniqed_city_code.each do |data|
+  city = City.find_by(code: data[city_code_index])
+
+  next if city && city.name == data[city_name_index]
+
+  if city
+    city.name = data[city_name_index]
+    city.prefecture_id = data[prefecutre_code_index].to_i
+    cities << city
+    next
   end
+
+  cities << City.new(
+    code: data[city_code_index],
+    name: data[city_name_index],
+    prefecture_id: format('%01d', data[prefecutre_code_index])
+  )
 end
 
-Prefecture.all.each do |prefecture|
-  cities = get_cities_json(prefecture)
-  cities.each do |city|
-    if City.find_by(code: city["cityCode"]).nil?
-      City.find_or_create_by!(name: city["cityName"], code: city["cityCode"], prefecture_id: prefecture.id)
-    end
-  end
-end
+City.upsert_all(cities.map(&:attributes))
