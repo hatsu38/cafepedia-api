@@ -16,6 +16,7 @@
 class City < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :shops, dependent: :nullify
+  has_many :stations, dependent: :nullify
   belongs_to_active_hash :prefecture
 
   validates :code, uniqueness: true

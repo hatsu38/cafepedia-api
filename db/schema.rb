@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_055206) do
+ActiveRecord::Schema.define(version: 2020_08_26_043316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,11 @@ ActiveRecord::Schema.define(version: 2020_08_12_055206) do
   create_table "stations", force: :cascade do |t|
     t.string "kanji_name", null: false
     t.string "kana_name", null: false
+    t.bigint "city_id"
+    t.integer "prefecture_id", default: 48, null: false
+    t.datetime "created_at", default: "2020-08-26 14:30:52", null: false
+    t.datetime "updated_at", default: "2020-08-26 14:30:52", null: false
+    t.index ["city_id"], name: "index_stations_on_city_id"
   end
 
   add_foreign_key "comments", "shops"
@@ -140,4 +145,5 @@ ActiveRecord::Schema.define(version: 2020_08_12_055206) do
   add_foreign_key "shop_stations", "stations"
   add_foreign_key "shops", "cities"
   add_foreign_key "shops", "main_shops"
+  add_foreign_key "stations", "cities"
 end
