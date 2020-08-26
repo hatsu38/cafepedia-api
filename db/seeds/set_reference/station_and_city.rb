@@ -51,7 +51,10 @@ def most_match_city(postalcodes)
   [city, prefecture]
 end
 
-Station.where(prefecture_id: 48).find_each do |station|
+stations = Station.where(city_id: nil).or(Station.where(prefecture_id: 48))
+next if stations.blank?
+
+stations.find_each do |station|
   station_name = station.kanji_name.last == "駅" ? station.kanji_name.chop : station.kanji_name
   near_stations_json = get_near_stations_json(station_name)
   next unless near_stations_json

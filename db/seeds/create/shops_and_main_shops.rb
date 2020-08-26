@@ -211,16 +211,16 @@ mainshop_array.each do |shop|
   main_shop = MainShop.find_by(name: shop[:name]) || MainShop.find_by(eng_name: shop[:eng_name]) || MainShop.find_or_create_by!(name: shop[:name], eng_name: shop[:eng_name], image: shop[:image])
 
   CSV.foreach(shop[:csv], headers: true) do |data|
-    next if main_shop.shops.find_by(name: data['name'])
+    next if main_shop.shops.find_by(name: data['name']) || main_shop.shops.find_by(hp: data['hp']) || main_shop.shops.find_by(tel: data['tel'])
 
     prefecture = Prefecture.find_by_name(data['prefecture'])
     city = prefecture.cities.find_by(name: data['city'])
     Rails.logger.debug("#{city}のお店")
 
-    main_shop.shops.find_or_create_by!(
+    find_or_create_by!(
       name: data['name'],
       prefecture_name: prefecture.name,
-      city_name: data['city'],
+      city_name: data['city'].gsub(/ケ/, 'ヶ'),
       other_address: data['other_address'],
       access: data['access'],
       tel: data['tel'],
