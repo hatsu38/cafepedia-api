@@ -9,11 +9,20 @@ module Api
             PER = 20
             def index
               @stations = @city.stations.popular
-              @shops = @city.shops.open.where(main_shop_id: @main_shop.id).eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+              @shops = @city.shops
+                            .open
+                            .where(main_shop_id: @main_shop.id)
+                            .eager_load(:main_shop)
+                            .page(params[:page])
+                            .per(params[:per] || PER)
             end
 
             def show
-              @shop = @city.shops.open.where(main_shop_id: @main_shop.id).eager_load(:main_shop).find_by(id: params[:id])
+              @shop = @city.shops
+                           .open
+                           .where(main_shop_id: @main_shop.id)
+                           .eager_load(:main_shop)
+                           .find_by(id: params[:id])
               @station = @shop.stations.first
               @stations = @station.near_stations.popular
             end
