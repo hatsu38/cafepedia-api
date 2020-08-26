@@ -4,7 +4,7 @@ module Api
       class MainShopsController < ApplicationController
         PER = 50
         def index
-          @main_shops = MainShop.popular.eager_load(:shops).page(params[:page]).per(params[:per] || PER)
+          @main_shops = MainShop.popular_in_whole.eager_load(:shops).page(params[:page]).per(params[:per] || PER)
         end
       end
     end
