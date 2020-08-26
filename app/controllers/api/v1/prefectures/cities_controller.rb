@@ -12,6 +12,7 @@ module Api
 
         def show
           @city = @prefecture.cities.find_by(code: params[:code])
+          @stations = @city.stations.popular_as_parts(limit: 15, station_ids: @city.stations.pluck(:id))
           @shops = @city.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
         end
 
