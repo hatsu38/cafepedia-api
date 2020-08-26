@@ -13,7 +13,12 @@ module Api
 
           def show
             @main_shop = MainShop.find_by(eng_name: params[:eng_name])
-            @shops = @city.shops.open.where(main_shop_id: @main_shop.id).page(params[:page]).per(params[:per] || PER)
+            @shops = @city.shops
+                          .open
+                          .where(main_shop_id: @main_shop.id)
+                          .eager_load(:main_shop)
+                          .page(params[:page])
+                          .per(params[:per] || PER)
           end
 
           private
@@ -21,7 +26,7 @@ module Api
           def set_address
             @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
             @city = @prefecture.cities.find_by(code: params[:city_code])
-            @stations = @city.stations.popular_as_parts(limit: 15, station_ids: @city.stations.pluck(:id))
+            @stations = @city.stations.popular
           end
         end
       end
