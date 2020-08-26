@@ -41,7 +41,7 @@ class Station < ApplicationRecord
            dependent: :destroy
   has_many :near_stations, through: :near_station_reloations
   has_many :main_stations, through: :main_station_reloations
-  belongs_to :city
+  belongs_to :city, optional: true
   belongs_to_active_hash :prefecture
 
   def self.search(word)

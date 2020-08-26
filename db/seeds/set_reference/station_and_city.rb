@@ -21,7 +21,7 @@ def get_city_name(postalcode)
   uri.query = URI.encode_www_form(params)
   begin
     response = Net::HTTP.get_response(uri)
-    response.is_a?(Net::HTTPSuccess) ? JSON.parse(response.body)["results"][0] : nil
+    response.is_a?(Net::HTTPSuccess) && JSON.parse(response.body)["results"] ? JSON.parse(response.body)["results"][0] : nil
   rescue => error
     return nil if count > 3
     sleep(10)
@@ -40,6 +40,8 @@ def most_match_city(postalcodes)
   prefecture = Prefecture.find_by_id(48)
   postalcodes.each do |postalcode|
     city_info = get_city_name(postalcode)
+    next unless city_info
+
     prefecture_name = city_info["address1"]
     city_name = city_info["address2"]
     prefecture = Prefecture.find_by_name(prefecture_name)
@@ -60,7 +62,7 @@ Station.where(prefecture_id: 48).find_each do |station|
   puts "都道府県：#{prefecture&.name}"
   puts "市区町村：#{city&.name}"
   begin
-    station.update(
+    station.update!(
       prefecture_id: prefecture.id,
       city_id: city&.id
     )
