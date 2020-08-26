@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         end
       end
       resources :main_shops, only: [:show], param: :eng_name
+      resources :stations, only: [:show]
       namespace :popular do
         resources :stations, only: [:index]
         resources :main_shops, only: [:index]
