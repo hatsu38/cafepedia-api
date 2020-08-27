@@ -52,25 +52,25 @@ def most_match_city(postalcodes)
 end
 
 stations = Station.where(city_id: nil).or(Station.where(prefecture_id: 48))
-next if stations.blank?
 
-stations.find_each do |station|
-  station_name = station.kanji_name.last == "駅" ? station.kanji_name.chop : station.kanji_name
-  near_stations_json = get_near_stations_json(station_name)
-  next unless near_stations_json
+if stations.present?
+  stations.find_each do |station|
+    station_name = station.kanji_name.last == "駅" ? station.kanji_name.chop : station.kanji_name
+    near_stations_json = get_near_stations_json(station_name)
+    next unless near_stations_json
 
-  postalcodes = near_stations_json.pluck("postal").flatten.compact
-  city, prefecture = most_match_city(postalcodes)
-  puts "駅名：#{station_name}"
-  puts "都道府県：#{prefecture&.name}"
-  puts "市区町村：#{city&.name}"
-  begin
-    station.update!(
-      prefecture_id: prefecture.id,
-      city_id: city&.id
-    )
-  rescue => error
-    Raven.extra_context(error)
+    postalcodes = near_stations_json.pluck("postal").flatten.compact
+    city, prefecture = most_match_city(postalcodes)
+    puts "駅名：#{station_name}"
+    puts "都道府県：#{prefecture&.name}"
+    puts "市区町村：#{city&.name}"
+    begin
+      station.update!(
+        prefecture_id: prefecture.id,
+        city_id: city&.id
+      )
+    rescue => error
+      Raven.extra_context(error)
+    end
   end
 end
-
