@@ -2,14 +2,14 @@ require 'open-uri'
 
 csv = URI.parse('https://raw.githubusercontent.com/geolonia/japanese-addresses/master/data/latest.csv').open { |f| f.read }
 
-datas = CSV.parse(csv)
 # 市区町村コードでユニークする
-cities_by_uniqed_city_code = datas[1..-1].uniq { |data| data[4] }
+cities_by_uniqed_city_code = CSV.parse(csv)[1..-1].uniq { |data| data[4] }
 
 # 必要なデータのIndexをとる
-city_code_index = datas[0].find_index("市区町村コード")
-city_name_index = datas[0].find_index("市区町村名")
-prefecutre_code_index = datas[0].find_index("都道府県コード")
+data = CSV.parse(csv)[0]
+city_code_index = data.find_index("市区町村コード")
+city_name_index = data.find_index("市区町村名")
+prefecutre_code_index = data.find_index("都道府県コード")
 
 cities = []
 cities_by_uniqed_city_code.each do |data|
