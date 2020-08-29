@@ -8,7 +8,7 @@ module Api
 
             PER = 20
             def index
-              @stations = @city.stations.popular
+              @stations = @city.stations.popular.preload(:city)
               @shops = @city.shops
                             .open
                             .where(main_shop_id: @main_shop.id)
@@ -25,7 +25,7 @@ module Api
                            .find_by(id: params[:id])
               # TODO: 駅がないこともあるので、市区町村の取得も行う
               @station = @shop.stations.first
-              @stations = @station.near_stations.popular
+              @stations = @station.near_stations.popular.preload(:city)
             end
 
             private

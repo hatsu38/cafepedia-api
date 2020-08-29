@@ -8,7 +8,7 @@ module Api
           PER = 20
           def show
             @station = @city.stations.find_by(id: params[:id])
-            @stations = @station.near_stations.popular
+            @stations = @station.near_stations.popular.preload(:city)
             @cities = @city.same_prefecutre_other_cities.popular
             @main_shops = MainShop.popular
             @shops = @station.shops.open.page(params[:page]).per(params[:per] || PER)
