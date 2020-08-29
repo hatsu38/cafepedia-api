@@ -19,14 +19,16 @@ Rails.application.routes.draw do
         scope module: :prefectures do
           resources :main_shops, only: [:show], param: :eng_name
           resources :cities, only: [:index, :show], param: :code do
-            resources :main_shops, only: [:index, :show], param: :eng_name, module: :cities do
-              resources :shops, only: [:index, :show], module: :main_shops
+            scope module: :cities do
+              resources :stations, only: [:show]
+              resources :main_shops, only: [:index, :show], param: :eng_name do
+                resources :shops, only: [:index, :show], module: :main_shops
+              end
             end
           end
         end
       end
       resources :main_shops, only: [:show], param: :eng_name
-      resources :stations, only: [:show]
       namespace :popular do
         resources :stations, only: [:index]
         resources :main_shops, only: [:index]

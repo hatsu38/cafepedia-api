@@ -23,7 +23,7 @@ class City < ApplicationRecord
   validates :name, presence: true
 
   def self.popular(limit: 20)
-    left_joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 
   def same_prefecutre_other_cities(limit: 50)
