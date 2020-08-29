@@ -23,6 +23,7 @@ module Api
                            .where(main_shop_id: @main_shop.id)
                            .eager_load(:main_shop)
                            .find_by(id: params[:id])
+              # TODO: 駅がないこともあるので、市区町村の取得も行う
               @station = @shop.stations.first
               @stations = @station.near_stations.popular
             end
