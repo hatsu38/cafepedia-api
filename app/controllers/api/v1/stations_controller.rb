@@ -5,6 +5,7 @@ module Api
       def show
         @station = Station.find_by(id: params[:id])
         @stations = @station.near_stations.popular
+        @cities = @station.cities.popular
         @shops = @station.shops.open.page(params[:page]).per(params[:per] || PER)
       end
     end
