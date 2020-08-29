@@ -8,7 +8,11 @@ module Api
           @main_shop = MainShop.find_by(eng_name: params[:eng_name])
           @stations = @prefecture.stations.popular
           @cities = @prefecture.cities.popular
-          @shops = @main_shop.shops.where(prefecture_id: @prefecture.id).open.page(params[:page]).per(params[:per] || PER)
+          @shops = @main_shop.shops
+                             .where(prefecture_id: @prefecture.id)
+                             .open
+                             .page(params[:page])
+                             .per(params[:per] || PER)
         end
       end
     end
