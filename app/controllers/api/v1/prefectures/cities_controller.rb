@@ -7,7 +7,7 @@ module Api
         PER = 10
         def index
           @cities = @prefecture.cities.popular
-          @shops = @prefecture.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+          @shops = @prefecture.shops.open.eager_load(:main_shop, :city).page(params[:page]).per(params[:per] || PER)
         end
 
         def show
