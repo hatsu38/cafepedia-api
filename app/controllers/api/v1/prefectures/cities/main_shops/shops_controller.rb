@@ -16,7 +16,10 @@ module Api
             def show
               filted_shops = @city.shops.open.where(main_shop_id: @main_shop.id)
               @shop = filted_shops.find_by(id: params[:id])
-              @shops = filted_shops.where.not(id: @shop.id).eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+              @shops = filted_shops.where.not(id: @shop.id)
+                                   .eager_load(:main_shop)
+                                   .page(params[:page])
+                                   .per(params[:per] || PER)
               @station = @shop.stations.first
               staions = @station ? @station.nearby_stations : @city.stations
               @stations = staions.popular.preload(:city)
