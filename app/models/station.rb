@@ -51,4 +51,8 @@ class Station < ApplicationRecord
   def self.popular(limit: 20)
     joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
+
+  def same_city_other_stations(limit: 25)
+    city.stations.where.not(id: self).limit(limit)
+  end
 end
