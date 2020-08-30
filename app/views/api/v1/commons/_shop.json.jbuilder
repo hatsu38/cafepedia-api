@@ -3,6 +3,7 @@ json.name shop.name
 json.prefecture shop.prefecture_name
 json.city shop.city_name
 json.other_address shop.other_address
+json.full_address shop.full_address
 json.access shop.access
 json.tel shop.tel
 json.business_hour shop.business_hour
