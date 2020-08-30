@@ -11,6 +11,7 @@ module Api
           @shops = @main_shop.shops
                              .where(prefecture_id: @prefecture.id)
                              .open
+                             .eager_load(:city)
                              .page(params[:page])
                              .per(params[:per] || PER)
         end

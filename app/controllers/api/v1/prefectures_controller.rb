@@ -11,7 +11,7 @@ module Api
         @prefecture = Prefecture.find_by(name_e: params[:name_e])
         @cities = @prefecture.cities.popular
         @main_shops = MainShop.popular
-        @shops = @prefecture.shops.open.page(params[:page]).per(params[:per] || PER)
+        @shops = @prefecture.shops.open.eager_load(:main_shop, :city).page(params[:page]).per(params[:per] || PER)
       end
     end
   end
