@@ -52,7 +52,11 @@ class Station < ApplicationRecord
     joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 
-  def same_city_other_stations(limit: 25)
-    city.stations.where.not(id: self).limit(limit)
+  def same_city_other_stations
+    city.stations.where.not(id: self)
+  end
+
+  def nearby_stations
+    near_stations || same_city_other_stations
   end
 end

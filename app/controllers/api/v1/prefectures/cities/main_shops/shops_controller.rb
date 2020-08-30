@@ -25,7 +25,7 @@ module Api
                            .find_by(id: params[:id])
               # TODO: 駅がないこともあるので、市区町村の取得も行う
               @station = @shop.stations.first
-              @stations = @station.near_stations.popular.preload(:city)
+              @stations = @station.nearby_stations.popular.preload(:city)
             end
 
             private
@@ -33,6 +33,7 @@ module Api
             def set_commons_instance
               @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
               @city = @prefecture.cities.find_by(code: params[:city_code])
+              @cities = @city.same_prefecutre_other_cities.popular
               @main_shop = MainShop.find_by(eng_name: params[:main_shop_eng_name])
             end
           end
