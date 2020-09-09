@@ -45,8 +45,8 @@ class Station < ApplicationRecord
   belongs_to_active_hash :prefecture
 
   def self.search(word = nil)
-    search_word = word.present? && word != "駅" ? "%#{word}%" : ""
-    where('kanji_name LIKE :word OR kana_name LIKE :word', word: word)
+    search_word = word.present? && word != '駅' ? "%#{word}%" : ''
+    where('kanji_name LIKE :word OR kana_name LIKE :word', word: search_word)
   end
 
   def self.popular(limit: 20)

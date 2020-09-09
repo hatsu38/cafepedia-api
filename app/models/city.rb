@@ -27,7 +27,7 @@ class City < ApplicationRecord
   end
 
   def self.search_name_by_keyword(keyword = nil)
-    search_word = keyword.present? && !["市","区","町","村"].include?(keyword) ? "%#{keyword}%" : ""
+    search_word = keyword.present? && !%w[市 区 町 村].include?(keyword) ? "%#{keyword}%" : ''
     where(['name LIKE ?', search_word])
   end
 
