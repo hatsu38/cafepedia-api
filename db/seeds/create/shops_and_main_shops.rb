@@ -216,7 +216,6 @@ mainshop_array.each do |shop|
     prefecture = Prefecture.find_by_name(data['prefecture'])
     city = prefecture.cities.find_by(name: data['city'])
     Rails.logger.debug("#{city}のお店")
-
     find_or_create_by!(
       name: data['name'],
       prefecture_name: prefecture.name,

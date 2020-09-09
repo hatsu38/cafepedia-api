@@ -1,10 +1,10 @@
 id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,smoking,iccard,lat,lng,chair
-0,グランエミオ大泉学園店 | ミヤマ珈琲,東京都,練馬区,東大泉1-28-1グランエミオ大泉学園内1F,西武池袋線大泉学園駅より徒歩で1分,03-5935-6359,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/97,TRUE,TRUE,TRUE,FALSE,35.749914,139.587562,77席(禁煙:49席/喫煙:28席)
-1,熊本光の森店 | ミヤマ珈琲,熊本県,熊本市,北区武蔵ケ丘5-23ー10,周辺の店舗はありません。,096-339-5500,"平日 ：8：00-22：00
+0,グランエミオ大泉学園店東京都,練馬区,東大泉1-28-1グランエミオ大泉学園内1F,西武池袋線大泉学園駅より徒歩で1分,03-5935-6359,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/97,TRUE,TRUE,TRUE,FALSE,35.749914,139.587562,77席(禁煙:49席/喫煙:28席)
+1,熊本光の森店熊本県,熊本市,北区武蔵ケ丘5-23ー10,周辺の店舗はありません。,096-339-5500,"平日 ：8：00-22：00
 土曜日：7：00-22：00
 日祝日：7：00-22：00",https://www.ginza-renoir.co.jp/shopsearch/shops/view/1001,FALSE,TRUE,TRUE,FALSE,32.8552767,130.7728756,65席(禁煙:31席/喫煙:34席)
-2,草加清門町店 | ミヤマ珈琲,埼玉県,草加市,清門1-354,東武スカイツリーライン線新田駅より徒歩で10分,048-946-3781,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/95,TRUE,TRUE,TRUE,TRUE,35.8517033,139.7881669,68席(禁煙:30席/喫煙:38席)
-3,大宮大成町店 | ミヤマ珈琲,埼玉県,さいたま市,北区大成町4-400-2,鉄道博物館駅より徒歩で8分,048-669-3331,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/91,TRUE,TRUE,TRUE,TRUE,35.9241285,139.6151299,90席(禁煙:64席/喫煙:26席)
-4,大船駅前店 | ミヤマ珈琲,神奈川県,鎌倉市,大船1-25-35OF‐Wave2F,JR大船駅東口を出て徒歩約5分、OF-WAVEの2階,0467-38-6376,全日 ：7：30-22：30,https://www.ginza-renoir.co.jp/shopsearch/shops/view/40,TRUE,TRUE,TRUE,TRUE,35.3536853,139.5330047,94席(禁煙:72席/喫煙:22席)
-5,朝霞本町店 | ミヤマ珈琲,埼玉県,朝霞市,青葉台1-2-2,東武東上線朝霞駅より徒歩で7分,048-465-7520,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/80,TRUE,TRUE,TRUE,TRUE,35.7955499,139.5957775,62席(禁煙:26席/喫煙:36席)
-6,練馬春日町店 | ミヤマ珈琲,東京都,練馬区,春日町6-5-29,地下鉄大江戸線練馬春日町駅より徒歩で3分,03-3577-8218,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/96,TRUE,TRUE,TRUE,TRUE,35.7523794,139.6385692,84席(禁煙:55席/喫煙:29席)
+2,草加清門町店埼玉県,草加市,清門1-354,東武スカイツリーライン線新田駅より徒歩で10分,048-946-3781,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/95,TRUE,TRUE,TRUE,TRUE,35.8517033,139.7881669,68席(禁煙:30席/喫煙:38席)
+3,大宮大成町店埼玉県,さいたま市,北区大成町4-400-2,鉄道博物館駅より徒歩で8分,048-669-3331,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/91,TRUE,TRUE,TRUE,TRUE,35.9241285,139.6151299,90席(禁煙:64席/喫煙:26席)
+4,大船駅前店神奈川県,鎌倉市,大船1-25-35OF‐Wave2F,JR大船駅東口を出て徒歩約5分、OF-WAVEの2階,0467-38-6376,全日 ：7：30-22：30,https://www.ginza-renoir.co.jp/shopsearch/shops/view/40,TRUE,TRUE,TRUE,TRUE,35.3536853,139.5330047,94席(禁煙:72席/喫煙:22席)
+5,朝霞本町店埼玉県,朝霞市,青葉台1-2-2,東武東上線朝霞駅より徒歩で7分,048-465-7520,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/80,TRUE,TRUE,TRUE,TRUE,35.7955499,139.5957775,62席(禁煙:26席/喫煙:36席)
+6,練馬春日町店東京都,練馬区,春日町6-5-29,地下鉄大江戸線練馬春日町駅より徒歩で3分,03-3577-8218,全日 ：7：00-23：00,https://www.ginza-renoir.co.jp/shopsearch/shops/view/96,TRUE,TRUE,TRUE,TRUE,35.7523794,139.6385692,84席(禁煙:55席/喫煙:29席)

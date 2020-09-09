@@ -101,6 +101,14 @@ class Shop < ApplicationRecord
     cafe_lists.sort_by { |cafe| cafe['distance'] }
   end
 
+  def self.search_by_keywords(keyword = nil)
+
+  end
+
+  def self.search_name_by_keyword(keyword = nil)
+    where(['name LIKE ?', "%#{keyword}%"])
+  end
+
   def full_address
     prefecture_name + city_name + other_address
   end
