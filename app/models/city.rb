@@ -22,6 +22,8 @@ class City < ApplicationRecord
   validates :code, uniqueness: true
   validates :name, presence: true
 
+  delegate :name_e, to: :prefecture, prefix: true
+
   def self.popular(limit: 20)
     joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
