@@ -34,4 +34,8 @@ class City < ApplicationRecord
   def same_prefecutre_other_cities(limit: 50)
     prefecture.cities.where.not(id: self).limit(limit)
   end
+
+  def prefecture_name_e
+    prefecture.name_e
+  end
 end
