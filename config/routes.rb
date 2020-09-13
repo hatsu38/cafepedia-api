@@ -28,7 +28,10 @@ Rails.application.routes.draw do
           end
         end
       end
-      resources :search, only: [:index]
+      namespace :search do
+        resources :keywords, only: [:index]
+        resources :positions, only: [:index]
+      end
       resources :main_shops, only: [:index, :show], param: :eng_name
       namespace :popular do
         resources :stations, only: [:index]
