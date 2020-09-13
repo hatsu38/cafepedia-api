@@ -4,13 +4,15 @@
 #
 # Table name: stations
 #
-#  id            :bigint           not null, primary key
-#  kana_name     :string           not null
-#  kanji_name    :string           not null
-#  created_at    :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
-#  updated_at    :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
-#  city_id       :bigint
-#  prefecture_id :integer          default(48), not null
+#  id              :bigint           not null, primary key
+#  kana_name       :string           not null
+#  kanji_name      :string           not null
+#  latitude(緯度)  :decimal(10, 7)   default(0.0), not null
+#  longitude(経度) :decimal(9, 7)    default(0.0), not null
+#  created_at      :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
+#  updated_at      :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
+#  city_id         :bigint
+#  prefecture_id   :integer          default(48), not null
 #
 # Indexes
 #
@@ -59,5 +61,9 @@ class Station < ApplicationRecord
 
   def nearby_stations
     near_stations || same_city_other_stations
+  end
+
+  def eki_except_from_kanji_name
+    kanji_name.end_with?("駅") ? kanji_name.chop : kanji_name
   end
 end
