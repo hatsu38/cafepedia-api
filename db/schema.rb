@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_110429) do
+ActiveRecord::Schema.define(version: 2020_08_26_043316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,8 +135,6 @@ ActiveRecord::Schema.define(version: 2020_09_13_110429) do
     t.integer "prefecture_id", default: 48, null: false
     t.datetime "created_at", default: "2020-08-26 14:30:52", null: false
     t.datetime "updated_at", default: "2020-08-26 14:30:52", null: false
-    t.decimal "latitude", precision: 10, scale: 7, default: "0.0", null: false, comment: "緯度"
-    t.decimal "longitude", precision: 9, scale: 7, default: "0.0", null: false, comment: "経度"
     t.index ["city_id"], name: "index_stations_on_city_id"
   end
 
