@@ -11,7 +11,7 @@ class NearShopsByPositionService
 
   private
 
-  def calculate_distance_from_position(shop, latitude, longitude)
+  def calculate_distance_from_position(shop, latitude, longitude) # rubocop:disable Metrics/AbcSize
     # ラジアン単位に変換
     x1 = shop.lat.to_d * Math::PI / 180
     y1 = shop.lng.to_d * Math::PI / 180

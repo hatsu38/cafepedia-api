@@ -10,20 +10,19 @@ class NearStationsByPositionService
 
   private
 
-  def get_near_stations_json(latitude, longitude)
-    count = 0
+  def get_near_stations_json(latitude, longitude, count = 0)
     uri = URI('https://express.heartrails.com/api/json')
     params = { method: 'getStations', x: longitude, y: latitude }
     uri.query = URI.encode_www_form(params)
     begin
       response = Net::HTTP.get_response(uri)
       response.is_a?(Net::HTTPSuccess) ? JSON.parse(response.body)['response']['station'] : nil
-    rescue StandardError => e
+    rescue StandardError
       return nil if count > 3
 
       sleep(1)
       count += 1
-      get_near_stations_json(latitude, longitude)
+      get_near_stations_json(latitude, longitude, count)
     end
   end
 end
