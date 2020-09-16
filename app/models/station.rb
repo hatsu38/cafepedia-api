@@ -64,6 +64,6 @@ class Station < ApplicationRecord
   end
 
   def eki_except_from_kanji_name
-    kanji_name.end_with?("駅") ? kanji_name.chop : kanji_name
+    kanji_name.end_with?('駅') ? kanji_name.chop : kanji_name
   end
 end
