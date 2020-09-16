@@ -16,6 +16,7 @@ json.iccard shop.iccard
 json.is_open shop.is_open
 json.lat shop.lat
 json.lng shop.lng
+json.distance shop.distance.zero? ? 0 : shop.distance
 json.main_shop shop.main_shop
 json.prefecture_name_e shop.prefecture.name_e
 json.city_code shop.city&.code

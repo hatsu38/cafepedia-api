@@ -15,7 +15,7 @@ def self.get_near_stations_json(station_name)
 end
 
 Station.all.find_each do |station|
-  station_name = station.kanji_name.last == "駅" ? station.kanji_name.chop : station.kanji_name
+  station_name = station.eki_except_from_kanji_name
   near_stations_json = get_near_stations_json(station_name)
   next unless near_stations_json
 

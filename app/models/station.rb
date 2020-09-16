@@ -60,4 +60,8 @@ class Station < ApplicationRecord
   def nearby_stations
     near_stations || same_city_other_stations
   end
+
+  def eki_except_from_kanji_name
+    kanji_name.end_with?('駅') ? kanji_name.chop : kanji_name
+  end
 end

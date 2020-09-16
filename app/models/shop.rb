@@ -39,6 +39,7 @@
 #
 class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  attribute :distance, :decimal, default: 0.0
 
   has_many :comments, dependent: :destroy
   has_many :shop_congrestion_infos, dependent: :destroy
@@ -85,6 +86,7 @@ class Shop < ApplicationRecord
     where(['access LIKE ?', "%#{word}%"])
   }
 
+  # TODO: SeriveClassのものをつかうため、Nextに置き換えたら置き換えたら削除する
   def self.cafe_list_calculated_distance(params)
     lat = params[:lat] || 35.6589568
     lng = params[:lng] || 139.7219328
@@ -108,5 +110,9 @@ class Shop < ApplicationRecord
 
   def full_address
     prefecture_name + city_name + other_address
+  end
+
+  def set_deistance(distance)
+    self.distance = distance
   end
 end
