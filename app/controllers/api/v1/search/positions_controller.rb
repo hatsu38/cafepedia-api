@@ -4,18 +4,12 @@ module Api
       class PositionsController < ApplicationController
         PER = 20
         def index
-          @stations = NearStationsByPositionService.new.execute(35.66521320007564, 139.7300114513391)
-          @city = NearCityByPositionService.new.execute(35.66521320007564, 139.7300114513391)
+          @stations = NearStationsByPositionService.new.execute(params[:lat], params[:lng])
+          @city = NearCityByPositionService.new.execute(params[:lat], params[:lng])
           @cities = @city&.same_prefecutre_other_cities.preload(:shops, :stations).page(params[:page]).per(params[:per] || PER)
-          # @cities = City.search_name_by_keyword(params[:keyword])
-          #               .preload(:shops, :stations)
-          #               .page(params[:page])
-          #               .per(params[:per] || PER)
-          # @shops = Shop.open
-          #             .search_name_by_keyword(params[:keyword])
-          #             .preload(:main_shop, :city)
-          #             .page(params[:page])
-          #             .per(params[:per] || PER)
+          cities_shops = Shop.open.where(city_id: @cities.pluck(:id)).eager_load(:main_shop, :city)
+          shops = NearShopsByPositionService.new.execute(cities_shops, params[:lat], params[:lng])
+          @shops = shops[0..50]
         end
       end
     end
