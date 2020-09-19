@@ -9,12 +9,12 @@ module Api
             PER = 20
             def index
               @stations = @city.stations.popular.preload(:city)
-              filted_shops = @city.shops.open.where(main_shop_id: @main_shop.id)
+              filted_shops = @city.shops.open.have_scocket.have_wifi.where(main_shop_id: @main_shop.id)
               @shops = filted_shops.page(params[:page]).per(params[:per] || PER)
             end
 
             def show
-              filted_shops = @city.shops.open.where(main_shop_id: @main_shop.id)
+              filted_shops = @city.shops.open.have_scocket.have_wifi.where(main_shop_id: @main_shop.id)
               @shop = filted_shops.find_by(id: params[:id])
               @shops = filted_shops.where.not(id: @shop.id)
                                    .eager_load(:main_shop)

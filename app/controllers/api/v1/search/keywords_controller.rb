@@ -12,7 +12,7 @@ module Api
                         .preload(:shops, :stations)
                         .page(params[:page])
                         .per(params[:per] || PER)
-          @shops = Shop.open
+          @shops = Shop.open.have_scocket.have_wifi
                        .search_name_by_keyword(params[:keyword])
                        .preload(:main_shop, :city)
                        .page(params[:page])

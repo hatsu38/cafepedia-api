@@ -10,7 +10,11 @@ module Api
                          .preload(:shops, :stations)
                          .page(params[:page])
                          .per(params[:per] || PER)
-          cities_shops = Shop.open.where(city_id: @cities.pluck(:id)).eager_load(:main_shop, :city)
+          cities_shops = Shop.open
+                             .have_scocket
+                             .have_wifi
+                             .where(city_id: @cities.pluck(:id))
+                             .eager_load(:main_shop, :city)
           shops = NearShopsByPositionService.new.execute(cities_shops, params[:lat], params[:lng])
           @shops = shops[0..50]
         end

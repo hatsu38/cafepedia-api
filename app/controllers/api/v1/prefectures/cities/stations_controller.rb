@@ -11,7 +11,7 @@ module Api
             @stations = @station.nearby_stations.popular.preload(:city)
             @cities = @city.same_prefecutre_other_cities.popular
             @main_shops = MainShop.popular
-            @shops = @station.shops.open.page(params[:page]).per(params[:per] || PER)
+            @shops = @station.shops.open.have_scocket.have_wifi.page(params[:page]).per(params[:per] || PER)
           end
 
           private

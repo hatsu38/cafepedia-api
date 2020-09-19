@@ -7,7 +7,13 @@ module Api
         PER = 10
         def index
           @cities = @prefecture.cities.popular
-          @shops = @prefecture.shops.open.eager_load(:main_shop, :city).page(params[:page]).per(params[:per] || PER)
+          @shops = @prefecture.shops
+                              .open
+                              .have_scocket
+                              .have_wifi
+                              .eager_load(:main_shop, :city)
+                              .page(params[:page])
+                              .per(params[:per] || PER)
         end
 
         def show
@@ -15,7 +21,13 @@ module Api
           @stations = @city.stations.popular.preload(:city)
           @cities = @city.same_prefecutre_other_cities.popular
           @main_shops = MainShop.popular
-          @shops = @city.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+          @shops = @city.shops
+                        .open
+                        .have_scocket
+                        .have_wifi
+                        .eager_load(:main_shop)
+                        .page(params[:page])
+                        .per(params[:per] || PER)
         end
 
         private
