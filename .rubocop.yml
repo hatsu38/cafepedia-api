@@ -35,7 +35,7 @@ Metrics/ClassLength:
   Max: 200
 
 Metrics/AbcSize:
-  Max: 32
+  Max: 35
   Exclude:
     - 'app/controllers/concerns/calculate.rb'
 

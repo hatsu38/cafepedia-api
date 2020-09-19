@@ -10,7 +10,7 @@ module Api
           @cities = @prefecture.cities.popular
           @shops = @main_shop.shops
                              .where(prefecture_id: @prefecture.id)
-                             .open
+                             .open.have_scocket.have_wifi
                              .eager_load(:city)
                              .page(params[:page])
                              .per(params[:per] || PER)

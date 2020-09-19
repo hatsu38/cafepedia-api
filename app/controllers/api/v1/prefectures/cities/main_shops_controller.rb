@@ -7,7 +7,13 @@ module Api
 
           PER = 20
           def index
-            @shops = @city.shops.open.eager_load(:main_shop).page(params[:page]).per(params[:per] || PER)
+            @shops = @city.shops
+                          .open
+                          .have_scocket
+                          .have_wifi
+                          .eager_load(:main_shop)
+                          .page(params[:page])
+                          .per(params[:per] || PER)
             @main_shops = MainShop.eager_load(:shops)
           end
 
@@ -15,7 +21,7 @@ module Api
             @main_shop = MainShop.find_by(eng_name: params[:eng_name])
             @shops = @city.shops
                           .where(main_shop_id: @main_shop.id)
-                          .open
+                          .open.have_scocket.have_wifi
                           .eager_load(:main_shop)
                           .page(params[:page])
                           .per(params[:per] || PER)
