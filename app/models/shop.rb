@@ -51,6 +51,9 @@ class Shop < ApplicationRecord
 
   belongs_to_active_hash :prefecture
 
+  delegate :name_e, to: :prefecture, prefix: true
+  delegate :code, to: :city, prefix: true
+  delegate :eng_name, to: :main_shop, prefix: true
   with_options presence: true do
     validates :name
     validates :prefecture_name
