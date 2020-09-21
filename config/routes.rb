@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :prefectures, only: [:index, :show], param: :name_e do
         scope module: :prefectures do
-          resources :main_shops, only: [:show], param: :eng_name
+          resources :main_shops, only: [:index, :show], param: :eng_name
           resources :cities, only: [:index, :show], param: :code do
             scope module: :cities do
               resources :stations, only: [:show]
