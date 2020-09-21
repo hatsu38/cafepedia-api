@@ -3,6 +3,11 @@ module Api
     module Prefectures
       class MainShopsController < ApplicationController
         PER = 20
+        def index
+          @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
+          @main_shops = MainShop.all
+        end
+
         def show
           @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
           @main_shop = MainShop.find_by(eng_name: params[:eng_name])
