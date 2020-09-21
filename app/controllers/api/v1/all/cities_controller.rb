@@ -3,7 +3,7 @@ module Api
     module All
       class CitiesController < ApplicationController
         def index
-          @cities = City.all
+          @cities = City.all.select(:id, :code, :prefecture_id)
         end
       end
     end

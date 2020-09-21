@@ -27,6 +27,9 @@ class Station < ApplicationRecord
   validates :kana_name, presence: true
   validates :kanji_name, presence: true
 
+  delegate :name_e, to: :prefecture, prefix: true
+  delegate :code, to: :city, prefix: true
+
   has_many :shop_stations, dependent: :destroy
   has_many :shops, through: :shop_stations
   has_many :near_station_reloations,

@@ -1,3 +1,4 @@
 json.shops do
-  json.array! @shops, :id, :main_shop_id, :city_id, :prefecture_id
+  json.array! @shops, :id, :main_shop_eng_name, :city_code, :prefecture_name_e
 end
+json.total_pages @shops.total_pages
