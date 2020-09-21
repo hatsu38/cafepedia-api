@@ -37,6 +37,11 @@ Rails.application.routes.draw do
         resources :stations, only: [:index]
         resources :main_shops, only: [:index]
       end
+      namespace :all do
+        resources :stations, only: [:index]
+        resources :shops, only: [:index]
+        resources :cities, only: [:index]
+      end
     end
   end
   root to: 'api/shops#search', defaults: { format: :json }
