@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'sitemap_generator' # Sitemap作成
 gem 'dotenv-rails'
 gem 'active_hash'
 gem 'sentry-raven'
