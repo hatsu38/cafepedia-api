@@ -114,3 +114,10 @@ Naming/AccessorMethodName:
 
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging

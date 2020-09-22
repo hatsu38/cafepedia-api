@@ -1,7 +1,7 @@
 module Api
   module V1
     module Search
-      class KeywordsController < ApplicationController
+      class KeywordsController < BaseController
         PER = 20
         def index
           @stations = Station.search(params[:keyword])

@@ -1,7 +1,7 @@
 module Api
   module V1
     module All
-      class ShopsController < ApplicationController
+      class ShopsController < BaseController
         PER = 1000
         def index
           @shops = Shop.where.not(city_id: nil)

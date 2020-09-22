@@ -1,6 +1,6 @@
 module Api
   module V1
-    class PrefecturesController < ApplicationController
+    class PrefecturesController < BaseController
       PER = 10
       def index
         # TODO: Active::Hashにeager_loadが存在しないため、ここでだけN+1が起きてしまう
@@ -8,7 +8,7 @@ module Api
       end
 
       def show
-        @prefecture = Prefecture.find_by(name_e: params[:name_e])
+        @prefecture = Prefecture.find_by!(name_e: params[:name_e])
         @cities = @prefecture.cities.popular
         @main_shops = MainShop.popular
         @shops = @prefecture.shops

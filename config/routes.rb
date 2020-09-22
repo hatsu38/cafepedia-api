@@ -46,4 +46,5 @@ Rails.application.routes.draw do
   end
   root to: 'api/shops#search', defaults: { format: :json }
   resources :health_check, only: [:index]
+  get "*anything" => "api/v1/base#rescue_404"
 end

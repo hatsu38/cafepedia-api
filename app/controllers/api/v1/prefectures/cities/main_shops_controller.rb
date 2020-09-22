@@ -2,7 +2,7 @@ module Api
   module V1
     module Prefectures
       module Cities
-        class MainShopsController < ApplicationController
+        class MainShopsController < BaseController
           before_action :set_address
 
           PER = 20
@@ -18,7 +18,7 @@ module Api
           end
 
           def show
-            @main_shop = MainShop.find_by(eng_name: params[:eng_name])
+            @main_shop = MainShop.find_by!(eng_name: params[:eng_name])
             @shops = @city.shops
                           .where(main_shop_id: @main_shop.id)
                           .open.have_scocket.have_wifi
@@ -30,8 +30,8 @@ module Api
           private
 
           def set_address
-            @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-            @city = @prefecture.cities.find_by(code: params[:city_code])
+            @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
+            @city = @prefecture.cities.find_by!(code: params[:city_code])
             @cities = @city.same_prefecutre_other_cities.popular
             @stations = @city.stations.popular.preload(:city)
           end

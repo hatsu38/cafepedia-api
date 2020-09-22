@@ -1,16 +1,16 @@
 module Api
   module V1
     module Prefectures
-      class MainShopsController < ApplicationController
+      class MainShopsController < BaseController
         PER = 20
         def index
-          @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
+          @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
           @main_shops = MainShop.all
         end
 
         def show
-          @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-          @main_shop = MainShop.find_by(eng_name: params[:eng_name])
+          @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
+          @main_shop = MainShop.find_by!(eng_name: params[:eng_name])
           @stations = @prefecture.stations.popular.preload(:city)
           @cities = @prefecture.cities.popular
           @shops = @main_shop.shops

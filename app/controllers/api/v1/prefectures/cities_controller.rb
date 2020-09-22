@@ -1,7 +1,7 @@
 module Api
   module V1
     module Prefectures
-      class CitiesController < ApplicationController
+      class CitiesController < BaseController
         before_action :set_pfefecture
 
         PER = 10
@@ -17,7 +17,7 @@ module Api
         end
 
         def show
-          @city = @prefecture.cities.find_by(code: params[:code])
+          @city = @prefecture.cities.find_by!(code: params[:code])
           @stations = @city.stations.popular.preload(:city)
           @cities = @city.same_prefecutre_other_cities.popular
           @main_shops = MainShop.popular
@@ -33,7 +33,7 @@ module Api
         private
 
         def set_pfefecture
-          @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
+          @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
         end
       end
     end
