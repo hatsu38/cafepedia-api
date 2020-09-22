@@ -2,11 +2,11 @@
 SitemapGenerator::Sitemap.default_host = "https://cafepedia.jp"
 
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}"
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-ap-northeast-1.amazonaws.com/#{Rails.application.credentials.aws[:s3_backet_name]}"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
-  ENV['S3_BUCKET_NAME'],
-  aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-  aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+  Rails.application.credentials.aws[:s3_backet_name],
+  aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
+  aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
   aws_region: 'ap-northeast-1'
 )
 
@@ -36,8 +36,6 @@ SitemapGenerator::Sitemap.create do
 
   stations = Station.where.not(city_id: nil)
                           .select(:id, :prefecture_id, :city_id)
-                          .page(params[:page])
-                          .per(params[:per] || PER)
                           .preload(:city)
   stations.each do |station|
     add "#{station.prefecture_name_e}/#{station.city_code}/stations/#{station.id}", changefreq: "daily"
@@ -45,8 +43,6 @@ SitemapGenerator::Sitemap.create do
 
   shops = Shop.where.not(city_id: nil)
                     .select(:id, :main_shop_id, :prefecture_id, :city_id)
-                    .page(params[:page])
-                    .per(params[:per] || PER)
                     .preload(:main_shop, :city)
   shops.all.each do |shop|
     add "#{shop.prefecture_name_e}/#{shop.city_code}/chain_shops/#{shop.main_shop_eng_name}/#{shop.id}", changefreq: "daily"

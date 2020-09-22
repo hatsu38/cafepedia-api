@@ -33,5 +33,4 @@ yarn-debug.log*
 /coverage
 
 # Sitemap
-public/sitemap.xml
-public/sitemap.xml.gz
+public/sitemap*
