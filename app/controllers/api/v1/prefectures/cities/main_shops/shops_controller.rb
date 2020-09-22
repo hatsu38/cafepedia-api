@@ -3,7 +3,7 @@ module Api
     module Prefectures
       module Cities
         module MainShops
-          class ShopsController < ApplicationController
+          class ShopsController < BaseController
             before_action :set_commons_instance
 
             PER = 20
@@ -15,7 +15,7 @@ module Api
 
             def show
               filted_shops = @city.shops.open.have_scocket.have_wifi.where(main_shop_id: @main_shop.id)
-              @shop = filted_shops.find_by(id: params[:id])
+              @shop = filted_shops.find_by!(id: params[:id])
               @shops = filted_shops.where.not(id: @shop.id)
                                    .eager_load(:main_shop)
                                    .page(params[:page])
@@ -28,10 +28,10 @@ module Api
             private
 
             def set_commons_instance
-              @prefecture = Prefecture.find_by(name_e: params[:prefecture_name_e])
-              @city = @prefecture.cities.find_by(code: params[:city_code])
+              @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
+              @city = @prefecture.cities.find_by!(code: params[:city_code])
               @cities = @city.same_prefecutre_other_cities.popular
-              @main_shop = MainShop.find_by(eng_name: params[:main_shop_eng_name])
+              @main_shop = MainShop.find_by!(eng_name: params[:main_shop_eng_name])
             end
           end
         end

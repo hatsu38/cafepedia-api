@@ -1,7 +1,7 @@
 module Api
   module V1
     module Search
-      class PositionsController < ApplicationController
+      class PositionsController < BaseController
         PER = 20
         def index
           @stations = NearStationsByPositionService.new.execute(params[:lat], params[:lng])
