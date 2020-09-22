@@ -13,7 +13,7 @@ module Api
           cities_shops = Shop.open
                              .have_scocket
                              .have_wifi
-                             .where(city_id: @cities.pluck(:id))
+                             .where(city_id: [@city.id, @cities.pluck(:id)].flatten)
                              .eager_load(:main_shop, :city)
           shops = NearShopsByPositionService.new.execute(cities_shops, params[:lat], params[:lng])
           @shops = shops[0..50]
