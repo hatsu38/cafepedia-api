@@ -213,27 +213,26 @@ mainshop_array.each do |shop|
   CSV.foreach(shop[:csv], headers: true) do |data|
     next if main_shop.shops.find_by(name: data['name']) || main_shop.shops.find_by(hp: data['hp']) || main_shop.shops.find_by(tel: data['tel'])
 
-    begin
-      prefecture = Prefecture.find_by_name(data['prefecture']&.strip)
-      city = prefecture.cities.find_by(name: data['city'])
-      Rails.logger.debug("#{city}のお店")
-      main_shop.shops.find_or_create_by!(
-        name: data['name'],
-        prefecture_name: prefecture.name,
-        city_name: data['city'].gsub(/ケ/, 'ヶ'),
-        other_address: data['other_address'],
-        access: data['access'],
-        tel: data['tel'],
-        business_hour: data['business_hour'],
-        hp: data['hp'],
-        wifi: data['wifi'],
-        socket: data['socket'],
-        smoking: data['smoking'],
-        iccard: data['iccard'],
-        lat: data['lat'],
-        lng: data['lng'],
-        prefecture_id: prefecture.id,
-        city_id: city&.id
-      )
+    prefecture = Prefecture.find_by_name(data['prefecture']&.strip)
+    city = prefecture.cities.find_by(name: data['city'])
+    Rails.logger.debug("#{city}のお店")
+    main_shop.shops.find_or_create_by!(
+      name: data['name'],
+      prefecture_name: prefecture.name,
+      city_name: data['city'].gsub(/ケ/, 'ヶ'),
+      other_address: data['other_address'],
+      access: data['access'],
+      tel: data['tel'],
+      business_hour: data['business_hour'],
+      hp: data['hp'],
+      wifi: data['wifi'],
+      socket: data['socket'],
+      smoking: data['smoking'],
+      iccard: data['iccard'],
+      lat: data['lat'],
+      lng: data['lng'],
+      prefecture_id: prefecture.id,
+      city_id: city&.id
+    )
   end
 end
