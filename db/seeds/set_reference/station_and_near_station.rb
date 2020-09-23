@@ -14,16 +14,16 @@ def self.get_near_stations_json(station_name)
   end
 end
 
-Station.all.find_each do |station|
+Station.where(id: 796).find_each do |station|
   station_name = station.eki_except_from_kanji_name
   near_stations_json = get_near_stations_json(station_name)
+  puts station_name
   next unless near_stations_json
 
   near_station_names = near_stations_json.pluck("prev","next").flatten.compact.uniq
   near_station_names.each do |near_station_name|
     near_station = Station.find_by(kanji_name: "#{near_station_name}駅") || Station.find_by(kanji_name: near_station_name)
     next if near_station.nil?
-    puts near_station.kanji_name
     NearStationRelationship.find_or_create_by!(
       main_station_id: station.id,
       near_station_id: near_station.id
