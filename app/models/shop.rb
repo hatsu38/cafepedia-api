@@ -54,6 +54,9 @@ class Shop < ApplicationRecord
   delegate :name_e, to: :prefecture, prefix: true
   delegate :code, to: :city, prefix: true
   delegate :eng_name, to: :main_shop, prefix: true
+
+  before_validation :trim_name
+
   with_options presence: true do
     validates :name
     validates :prefecture_name
@@ -116,5 +119,11 @@ class Shop < ApplicationRecord
 
   def set_deistance(distance)
     self.distance = distance
+  end
+
+  private
+
+  def trim_name
+    self.name = name&.gsub(/\A[[:space:]]+|[[:space:]]+\z/, '')
   end
 end

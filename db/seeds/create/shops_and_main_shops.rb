@@ -215,9 +215,9 @@ mainshop_array.each do |shop|
 
     prefecture = Prefecture.find_by_name(data['prefecture']&.strip)
     city = prefecture.cities.find_by(name: data['city'])
-    Rails.logger.debug("#{city}のお店")
+    Rails.logger.info("#{city}のお店")
     main_shop.shops.find_or_create_by!(
-      name: data['name'],
+      name: data['name'].gsub(/\|.+/,""),
       prefecture_name: prefecture.name,
       city_name: data['city'].gsub(/ケ/, 'ヶ'),
       other_address: data['other_address'],
