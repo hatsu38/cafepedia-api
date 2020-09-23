@@ -213,10 +213,11 @@ mainshop_array.each do |shop|
   CSV.foreach(shop[:csv], headers: true) do |data|
     next if main_shop.shops.find_by(name: data['name']) || main_shop.shops.find_by(hp: data['hp']) || main_shop.shops.find_by(tel: data['tel'])
 
-    prefecture = Prefecture.find_by_name(data['prefecture'])
+    prefecture = Prefecture.find_by_name(data['prefecture'].strip)
+    binding.pry if prefecture.nil?
     city = prefecture.cities.find_by(name: data['city'])
     Rails.logger.debug("#{city}のお店")
-    find_or_create_by!(
+    main_shop.shops.find_or_create_by!(
       name: data['name'],
       prefecture_name: prefecture.name,
       city_name: data['city'].gsub(/ケ/, 'ヶ'),
