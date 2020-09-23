@@ -27,7 +27,7 @@ cities_by_uniqed_city_code.each do |data|
   cities << City.new(
     code: data[city_code_index],
     name: data[city_name_index],
-    prefecture_id: format('%01d', data[prefecutre_code_index])
+    prefecture_id: format('%01d', data[prefecutre_code_index].to_i)
   )
 end
 
