@@ -103,11 +103,11 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ7:00〜18:00
 日曜：カフェ7:00〜18:00
 祝日：カフェ7:00〜18:00",https://www.pronto.co.jp/shop/detail?shopid=PR00000251,FALSE,FALSE,TRUE,FALSE,35.7914866,139.9377274,54席
-27,9‐CAFEbyPRONTO東京都,千代田区,紀尾井町上智大学9号館B1F,四ツ谷駅徒歩2分以上,03-3288-1877,"平日：カフェ8:00〜20:00
+27,9‐CAFEbyPRONTO,東京都,千代田区,紀尾井町上智大学9号館B1F,四ツ谷駅徒歩2分以上,03-3288-1877,"平日：カフェ8:00〜20:00
 土曜：カフェ10:00〜17:00
 日曜：カフェ10:00〜17:00
 祝日：カフェ10:00〜17:00",https://www.pronto.co.jp/shop/detail?shopid=PR00000069,FALSE,FALSE,FALSE,FALSE,35.6831761,139.7320976,
-28,HASSOCAFFEwithPRONTO東京都,千代田区,神田錦町3-22テラススクエア1Ｆ,神保町駅徒歩5分以上,03-6273-7775,"平日：カフェ7:00〜17:30
+28,HASSOCAFFEwithPRONTO,東京都,千代田区,神田錦町3-22テラススクエア1Ｆ,神保町駅徒歩5分以上,03-6273-7775,"平日：カフェ7:00〜17:30
 土曜：カフェ11:00〜17:00",https://www.pronto.co.jp/shop/detail?shopid=PR00000263,FALSE,FALSE,TRUE,FALSE,35.6933788,139.7600168,81席
 29,BEERTERIA東京駅店,東京都,千代田区,丸の内1丁目9-1東京駅八重洲北口1階キッチンストリート,東京駅徒歩5分以上,03-5224-8685,"平日：カフェ 7:00～17:00
 土曜：カフェ 7:00～17:00
@@ -312,7 +312,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 祝日：カフェ 10:30～17:00",https://www.pronto.co.jp/shop/detail?shopid=0333440476,FALSE,FALSE,FALSE,FALSE,35.6884327,139.6976406,30席
 89,新橋駅前店,東京都,港区,新橋２−８−７新橋東和ビル１Ｆ,内幸町駅徒歩3分以上,03-3508-2166,"平日：カフェ7:00〜17:30
 土曜：カフェ7:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0X00096755,TRUE,FALSE,TRUE,FALSE,35.6669439,139.7551855,107席
-90,JPタワー東京東京都,千代田区,丸の内2-7-2JPタワー6階,東京駅徒歩2分以上,03-5224-8220,平日：カフェ7:00〜17:30,https://www.pronto.co.jp/shop/detail?shopid=PR00000067,FALSE,FALSE,TRUE,FALSE,35.6801168,139.7647661,
+90,JPタワー東京,東京都,千代田区,丸の内2-7-2JPタワー6階,東京駅徒歩2分以上,03-5224-8220,平日：カフェ7:00〜17:30,https://www.pronto.co.jp/shop/detail?shopid=PR00000067,FALSE,FALSE,TRUE,FALSE,35.6801168,139.7647661,
 91,水道橋店,東京都,千代田区,三崎町3-7-12,水道橋駅徒歩4分以上,03-5215-8799,"平日：カフェ7:00〜17:30
 土曜：カフェ9:00〜17:30
 日曜：カフェ9:00〜17:30
@@ -331,7 +331,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 祝日：カフェ8:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0425481871,TRUE,TRUE,TRUE,FALSE,35.699644,139.4141247,68席
 96,天王洲シーフォートスクエア店,東京都,品川区,東品川2-3-12,天王洲アイル駅徒歩3分以内,03-3471-4410,"平日：カフェ7:00〜17:30
 土曜：カフェ10:00〜18:00",https://www.pronto.co.jp/shop/detail?shopid=PR00000270,FALSE,FALSE,TRUE,FALSE,35.6237027,139.7506757,69席
-97,東京シティアイカフェ東京都,千代田区,丸の内2−7−2JPタワーB１F,東京駅徒歩2分以上,03-3217-2046,"平日：カフェ7:00〜17:30
+97,東京シティアイカフェ,東京都,千代田区,丸の内2−7−2JPタワーB１F,東京駅徒歩2分以上,03-3217-2046,"平日：カフェ7:00〜17:30
 土曜：カフェ7:00〜17:30
 日曜：カフェ7:00〜17:30
 祝日：カフェ7:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0X00299818,FALSE,TRUE,TRUE,FALSE,35.679873,139.7650971,44席
@@ -436,7 +436,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ 7:00～17:30
 日曜：カフェ 7:30～17:30
 祝日：カフェ 7:30～17:30",https://www.pronto.co.jp/shop/detail?shopid=0353512630,TRUE,FALSE,TRUE,FALSE,35.6833931,139.7013286,93席
-129,ライブラリーショップ＆カフェ日比谷東京都,千代田区,日比谷公園1−41F,内幸町駅徒歩3分以上,03-3502-3347,"平日：カフェ10:00〜19:00
+129,ライブラリーショップ＆カフェ日比谷,東京都,千代田区,日比谷公園1−41F,内幸町駅徒歩3分以上,03-3502-3347,"平日：カフェ10:00〜19:00
 土曜：カフェ10:00〜17:00
 日曜：カフェ10:00〜17:00
 祝日：カフェ10:00〜17:00",https://www.pronto.co.jp/shop/detail?shopid=S000004660,FALSE,FALSE,FALSE,FALSE,35.671414,139.7556467,65席
@@ -464,7 +464,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ8:00〜17:30
 日曜：カフェ9:00〜17:30
 祝日：カフェ9:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0X00082905,TRUE,FALSE,TRUE,FALSE,35.4585635,139.6326171,50席
-136,小田急相模大野神奈川県,相模原市,南区相模大野3-8-1,相模大野駅徒歩3分以内,042-767-1071,"平日：カフェ7:00〜17:30
+136,小田急相模大野,神奈川県,相模原市,南区相模大野3-8-1,相模大野駅徒歩3分以内,042-767-1071,"平日：カフェ7:00〜17:30
 土曜：カフェ7:00〜17:30
 日曜：カフェ7:00〜17:30
 祝日：カフェ7:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0X00299023,TRUE,TRUE,TRUE,FALSE,35.5312888,139.437047,42席
@@ -484,7 +484,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ7:00〜17:30
 日曜：カフェ7:00〜17:30
 祝日：カフェ7:00〜17:30",https://www.pronto.co.jp/shop/detail?shopid=0X00238207,FALSE,FALSE,TRUE,FALSE,35.3382315,139.4463897,82席
-141,PRONTOFOOD＆TIMEISETANYOKOHAMA神奈川県,横浜市,西区南幸1-5-1ジョイナス地下1階,横浜駅徒歩4分以上,045-548-8739,"平日：カフェ7:30〜17:30
+141,PRONTOFOOD＆TIMEISETANYOKOHAMA,神奈川県,横浜市,西区南幸1-5-1ジョイナス地下1階,横浜駅徒歩4分以上,045-548-8739,"平日：カフェ7:30〜17:30
 土曜：カフェ7:30〜17:30",https://www.pronto.co.jp/shop/detail?shopid=PR00000274,TRUE,FALSE,TRUE,FALSE,35.4654964,139.6208152,123席
 142,みなとみらい店,神奈川県,横浜市,西区みなとみらい２丁目グランモ−ル公園内クロスパティオ,みなとみらい駅徒歩2分以上,045-223-2628,"平日：カフェ7:00〜18:00
 土曜：カフェ10:00〜17:00
@@ -569,7 +569,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ7:00〜18:00
 日曜：カフェ7:00〜18:00
 祝日：カフェ7:00〜18:00",https://www.pronto.co.jp/shop/detail?shopid=0X00319368,TRUE,TRUE,TRUE,FALSE,35.1672337,136.8848141,77席
-165,四条烏丸店,byJEUGIA京都府,京都市,下京区四条通東洞院長刀鉾町33番地京都フコク生命四条烏丸ビル,烏丸駅徒歩2分以上,075-221-2542,"平日：カフェ7:30〜17:30
+165,四条烏丸店byJEUGIA,京都府,京都市,下京区四条通東洞院長刀鉾町33番地京都フコク生命四条烏丸ビル,烏丸駅徒歩2分以上,075-221-2542,"平日：カフェ7:30〜17:30
 土曜：カフェ7:30〜17:30
 日曜：カフェ7:30〜17:30
 祝日：カフェ7:30〜17:30",https://www.pronto.co.jp/shop/detail?shopid=PR00004032,TRUE,TRUE,FALSE,FALSE,35.0038395,135.7609778,81席
@@ -852,7 +852,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ10:00〜21:00
 日曜：カフェ10:00〜21:00
 祝日：カフェ10:00〜21:00",https://www.pronto.co.jp/shop/detail?shopid=PR00009040,TRUE,FALSE,FALSE,FALSE,35.4636516,139.5329904,78席
-243,CAFFESOLARETsumugiFOOD＆TIMEISETANYOKOHAMA神奈川県,横浜市,西区南幸1-5-1クイーンズ伊勢丹内B-１区画,横浜駅徒歩5分以上,045-322-0588,"平日：カフェ10:00〜23:00
+243,CAFFESOLARETsumugiFOOD＆TIMEISETANYOKOHAMA,神奈川県,横浜市,西区南幸1-5-1クイーンズ伊勢丹内B-１区画,横浜駅徒歩5分以上,045-322-0588,"平日：カフェ10:00〜23:00
 土曜：カフェ10:00〜23:00",https://www.pronto.co.jp/shop/detail?shopid=PR00009039,TRUE,FALSE,FALSE,FALSE,35.464504,139.6205275,100席
 244,CAFFESOLARE Tsumugiあべのｓｏｌａｈａ店,大阪府,大阪市,阿倍野区阿倍野筋1-1-43あべのsolaha3.5F,大阪阿部野橋駅徒歩3分以内,06-6625-2082,"平日：カフェ10:00〜20:30
 土曜：カフェ10:00〜20:30
@@ -983,7 +983,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 289,DiPUNTO 代々木店,東京都,渋谷区,代々木1-32-11Kビル2F,代々木駅徒歩2分以上,03-6276-7821,日曜：夜16:00〜24:00,https://www.pronto.co.jp/shop/detail?shopid=PR00008521,FALSE,FALSE,TRUE,FALSE,35.6824383,139.7020192,75席
 290,DiPUNTO 川崎店,神奈川県,川崎市,川崎区駅前本町11-1パシフィックマーク川崎B1F,川崎駅徒歩2分以上,044-200-4415,"日曜：夜17:00〜3:00
 祝日：夜17:00〜3:00",https://www.pronto.co.jp/shop/detail?shopid=PR00008517,FALSE,FALSE,TRUE,FALSE,35.5315242,139.6988098,82席
-291,DiPUNTO 武蔵小杉神奈川県,川崎市,中原区小杉町3-486S.N.B2F,武蔵小杉駅徒歩3分以内,044-819-8211,"日曜：夜16:00〜3:00
+291,DiPUNTO 武蔵小杉,神奈川県,川崎市,中原区小杉町3-486S.N.B2F,武蔵小杉駅徒歩3分以内,044-819-8211,"日曜：夜16:00〜3:00
 祝日：夜16:00〜3:00",https://www.pronto.co.jp/shop/detail?shopid=PR00008526,FALSE,FALSE,TRUE,FALSE,35.5752813,139.6586443,74席
 292,DiPUNTO 横須賀中央店,神奈川県,横須賀市,若松町3-18-14第86東京ビル1F,横須賀中央駅徒歩3分以内,046-828-5070,"日曜：夜15:00〜3:00
 祝日：夜15:00〜3:00",https://www.pronto.co.jp/shop/detail?shopid=PR00008513,FALSE,FALSE,TRUE,FALSE,35.2785359,139.671081,63席
@@ -1026,11 +1026,11 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 309,ブリオッシュドーレKITTE博多店,福岡県,福岡市,博多区博多駅中央街1−1B1F,博多駅徒歩1分以上,092-260-6344,平日：カフェ7:00〜22:00,https://www.pronto.co.jp/shop/detail?shopid=PR00007505,TRUE,FALSE,FALSE,FALSE,33.5893172,130.4211007,36席
 310,ブリオッシュドーレ天神ソラリアステージ店,福岡県,福岡市,中央区天神2-11-3,西鉄福岡駅徒歩3分以内,092-717-5789,平日：カフェ8:00〜22:00,https://www.pronto.co.jp/shop/detail?shopid=PR00007500,TRUE,FALSE,FALSE,FALSE,33.5900158,130.3990212,40席
 311,ブリオッシュドーレアンド カフェ 熊本COCOSA店,熊本県,熊本市,中央区下通1-3-8COCOCSA1F,通町筋駅徒歩2分以上,096-312-3553,平日：カフェ7:00〜23:00,https://www.pronto.co.jp/shop/detail?shopid=PR00007507,TRUE,FALSE,FALSE,FALSE,32.8022317,130.7087938,50席
-312,W e CAFFE DA IL BAR 　エキュート大宮店,埼玉県,さいたま市,大宮区錦町630大宮駅構内エキュート大宮,大宮駅徒歩3分以内,048-648-8818,"平日：カフェ7:00〜18:00
+312,W e CAFFE DA IL BAR エキュート大宮店,埼玉県,さいたま市,大宮区錦町630大宮駅構内エキュート大宮,大宮駅徒歩3分以内,048-648-8818,"平日：カフェ7:00〜18:00
 土曜：カフェ7:00〜18:00
 日曜：カフェ7:00〜18:00
 祝日：カフェ7:00〜18:00",https://www.pronto.co.jp/shop/detail?shopid=0X00223443,FALSE,FALSE,FALSE,FALSE,35.9058819,139.624261,35席
-313,COFFEE&WINESTANDTOROCCO神奈川県,川崎市,川崎区駅前本町26-1アトレ川崎4階,川崎駅徒歩1分以上,044-244-1050,"平日：カフェ8:00〜22:30
+313,COFFEE&WINESTANDTOROCCO,神奈川県,川崎市,川崎区駅前本町26-1アトレ川崎4階,川崎駅徒歩1分以上,044-244-1050,"平日：カフェ8:00〜22:30
 土曜：カフェ9:30〜21:30
 日曜：カフェ9:30〜21:30
 祝日：カフェ9:30〜21:30",https://www.pronto.co.jp/shop/detail?shopid=PR00009532,FALSE,FALSE,FALSE,FALSE,35.5311414,139.6978074,16席
@@ -1042,7 +1042,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土曜：カフェ6:00〜22:00
 日曜：カフェ6:00〜22:00
 祝日：カフェ6:00〜22:00",https://www.pronto.co.jp/shop/detail?shopid=S000004646,FALSE,FALSE,TRUE,FALSE,35.5622031,140.1573413,26席
-316,PRONTOCAFFE 南増尾千葉県,柏市,南増尾７−１−１４,常盤平駅徒歩22分以上,0471-70-5980,"平日：カフェ7:00〜22:00
+316,PRONTOCAFFE 南増尾,千葉県,柏市,南増尾７−１−１４,常盤平駅徒歩22分以上,0471-70-5980,"平日：カフェ7:00〜22:00
 土曜：カフェ7:00〜22:00
 日曜：カフェ7:00〜22:00
 祝日：カフェ7:00〜22:00",https://www.pronto.co.jp/shop/detail?shopid=S000004644,FALSE,FALSE,TRUE,FALSE,35.8131676,139.9614706,32席

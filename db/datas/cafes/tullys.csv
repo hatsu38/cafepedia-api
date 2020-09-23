@@ -599,7 +599,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 199,歌舞伎座店,東京都,中央区,銀座4-12-15GINZAKABUKIZAB2F,東銀座駅徒歩3分以内,03-3547-3370,"平日：7:30〜22:00
 土：8：00〜22：00
 日祝：8：00〜22：00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=628,TRUE,TRUE,TRUE,TRUE,35.6696727,139.7679144
-200,霞が関中央合同庁舎第5号館東京都,千代田区,霞が関1-2-2中央合同庁舎第５号館1階,霞ヶ関駅徒歩2分以上,03-6206-1177,"平日：8:30〜19:00
+200,霞が関中央合同庁舎第5号館,東京都,千代田区,霞が関1-2-2中央合同庁舎第５号館1階,霞ヶ関駅徒歩2分以上,03-6206-1177,"平日：8:30〜19:00
 土：休業日
 日祝：休業日",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=942,FALSE,FALSE,FALSE,FALSE,35.6732657,139.7531492
 201,海岸竹芝通り店,東京都,港区,海岸1-4-8キヤノン電子ビル,モノレール浜松町駅徒歩3分以上,03-5408-1137,"平日：7:30〜20:00
@@ -746,7 +746,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 248,渋谷ファイヤー通り店,東京都,渋谷区,神南1-12-14,渋谷駅徒歩8分以上,03-6455-1035,"平日：7:30〜22:00
 土：7:30〜22:00
 日祝：8:00〜22:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=771,TRUE,FALSE,TRUE,TRUE,35.6628326,139.7005648
-249,渋谷東急本店,前店東京都,渋谷区,道玄坂2-23-12フォンティスビル1F,神泉駅徒歩5分以上,03-5457-2866,"平日：7:30〜23:00
+249,渋谷東急本店前店,東京都,渋谷区,道玄坂2-23-12フォンティスビル1F,神泉駅徒歩5分以上,03-5457-2866,"平日：7:30〜23:00
 土：7:30〜23:00
 日祝：7:30〜23:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=33,TRUE,FALSE,FALSE,TRUE,35.6599597,139.6959636
 250,順天堂大学練馬病院店,東京都,練馬区,高野台3-1-10順天堂大学医学部附属練馬病院内1F,練馬高野台駅徒歩3分以上,03-6913-1612,"平日：7:00〜18:00
@@ -1246,7 +1246,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 415,東急あざみ野駅店,神奈川県,横浜市,青葉区あざみ野2-1-1東急あざみ野ビル1F,あざみ野駅徒歩1分以上,045-905-2206,"平日：7:00〜23:00
 土：7:00〜23:00
 日祝：7:00〜23:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=210,TRUE,TRUE,TRUE,TRUE,35.5683686,139.5537117
-416,東急百貨店,たまプラーザ店神奈川県,横浜市,青葉区美しが丘1-7B1F,たまプラーザ駅徒歩1分以上,045-903-2164,"平日：10:00〜22:30
+416,東急百貨店たまプラーザ店,神奈川県,横浜市,青葉区美しが丘1-7B1F,たまプラーザ駅徒歩1分以上,045-903-2164,"平日：10:00〜22:30
 土：10:00〜22:30
 日祝：10:00〜22:30",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=326,TRUE,FALSE,FALSE,FALSE,35.5783704,139.557956
 417,東戸塚駅東口店,神奈川県,横浜市,戸塚区品濃町516-8東戸塚駅東口プラザ1F,東戸塚駅徒歩3分以内,045-828-7008,"平日：7:00〜22:00
@@ -1551,7 +1551,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 517,三井アウトレットパーク滋賀竜王店,滋賀県,蒲生郡,竜王町大字薬師字砂山1178-694,篠原駅徒歩71分以上,0748-58-3580,"平日：10:00〜20:00
 土：10:00〜20:00
 日祝：10:00〜20:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=468,TRUE,FALSE,TRUE,FALSE,35.06084,136.100301
-518,滋賀医大病院滋賀県,大津市,瀬田月輪町滋賀医科大学医学部附属病院外来棟1F,瀬田駅徒歩39分以上,077-547-2377,"平日：7:00〜20:00
+518,滋賀医大病院,滋賀県,大津市,瀬田月輪町滋賀医科大学医学部附属病院外来棟1F,瀬田駅徒歩39分以上,077-547-2377,"平日：7:00〜20:00
 土：9:00〜18:00
 日祝：9:00〜18:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=577,FALSE,FALSE,FALSE,FALSE,34.9739158,135.9514479
 519,ＭＩＮＡＮＯ分倍河原店,東京都,府中市,片町3-22-26,分倍河原駅徒歩2分以上,042-352-8455,"平日：8:00〜21:00
@@ -1688,7 +1688,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 563,光明池店,大阪府,和泉市,室堂町824-36COMBOX光明池2F,光明池駅徒歩4分以上,0725-57-4147,"平日：9:00〜22:00（L.O.21:30）
 土：9:00〜22:00（L.O.21:30）
 日祝：9:00〜22:00（L.O.21:30）",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=185,FALSE,FALSE,TRUE,TRUE,34.4718184,135.4759775
-564,阪急うめだ本店, 8階店大阪府,大阪市,北区角田町8番7号阪急うめだ本店8階,東梅田駅徒歩1分以上,06-6313-1582,"月〜木：10:00〜20:00金・土：10:00〜21:00
+564,阪急うめだ本店8階店,大阪府,大阪市,北区角田町8番7号阪急うめだ本店8階,東梅田駅徒歩1分以上,06-6313-1582,"月〜木：10:00〜20:00金・土：10:00〜21:00
 日祝：10:00〜20:00",https://map.tullys.co.jp/tullys/detailMap?account=tullys&accmd=0&bid=609,FALSE,FALSE,FALSE,FALSE,34.7028186,135.4985323
 565,阪急三番街南館店,大阪府,大阪市,北区芝田1-1-3阪急三番街南館１Ｆ,梅田駅徒歩3分以内,06-6377-0777,"平日：7:00〜23:00
 土：7:00〜23:00

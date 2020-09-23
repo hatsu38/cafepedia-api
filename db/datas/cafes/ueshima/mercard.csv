@@ -24,7 +24,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 土日祝10:00～19:30",https://shop.ufs.co.jp/ufs/spot/detail?code=1420,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,13席
 11,須磨大丸店,兵庫県,神戸市,須磨区中落合2-2-4大丸須磨店1F,名谷駅徒歩2分,078-794-7255,"平日10:00～20:00
 土日祝10:00～20:00",https://shop.ufs.co.jp/ufs/spot/detail?code=1412,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,15席
-12,新宿高島屋店,（Ｂ１Ｆ）東京都,渋谷区,千駄ヶ谷5-24-2新宿高島屋B1F,代々木駅徒歩3分,03-5361-1365,"平日日祝10:00～20:00
+12,新宿高島屋店（Ｂ１Ｆ）,東京都,渋谷区,千駄ヶ谷5-24-2新宿高島屋B1F,代々木駅徒歩3分,03-5361-1365,"平日日祝10:00～20:00
 金土10:00～20:30",https://shop.ufs.co.jp/ufs/spot/detail?code=329,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,6席
 13,新潟三越店,新潟県,新潟市,中央区西堀通5-866三越新潟店B1F,白山駅徒歩21分,025-229-1577,"10:00～19:00
 土10:00～19:00",https://shop.ufs.co.jp/ufs/spot/detail?code=609,TRUE,TRUE,FALSE,TRUE,43.067656,141.350857,売店,のみ

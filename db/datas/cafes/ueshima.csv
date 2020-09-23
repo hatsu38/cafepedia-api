@@ -306,7 +306,7 @@ id,name,prefecture,city,other_address,access,tel,business_hour,hp,wifi,socket,sm
 104,OAPタワー店,大阪府,大阪市,北区天満橋1-8-30OAPタワー2F,桜ノ宮駅徒歩7分,06-6136-1480,"平日8:00～20:00
 土日祝10:00～18:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3659,TRUE,TRUE,FALSE,TRUE,35.444939,139.632849,"96席
 (禁煙:46/喫煙:50)"
-105,No.11東京都,港区,新橋6-1-11Daiwa御成門ビル1F,御成門駅徒歩2分,03-5733-6468,"平日7:00～20:00
+105,No.11,東京都,港区,新橋6-1-11Daiwa御成門ビル1F,御成門駅徒歩2分,03-5733-6468,"平日7:00～20:00
 土日祝8:00～18:00※9月9日（日）電気設備点検のため13:00～18:00の営業となります。",https://shop.ufs.co.jp/ufs/spot/detail?code=3617,TRUE,TRUE,TRUE,FALSE,35.524613,139.645609,96席
 106,NEOPASA浜松上り店,静岡県,浜松市,浜北区大平36新東名高速道路NEOPASA浜松上り線内,フルーツパーク駅徒歩27分,053-581-8110,"平日08:00～21:00
 土日祝08:00～21:00",https://shop.ufs.co.jp/ufs/spot/detail?code=3679,FALSE,FALSE,FALSE,FALSE,35.535894,139.631444,57席
