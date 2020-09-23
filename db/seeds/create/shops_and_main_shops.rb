@@ -215,10 +215,6 @@ mainshop_array.each do |shop|
 
     begin
       prefecture = Prefecture.find_by_name(data['prefecture']&.strip)
-      if prefecture.nil?
-        puts data
-        binding.pry
-      end
       city = prefecture.cities.find_by(name: data['city'])
       Rails.logger.debug("#{city}のお店")
       main_shop.shops.find_or_create_by!(
@@ -239,8 +235,5 @@ mainshop_array.each do |shop|
         prefecture_id: prefecture.id,
         city_id: city&.id
       )
-    rescue => e
-      binding.pry
-    end
   end
 end
