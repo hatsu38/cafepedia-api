@@ -22,7 +22,7 @@ cities_by_uniqed_city_code.each do |data|
   if city
     city.name = data[city_name_index].gsub(/ケ/, 'ヶ')
     city.prefecture_id = data[prefecutre_code_index].to_i
-    city.update
+    city.save!
   end
 
   City.create(
