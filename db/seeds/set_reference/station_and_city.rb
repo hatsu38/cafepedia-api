@@ -57,7 +57,7 @@ if stations.present?
   stations.find_each do |station|
     station_name = station.eki_except_from_kanji_name
     near_stations_json = get_near_stations_json(station_name)
-    next unless near_stations_json
+    next unless near_stations_json || near_stations_json
 
     postalcodes = near_stations_json.pluck("postal").flatten.compact
     city, prefecture = most_match_city(postalcodes)
