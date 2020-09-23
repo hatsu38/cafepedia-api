@@ -1,14 +1,18 @@
 require 'csv'
 
-Dir.glob(Rails.root.join("db/seeds/create/*.rb")).sort.each do |file|
-  require file
-end
+# Dir.glob(Rails.root.join("db/seeds/create/*.rb")).sort.each do |file|
+#   require file
+# end
 
-Dir.glob(Rails.root.join("db/seeds/fix/*.rb")).sort.each do |file|
-  require file
-end
+# Dir.glob(Rails.root.join("db/seeds/fix/*.rb")).sort.each do |file|
+#   require file
+# end
 
-Dir.glob(Rails.root.join("db/seeds/set_reference/*.rb")).sort.each do |file|
+# Dir.glob(Rails.root.join("db/seeds/set_reference/*.rb")).sort.each do |file|
+#   require file
+# end
+
+Dir.glob(Rails.root.join("db/seeds/set_reference/station_and_near_station.rb")).sort.each do |file|
   require file
 end
 

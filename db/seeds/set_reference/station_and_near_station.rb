@@ -14,7 +14,7 @@ def self.get_near_stations_json(station_name)
   end
 end
 
-Station.where(id: 796).find_each do |station|
+Station.all.find_each do |station|
   station_name = station.eki_except_from_kanji_name
   near_stations_json = get_near_stations_json(station_name)
   puts station_name
