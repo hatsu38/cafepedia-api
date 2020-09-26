@@ -4,11 +4,11 @@ ActiveAdmin.register MainShop do
   permit_params :name, :eng_name, :image, :logo
 
   form do |f|
-    f.inputs "MainShop" do
+    f.inputs 'MainShop' do
       f.input :name
       f.input :eng_name
       f.input :image
-      f.input :logo, :as => :file
+      f.input :logo, as: :file
     end
     f.actions
   end
