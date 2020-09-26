@@ -7,8 +7,8 @@
 #  id            :bigint           not null, primary key
 #  kana_name     :string           not null
 #  kanji_name    :string           not null
-#  created_at    :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
-#  updated_at    :datetime         default(Wed, 26 Aug 2020 14:30:52 JST +09:00), not null
+#  created_at    :datetime         default(Wed, 23 Sep 2020 11:19:02 JST +09:00), not null
+#  updated_at    :datetime         default(Wed, 23 Sep 2020 11:19:02 JST +09:00), not null
 #  city_id       :bigint
 #  prefecture_id :integer          default(48), not null
 #
