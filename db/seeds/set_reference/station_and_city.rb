@@ -1,4 +1,4 @@
-def get_near_stations_json(station_name)
+def self.get_near_stations_json(station_name)
   count = 0
   uri = URI("https://express.heartrails.com/api/json")
   params = { method: "getStations", name: station_name }
@@ -57,11 +57,11 @@ if stations.present?
   stations.find_each do |station|
     station_name = station.eki_except_from_kanji_name
     near_stations_json = get_near_stations_json(station_name)
+    puts "駅名：#{station_name}"
     next unless near_stations_json
 
     postalcodes = near_stations_json.pluck("postal").flatten.compact
     city, prefecture = most_match_city(postalcodes)
-    puts "駅名：#{station_name}"
     puts "都道府県：#{prefecture&.name}"
     puts "市区町村：#{city&.name}"
     begin

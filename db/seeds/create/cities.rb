@@ -1,5 +1,7 @@
 require 'open-uri'
 
+now = Time.zone.now
+
 csv = URI.parse('https://raw.githubusercontent.com/geolonia/japanese-addresses/master/data/latest.csv').open { |f| f.read }
 
 # 市区町村コードでユニークする
@@ -20,15 +22,12 @@ cities_by_uniqed_city_code.each do |data|
   if city
     city.name = data[city_name_index].gsub(/ケ/, 'ヶ')
     city.prefecture_id = data[prefecutre_code_index].to_i
-    cities << city
-    next
+    city.save!
   end
 
-  cities << City.new(
+  City.create(
     code: data[city_code_index],
     name: data[city_name_index],
     prefecture_id: format('%01d', data[prefecutre_code_index].to_i)
   )
 end
-
-City.upsert_all(cities.map(&:attributes))

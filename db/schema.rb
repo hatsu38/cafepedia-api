@@ -133,8 +133,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_043316) do
     t.string "kana_name", null: false
     t.bigint "city_id"
     t.integer "prefecture_id", default: 48, null: false
-    t.datetime "created_at", default: "2020-08-26 14:30:52", null: false
-    t.datetime "updated_at", default: "2020-08-26 14:30:52", null: false
+    t.datetime "created_at", default: "2020-09-23 11:19:02", null: false
+    t.datetime "updated_at", default: "2020-09-23 11:19:02", null: false
     t.index ["city_id"], name: "index_stations_on_city_id"
   end
 
