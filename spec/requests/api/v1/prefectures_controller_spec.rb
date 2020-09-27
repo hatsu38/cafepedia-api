@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::V1::Prefectures, type: :request do
+describe Api::V1::PrefecturesController, type: :request do
   describe 'Get Index' do
     let(:shop) { create(:shop) }
 
@@ -14,7 +14,7 @@ describe Api::V1::Prefectures, type: :request do
     let(:shop) { create(:shop) }
 
     it '200' do
-      get api_v1_prefecture_path, params: { prefecutre_name_e: shop.prefecutre_name_e}
+      get api_v1_prefecture_path(name_e: shop.prefecture_name_e)
       expect(response).to have_http_status(:success)
     end
   end

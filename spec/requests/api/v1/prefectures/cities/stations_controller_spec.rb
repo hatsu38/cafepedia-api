@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::V1::Prefectures::Cities::Stations, type: :request do
+describe Api::V1::Prefectures::Cities::StationsController, type: :request do
   let(:station) { create(:station) }
 
   describe 'Get Index' do

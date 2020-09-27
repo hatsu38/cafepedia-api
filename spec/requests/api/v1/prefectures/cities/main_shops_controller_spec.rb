@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::V1::Prefectures::Cities::MainShops, type: :request do
+describe Api::V1::Prefectures::Cities::MainShopsController, type: :request do
   let(:shop) { create(:shop) }
 
   describe 'Get Index' do
