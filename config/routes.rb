@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "api/v1/health_check#index"
   namespace :api, {format: 'json'} do
     namespace :v1 do
+      resources :health_check, only: [:index]
       resources :prefectures, only: [:index, :show], param: :name_e do
         scope module: :prefectures do
           resources :main_shops, only: [:index, :show], param: :eng_name
@@ -32,7 +33,6 @@ Rails.application.routes.draw do
         resources :cities, only: [:index]
       end
     end
-    resources :health_check, only: [:index]
   end
   get "*anything" => "api/v1/base#rescue_404"
 end

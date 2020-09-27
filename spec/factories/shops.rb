@@ -47,6 +47,8 @@ FactoryBot.define do
     sequence(:lat) { |n| n.to_s }
     sequence(:lng) { |n| n.to_s }
     sequence(:is_open) { true }
-    prefecture { Prefecture.all.sample }
+    sequence(:socket) { true }
+    sequence(:wifi) { true }
+    prefecture { Prefecture.find_by(name_e: "tokyo") }
   end
 end

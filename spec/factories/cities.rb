@@ -19,8 +19,7 @@ FactoryBot.define do
     sequence(:id) { |n| n }
     sequence(:code) { |n| "#{n}#{n + 1}#{n + 2}#{n + 3}" }
     sequence(:name) { |n| "#{n}区" }
-    sequence(:prefecture_id) { true }
-    prefecture { Prefecture.all.sample }
+    prefecture { Prefecture.find_by(name_e: "tokyo") }
   end
 end
 

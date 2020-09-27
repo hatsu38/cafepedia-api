@@ -2,9 +2,9 @@ class NearCityByPositionService
   # 参考: https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/placeinfo.html
   def execute(latitude, longitude)
     city_code = get_city_code_json(latitude, longitude)
-    return nil unless city_code
+    return nil unless city_code || City.exists(code: city_code)
 
-    City.find_by(code: city_code)
+    City.find_by!(code: city_code)
   end
 
   private

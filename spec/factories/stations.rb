@@ -23,6 +23,6 @@ FactoryBot.define do
     association :city
     sequence(:kana_name) { |n| "kana_#{n}えき" }
     sequence(:kanji_name) { |n| "kanji _#{n}駅" }
-    prefecture { Prefecture.all.sample }
+    prefecture_id { Prefecture.find_by(name_e: "tokyo").id }
   end
 end
