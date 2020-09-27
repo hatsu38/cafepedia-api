@@ -124,3 +124,6 @@ Rails/UnknownEnv:
 
 RSpec/ExampleLength:
   Max: 8
+
+RSpec/MultipleExpectations:
+  Max: 5
