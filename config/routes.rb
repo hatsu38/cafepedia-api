@@ -1,19 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  root to: "api/v1/health_check#index"
   namespace :api, {format: 'json'} do
-    resources :shops, only: [:index,:show] do
-      resources :comments, only: [:index, :create]
-      resources :congrestion_infos, only: [:create]
-    end
-    resources :shop_congrestion_infos, only: [:destroy]
-    resources :main_shops, only: [:index, :show]
-    resources :prefectures, only: [:index, :show]
-    resources :areas, only: [:index, :show], param: :area
-    resources :stations, only: [:index, :show]
-    resources :search_stations, only: [:index]
-    resources :search_shops, only: [:index]
-
     namespace :v1 do
       resources :prefectures, only: [:index, :show], param: :name_e do
         scope module: :prefectures do
@@ -43,8 +32,7 @@ Rails.application.routes.draw do
         resources :cities, only: [:index]
       end
     end
+    resources :health_check, only: [:index]
   end
-  root to: 'api/shops#search', defaults: { format: :json }
-  resources :health_check, only: [:index]
   get "*anything" => "api/v1/base#rescue_404"
 end
