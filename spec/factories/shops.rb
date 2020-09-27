@@ -49,6 +49,6 @@ FactoryBot.define do
     sequence(:is_open) { true }
     sequence(:socket) { true }
     sequence(:wifi) { true }
-    prefecture { Prefecture.find_by(name_e: "tokyo") }
+    prefecture { Prefecture.find_by(name_e: 'tokyo') }
   end
 end

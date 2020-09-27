@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::Prefectures::CitiesController, type: :request do
+describe Api::V1::Prefectures::CitiesController, type: :request do
   let(:shop) { create(:shop) }
+
   describe 'Get Index' do
     it '200' do
       get api_v1_prefecture_cities_path(prefecture_name_e: shop.prefecture_name_e)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::HealthCheckController, type: :request do
+describe Api::V1::HealthCheckController, type: :request do
   describe 'Get Index' do
     it '200' do
       get api_v1_health_check_index_path
