@@ -121,3 +121,6 @@ Rails/UnknownEnv:
     - development
     - test
     - staging
+
+RSpec/ExampleLength:
+  Max: 8
