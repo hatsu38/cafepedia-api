@@ -91,23 +91,6 @@ class Shop < ApplicationRecord
     where(['access LIKE ?', "%#{word}%"])
   }
 
-  # TODO: SeriveClassのものをつかうため、Nextに置き換えたら置き換えたら削除する
-  def self.cafe_list_calculated_distance(params)
-    lat = params[:lat] || 35.6589568
-    lng = params[:lng] || 139.7219328
-    cafe_lists = open
-                 .access_station(params[:socket])
-                 .params_have_socket(params)
-                 .params_have_wifi(params)
-                 .params_have_smoking(params)
-                 .map(&:attributes)
-    cafe_lists.map do |cafe|
-      cafe['distance'] = Calculate.distance(cafe['lat'], cafe['lng'], lat, lng)
-    end
-
-    cafe_lists.sort_by { |cafe| cafe['distance'] }
-  end
-
   def self.search_name_by_keyword(keyword = nil)
     search_word = keyword.present? && keyword != '店' ? "%#{keyword}%" : ''
     where(['other_address LIKE :word OR name LIKE :word OR access LIKE :word', word: search_word])
