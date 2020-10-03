@@ -30,11 +30,11 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: gem install bundler
           command: gem install bundler -v 2.0.2
 
       - run:
-          name: install dependencies
+          name: bundle install
           command: |
             bundle install
 
@@ -74,7 +74,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy to Heroku_Staging
+          name: Deploy to Heroku Staging
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGE.git master
 
