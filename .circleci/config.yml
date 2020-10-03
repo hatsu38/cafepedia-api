@@ -8,15 +8,30 @@ orbs:
   heroku: circleci/heroku@1.2.2
 
 workflows:
-  heroku_deploy:
+  heroku_deploy-staging:
     jobs:
       - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+      - heroku/deploy-via-git:
+          environment:
+          - RAILS_ENV: staging
+          - HEROKU_APP_NAME: cafepedia-api-staging
           requires:
             - build
           filters:
             branches:
               only: develop
+  heroku_deploy-production:
+    jobs:
+      - build
+      - heroku/deploy-via-git:
+          environment:
+            - RAILS_ENV: production
+            - HEROKU_APP_NAME: cafepedia-api
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
 jobs:
   build:
