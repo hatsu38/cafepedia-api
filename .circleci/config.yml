@@ -65,7 +65,7 @@ jobs:
           command: |
             bundle exec brakeman -A
 
-  deploy-stage:
+  deploy-staging:
     docker:
       - image: circleci/ruby:2.6.5-buster
     working_directory: ~/repo
@@ -76,7 +76,7 @@ jobs:
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGE.git master
 
-  deploy-prod:
+  deploy-production:
     docker:
       - image: circleci/ruby:2.6.5-buster
     working_directory: ~/repo
@@ -89,20 +89,21 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
+  build-deploy-staging:
     jobs:
       - build
-      - deploy_stage:
+      - deploy-staging:
           requires:
             - build
           filters:
             branches:
-              only:
-                - develop
-      - deploy_prod:
+              only: develop
+  build-deploy-production:
+    jobs:
+      - build
+      - deploy-production:
           requires:
             - build
           filters:
             branches:
-              only:
-                - master
+              only: master
