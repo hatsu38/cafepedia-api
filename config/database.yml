@@ -18,6 +18,7 @@ test:
   port: <%= ENV['DATABASE_PORT'] || 5432 %>
   username: <%= ENV['DATABASE_USER'] || '' %>
   password: <%= ENV['DATABASE_PASSWORD'] || '' %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 staging:
   <<: *default
