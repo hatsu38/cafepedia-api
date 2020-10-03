@@ -2,36 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2.1
-
-orbs:
-  heroku: circleci/heroku@1.2.2
-
-workflows:
-  heroku_deploy-staging:
-    jobs:
-      - build
-      - heroku/deploy-via-git:
-          environment:
-          - RAILS_ENV: staging
-          - HEROKU_APP_NAME: cafepedia-api-staging
-          requires:
-            - build
-          filters:
-            branches:
-              only: develop
-  heroku_deploy-production:
-    jobs:
-      - build
-      - heroku/deploy-via-git:
-          environment:
-            - RAILS_ENV: production
-            - HEROKU_APP_NAME: cafepedia-api
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+version: 2
 
 jobs:
   build:
@@ -94,3 +65,42 @@ jobs:
           command: |
             bundle exec brakeman -A
 
+  deploy-stage:
+    docker:
+      - image: circleci/ruby:2.6.5-buster
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Deploy to Heroku_Staging
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGE.git master
+
+  deploy-prod:
+    docker:
+      - image: circleci/ruby:2.6.5-buster
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Deploy to Heroku Production
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy_stage:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+      - deploy_prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
