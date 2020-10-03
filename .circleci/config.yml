@@ -70,6 +70,7 @@ jobs:
       - image: circleci/ruby:2.6.5-buster
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: Deploy to Heroku_Staging
           command: |
@@ -80,6 +81,7 @@ jobs:
       - image: circleci/ruby:2.6.5-buster
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: Deploy to Heroku Production
           command: |
