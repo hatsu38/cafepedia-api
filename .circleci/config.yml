@@ -30,11 +30,11 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: gem install bundler
           command: gem install bundler -v 2.0.2
 
       - run:
-          name: install dependencies
+          name: bundle install
           command: |
             bundle install
 
