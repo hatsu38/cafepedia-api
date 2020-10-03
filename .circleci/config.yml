@@ -2,7 +2,22 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.2
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
+          filters:
+            branches:
+              only: develop
+
 jobs:
   build:
     docker:
@@ -58,10 +73,6 @@ jobs:
           command: |
             bundle exec rubocop --extra-details --display-style-guide --parallel --display-cop-names
 
-      - run:
-          name: run rubocop-thread_safety
-          command: |
-            bundle exec rubocop -r rubocop-thread_safety --only ThreadSafety,Style/GlobalVars,Style/ClassVars,Style/MutableConstant --display-cop-names --extra-details --display-style-guide
       # BrakeMan
       - run:
           name: run brakeman
