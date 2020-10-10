@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'sitemap_generator' # Sitemap作成
