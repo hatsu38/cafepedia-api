@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "puma_worker_killer" #pumaのworkerプロセスが規定のメモリ使用量を超えた時に自動でそのプロセスを殺して再起動する
 gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws'
 gem 'carrierwave'
