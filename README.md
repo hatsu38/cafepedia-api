@@ -41,13 +41,32 @@ Frontend：https://github.com/hatsu38/cafepedia-frontend
 ### デプロイ方法
 新：
 ```
-# herokuにログイン
+0. $ git checkout develop
+
+1. versionはよしなに
+$ git flow release start 1.0.0
+
+2. version.txtをリリースバージョンに揃える
+
+3. $ git add public/version.txt
+
+4. $ git commit -m "1.0.0"
+
+5. $ git flow release finish 1.0.0
+
+6. $ git push origin master
+
+6. $ git push origin develop
+
+7. $ git push origin 1.0.0
+
+8. herokuにログイン
 $ heroku login
 
-# Masterブランチをデプロイ
+9. Masterブランチをデプロイ
 git push heroku master
 
-# DBセットアップ(必要に応じて)
+10. DBセットアップ(必要に応じて)
 heroku run rails db:migrate
 ```
 
