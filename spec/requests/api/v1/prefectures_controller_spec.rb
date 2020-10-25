@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Api::V1::PrefecturesController, type: :request do
   describe 'Get Index' do
-    let(:shop) { create(:shop) }
+    let(:shop) { shops(:test_shop) }
 
     it '200' do
       get api_v1_prefectures_path
@@ -11,7 +11,7 @@ describe Api::V1::PrefecturesController, type: :request do
   end
 
   describe 'Get Show' do
-    let(:shop) { create(:shop) }
+    let(:shop) { shops(:test_shop) }
 
     it '200' do
       get api_v1_prefecture_path(name_e: shop.prefecture_name_e)

@@ -21,5 +21,9 @@ FactoryBot.define do
     sequence(:name) { |n| "#{n}区" }
     prefecture { Prefecture.find_by(name_e: 'tokyo') }
   end
+
+  preload do
+    factory(:test_city) { create(:city) }
+  end
 end
 

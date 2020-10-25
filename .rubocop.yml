@@ -21,6 +21,7 @@ AllCops:
     - 'log/**/*'
     - 'coverage/**/*'
     - 'spec/*_helper.rb'
+    - 'spec/factories/*.rb'
     - ',/**/*'
     - 'node_modules/**/*'
   TargetRubyVersion: 2.5

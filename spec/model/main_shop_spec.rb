@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MainShop, type: :model do
   describe '.create' do
     it '生成できる' do
-      expect(create(:main_shop)).to be_present
+      expect(main_shops(:test_main_shop)).to be_present
     end
   end
 

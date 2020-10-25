@@ -51,4 +51,8 @@ FactoryBot.define do
     sequence(:wifi) { true }
     prefecture { Prefecture.find_by(name_e: 'tokyo') }
   end
+
+  preload do
+    factory(:test_shop) { create(:shop) }
+  end
 end
