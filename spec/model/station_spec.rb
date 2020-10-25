@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Station, type: :model do
   describe '.create' do
     it '生成できる' do
-      expect(create(:station)).to be_present
+      expect(stations(:test_station)).to be_present
     end
   end
 
