@@ -1085,6 +1085,9 @@ GEM
     excon (0.76.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
+    factory_bot-preload (0.3.0)
+      activerecord
+      factory_bot
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
@@ -1419,6 +1422,7 @@ DEPENDENCIES
   database_rewinder
   devise
   dotenv-rails
+  factory_bot-preload
   factory_bot_rails
   fog-aws
   foreman

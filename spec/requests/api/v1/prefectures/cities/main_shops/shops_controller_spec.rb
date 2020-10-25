@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::Prefectures::Cities::MainShops::ShopsController, type: :request do
-  let(:shop) { create(:shop) }
+  let(:shop) { shops(:test_shop) }
 
   describe 'Get Index' do
     it '200' do

@@ -25,4 +25,8 @@ FactoryBot.define do
     sequence(:kanji_name) { |n| "kanji _#{n}駅" }
     prefecture_id { Prefecture.find_by(name_e: 'tokyo').id }
   end
+
+  preload do
+    factory(:test_station) { create(:station) }
+  end
 end

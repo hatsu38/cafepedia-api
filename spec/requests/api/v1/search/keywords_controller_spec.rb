@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Api::V1::Search::KeywordsController, type: :request do
   describe 'Get Index' do
-    let(:shop) { create(:shop) }
+    let(:shop) { shops(:test_shop) }
 
     it '200' do
       get api_v1_search_keywords_path, params: { keyword: shop.name }

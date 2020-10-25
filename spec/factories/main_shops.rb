@@ -23,4 +23,9 @@ FactoryBot.define do
       main_shop.shops << shops
     end
   end
+
+  preload do
+    factory(:test_main_shop) { create(:main_shop) }
+    factory(:test_main_shop_with_many_shops) { create(:main_shop) }
+  end
 end
