@@ -8,7 +8,11 @@ class Prefecture < ActiveYaml::Base
   has_many :stations, dependent: :destroy
 
   def self.popular(limit: 10)
-    popular_prefecture_ids = Shop.group(:prefecture_id).count.sort_by { |_, v| -v }[0, limit].map(&:first)
+    popular_prefecture_ids = Shop.where(shops: { is_open: true, wifi: true, socket: true})
+                                 .group(:prefecture_id)
+                                 .count
+                                 .sort_by { |_, v| -v }[0, limit]
+                                 .map(&:first)
     Prefecture.where(id: popular_prefecture_ids)
   end
 end

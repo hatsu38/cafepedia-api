@@ -14,7 +14,7 @@ module Api
                           .eager_load(:main_shop)
                           .page(params[:page])
                           .per(params[:per] || PER)
-            @main_shops = MainShop.eager_load(:shops)
+            @main_shops = MainShop.have_socket_and_wifi_shops
           end
 
           def show
@@ -32,7 +32,7 @@ module Api
           def set_address
             @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
             @city = @prefecture.cities.find_by!(code: params[:city_code])
-            @cities = @city.same_prefecutre_other_cities.popular
+            @cities = @city.same_prefecutre_other_cities
             @stations = @city.stations.popular.preload(:city)
           end
         end

@@ -24,12 +24,6 @@ class Station < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   extend OrderAsSpecified
 
-  validates :kana_name, presence: true
-  validates :kanji_name, presence: true
-
-  delegate :name_e, to: :prefecture, prefix: true
-  delegate :code, to: :city, prefix: true
-
   has_many :shop_stations, dependent: :destroy
   has_many :shops, through: :shop_stations
   has_many :near_station_reloations,
@@ -47,17 +41,31 @@ class Station < ApplicationRecord
   belongs_to :city, optional: true
   belongs_to_active_hash :prefecture
 
+  validates :kana_name, presence: true
+  validates :kanji_name, presence: true
+
+  delegate :name_e, to: :prefecture, prefix: true
+  delegate :code, to: :city, prefix: true
+
+  scope :have_socket_and_wifi_shops, lambda {
+    eager_load(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+  }
+
   def self.search(word = nil)
     search_word = word.present? && word != '駅' ? "%#{word}%" : ''
     where('kanji_name LIKE :word OR kana_name LIKE :word', word: search_word)
   end
 
   def self.popular(limit: 20)
-    joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+                 .group(:id)
+                 .order('COUNT(shops.id) DESC')
+                 .preload(:shops)
+                 .limit(limit)
   end
 
   def same_city_other_stations
-    city.stations.where.not(id: self)
+    city.stations.have_socket_and_wifi_shops.where.not(id: self)
   end
 
   def nearby_stations
