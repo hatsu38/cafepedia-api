@@ -24,8 +24,12 @@ class City < ApplicationRecord
 
   delegate :name_e, to: :prefecture, prefix: true
 
+  scope :have_socket_and_wifi_shops, -> {
+    eager_load(:shops).where(shops: { wifi: true, socket: true})
+  }
+
   def self.popular(limit: 20)
-    joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { wifi: true, socket: true}).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 
   def self.search_name_by_keyword(keyword = nil)
@@ -34,6 +38,6 @@ class City < ApplicationRecord
   end
 
   def same_prefecutre_other_cities(limit: 50)
-    prefecture.cities.where.not(id: self).limit(limit)
+    prefecture.cities.have_socket_and_wifi_shops.where.not(id: self).limit(limit)
   end
 end
