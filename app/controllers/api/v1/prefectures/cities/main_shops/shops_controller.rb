@@ -30,7 +30,7 @@ module Api
             def set_commons_instance
               @prefecture = Prefecture.find_by!(name_e: params[:prefecture_name_e])
               @city = @prefecture.cities.find_by!(code: params[:city_code])
-              @cities = @city.same_prefecutre_other_cities.popular
+              @cities = @city.same_prefecutre_other_cities
               @main_shop = MainShop.find_by!(eng_name: params[:main_shop_eng_name])
             end
           end

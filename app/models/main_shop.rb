@@ -18,6 +18,7 @@ class MainShop < ApplicationRecord
 
   OVER_HAVE_SHOPS = 80
   has_many :shops, dependent: :destroy
+
   with_options presence: true do
     validates :name
     validates :eng_name
@@ -28,7 +29,15 @@ class MainShop < ApplicationRecord
   validates :eng_name, uniqueness: true
   validates :image, uniqueness: true
 
+  scope :have_socket_and_wifi_shops, lambda {
+    eager_load(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+  }
+
   def self.popular(limit: 20)
-    left_joins(:shops).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+                 .group(:id)
+                 .order('COUNT(shops.id) DESC')
+                 .preload(:shops)
+                 .limit(limit)
   end
 end
