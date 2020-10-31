@@ -19,7 +19,7 @@ module Api
         def show
           @city = @prefecture.cities.find_by!(code: params[:code])
           @stations = @city.stations.popular.preload(:city)
-          @cities = @prefecture.cities.popular
+          @cities = @city.same_prefecutre_other_cities
           @main_shops = MainShop.popular.where(shops: {city_id: @city.id})
           @shops = @city.shops
                         .open
