@@ -9,7 +9,7 @@ namespace :data_mainttenance do
 
       match_city_name = /.*市/.match(city.name) || /.*郡/.match(city.name)
       new_city = City.find_by(name: match_city_name.to_s)
-      next if city.nil?
+      next if new_city.nil?
 
       city.shops.update(city_id: new_city.id)
     end
