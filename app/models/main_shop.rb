@@ -29,11 +29,11 @@ class MainShop < ApplicationRecord
   validates :eng_name, uniqueness: true
   validates :image, uniqueness: true
 
-  scope :have_socket_and_wifi_shops, -> {
-    eager_load(:shops).where(shops: { wifi: true, socket: true})
+  scope :have_socket_and_wifi_shops, lambda {
+    eager_load(:shops).where(shops: { is_open: true, wifi: true, socket: true})
   }
 
   def self.popular(limit: 20)
-    joins(:shops).where(shops: { wifi: true, socket: true}).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true}).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
   end
 end

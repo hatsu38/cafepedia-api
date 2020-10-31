@@ -86,6 +86,7 @@ class Shop < ApplicationRecord
   scope :have_wifi, -> { where(wifi: true) }
   scope :have_smoking, -> { where(smoking: true) }
   scope :open, -> { where(is_open: true) }
+  scope :open_and_have_socket_wifi, -> { open.have_scocket.have_wifi }
 
   scope :access_station, lambda { |word|
     where(['access LIKE ?', "%#{word}%"])

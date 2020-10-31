@@ -19,8 +19,8 @@ module Api
         def show
           @city = @prefecture.cities.find_by!(code: params[:code])
           @stations = @city.stations.popular.preload(:city)
-          @cities = @city.same_prefecutre_other_cities.popular
-          @main_shops = MainShop.popular
+          @cities = @prefecture.cities.popular
+          @main_shops = MainShop.popular.where(shops: {city_id: @city.id})
           @shops = @city.shops
                         .open
                         .have_scocket

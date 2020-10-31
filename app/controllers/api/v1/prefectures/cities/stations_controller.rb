@@ -9,8 +9,8 @@ module Api
           def show
             @station = @city.stations.find_by!(id: params[:id])
             @stations = @station.nearby_stations.popular.preload(:city)
-            @cities = @city.same_prefecutre_other_cities.popular
-            @main_shops = MainShop.popular
+            @cities = @city.same_prefecutre_other_cities
+            @main_shops = MainShop.popular.joins(shops: :shop_stations).where(shop_stations: { station_id: @station.id})
             @shops = @station.shops.open.have_scocket.have_wifi.page(params[:page]).per(params[:per] || PER)
           end
 
