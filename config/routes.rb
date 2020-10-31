@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       namespace :popular do
         resources :stations, only: [:index]
         resources :main_shops, only: [:index]
+        resources :cities, only: [:index]
       end
       namespace :all do
         resources :stations, only: [:index]
