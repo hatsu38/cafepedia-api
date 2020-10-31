@@ -29,7 +29,11 @@ class City < ApplicationRecord
   }
 
   def self.popular(limit: 20)
-    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true}).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+                 .group(:id)
+                 .order('COUNT(shops.id) DESC')
+                 .preload(:shops)
+                 .limit(limit)
   end
 
   def self.search_name_by_keyword(keyword = nil)
@@ -37,7 +41,7 @@ class City < ApplicationRecord
     where(['name LIKE ?', search_word])
   end
 
-  def same_prefecutre_other_cities(limit: 50)
+  def same_prefecutre_other_cities
     prefecture.cities.where.not(id: self).popular
   end
 end

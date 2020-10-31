@@ -34,6 +34,10 @@ class MainShop < ApplicationRecord
   }
 
   def self.popular(limit: 20)
-    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true}).group(:id).order('COUNT(shops.id) DESC').preload(:shops).limit(limit)
+    joins(:shops).where(shops: { is_open: true, wifi: true, socket: true})
+                 .group(:id)
+                 .order('COUNT(shops.id) DESC')
+                 .preload(:shops)
+                 .limit(limit)
   end
 end
