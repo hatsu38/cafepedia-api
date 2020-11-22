@@ -11,31 +11,30 @@ BaseURL：https://cafepedia-api.herokuapp.com/
 Frontend：https://github.com/hatsu38/cafepedia-frontend
 
 ## Overview
-#### 日本全国にあるカフェチェーン店の一覧/カフェ詳細を返します
+#### 一覧,詳細
 |path|parameter|Description|
 |:-|:-|:-|
-|/api/shops| |日本全国のカフェチェーン一覧を返します|
-|/api/shops/:id| |idのカフェ詳細情報を返します|
-|/api/search| ・socket(=boolean) <br/> ・wifi(=boolean) <br /> ・smoking(=boolean) <br /> ・station_name(=string) <br /> ・lat(=float) <br /> ・lng(=float) <br /> ・page(=int) |paramsにヒットするカフェをlat,lngに近い順にソートして30件返します|
+|/api/v1/prefectures| |都道府県一覧を返します|
+|/api/v1/prefectures/:name_e| |ある都道府県のカフェ一覧情報を返します|
+|/api/v1/prefectures/:name_e/cities| |ある都道府県のカフェ一覧、市区町村一覧情報を返します|
+|/api/v1/prefectures/:name_e/cities/:code| |ある市区町村のお店一覧、カフェ一覧情報を返します|
+|/api/v1/prefectures/:name_e/cities/:code/main_shops| |ある市区町村のチェーン店一覧、カフェ一覧を返します
+|/api/v1/prefectures/:name_e/cities/:code/main_shops/:eng_name| |ある市区町村のあるチェーン店のカフェ一覧情報を返します|
+|/api/v1/prefectures/:name_e/cities/:code/main_shops/:eng_name/shops| |ある市区町村のあるチェーン店のカフェ一覧情報を返します|
+|/api/v1/prefectures/:name_e/cities/:code/main_shops/:eng_name/shops/:id| |あるカフェの詳細情報を返します|
 
-#### 都道府県とそのカフェの一部を返す
+#### 多いカフェ
 |path|parameter|Description|
 |:-|:-|:-|
-|/api/prefectures| |都道府県一覧とカフェ5つを返します|
-|/api/prefectures/:id| |idの都道府県とそのカフェ一覧を返します|
-|/api/areas/ | |地方一覧を返します|
-|/api/areas/:area | |地方名にマッチした都道府県一覧とそのカフェを返します|
+|/api/v1/popular/cities| |カフェの多い市区町村を返します|
+|/api/v1/popular/stations| |カフェの多い駅を返します|
+|/api/v1/popular/main_shops| |カフェの多いチェーン店を返します|
 
-#### お店のコメントを返します/投稿できます
+#### 検索
 |path|parameter|Description|
 |:-|:-|:-|
-|/api/shops/:shop_id/comments(get)| page(=int) | shopに紐付くコメントを最新順に3件返します|
-|/api/shops/:shop_id/comments(post)| ・name(=string) <br /> ・content(=string) <br /> ・is_complete(=boolean) <br />  ・shop_id(=int)| shopに紐付くコメントを追加します|
-
-#### 駅名あいまい検索
-|path|parameter|Description|
-|:-|:-|:-|
-|/api/stations/search| ・word(=string)<br /> ・page(=int)| wordを含む駅名を10件返します |
+|/api/v1/search/keywords| keyword(=string)| keywordを含む駅、市区町村、カフェ一覧を返します |
+|/api/v1/search/positions| lat(=float), lng(=float)| 緯度経度から近い駅、市区町村、カフェ一覧を返します |
 
 
 ### デプロイ方法
