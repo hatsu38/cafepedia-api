@@ -2,15 +2,15 @@ module Api
   module V1
     class BaseController < ApplicationController
       if Rails.env.production? || Rails.env.staging?
-        rescue_from StandardError, with: :rescue_500
-        rescue_from ActionController::RoutingError, with: :rescue_404
-        rescue_from ActiveRecord::RecordNotFound, with: :rescue_404
-        rescue_from ActionController::UnknownFormat, with: :rescue_404
-        rescue_from ActionView::MissingTemplate, with: :rescue_404
-        rescue_from ActiveHash::RecordNotFound, with: :rescue_404
+        rescue_from StandardError, with: :rescue_internal_error
+        rescue_from ActionController::RoutingError, with: :rescue_not_found
+        rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
+        rescue_from ActionController::UnknownFormat, with: :rescue_not_found
+        rescue_from ActionView::MissingTemplate, with: :rescue_not_found
+        rescue_from ActiveHash::RecordNotFound, with: :rescue_not_found
       end
 
-      def rescue_404(error = nil)
+      def rescue_not_found(error = nil)
         Rails.logger.warn(
           "message: 404 NotFound #{request.url},
           #{error&.message},
@@ -20,7 +20,7 @@ module Api
         render json: { message: 'not found', status: 404 }
       end
 
-      def rescue_500(error = nil)
+      def rescue_internal_error(error = nil)
         Rails.logger.error(
           "message: 500 InternalError #{request.url},
           #{error&.message},

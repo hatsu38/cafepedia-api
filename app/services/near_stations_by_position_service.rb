@@ -4,7 +4,7 @@ class NearStationsByPositionService
     return nil unless stations
 
     station_names = stations.map {|station| station['name']}
-    station_names += station_names.map {|station| station + '駅' }
+    station_names += station_names.map {|station| "#{station}駅" }
     Station.where(kanji_name: station_names)
   end
 

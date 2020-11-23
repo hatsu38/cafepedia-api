@@ -35,5 +35,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  get "*anything" => "api/v1/base#rescue_404"
+  get "*anything" => "api/v1/base#rescue_not_found"
 end
