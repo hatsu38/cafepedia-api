@@ -7,7 +7,7 @@ module Api
 
           PER = 20
           def show
-            @station = @city.stations.find_by!(id: params[:id])
+            @station = @city.stations.find(params[:id])
             @stations = @station.nearby_stations.popular.preload(:city)
             @cities = @city.same_prefecutre_other_cities
             @main_shops = MainShop.popular.joins(shops: :shop_stations).where(shop_stations: { station_id: @station.id})

@@ -15,7 +15,7 @@ module Api
 
             def show
               filted_shops = @city.shops.open.have_scocket.have_wifi.where(main_shop_id: @main_shop.id)
-              @shop = filted_shops.find_by!(id: params[:id])
+              @shop = filted_shops.find(params[:id])
               @shops = filted_shops.where.not(id: @shop.id)
                                    .eager_load(:main_shop)
                                    .page(params[:page])

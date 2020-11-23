@@ -1,22 +1,23 @@
-# Ruby CircleCI 2.0 configuration file
+# Ruby CircleCI 2.1 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+version: 2.1
 
 jobs:
-  build:
+  build_and_test:
     docker:
-      - image: circleci/ruby:2.6.5-buster
+      - image: cimg/ruby:2.6.5-node
         environment:
           RAILS_ENV: test
+          BUNDLE_PATH: ./vendor/bundle
           POSTGRES_DB: cafepedia_api_test
           DATABASE_USER: postgres
           DATABASE_PASSWORD: ""
           DATABASE_HOST: 127.0.0.1
           DATABASE_PORT: 5432
           TZ: Asia/Tokyo
-      - image: circleci/postgres:11.5
+      - image: circleci/postgres:11.5-alpine
     working_directory: ~/repo
 
     steps:
@@ -25,33 +26,54 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - rails-bundle-v1-{{ checksum "Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - rails-bundle-v1-
 
       - run:
-          name: gem install bundler
-          command: gem install bundler -v 2.0.2
+          name: pg gem の依存関係のインストール
+          command: sudo apt-get update; sudo apt-get install libpq-dev
 
       - run:
-          name: bundle install
-          command: |
-            bundle install
+          name: Bundler のインストール
+          command: gem install bundler -v 1.17.3
+
+      - run:
+          name: gem の依存関係のインストール
+          command: bundle check || bundle install
 
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: rails-bundle-v1-{{ checksum "Gemfile.lock" }}
 
-      # Database setup
-      - run: RAILS_ENV=test bundle exec rails db:create
-      - run: RAILS_ENV=test bundle exec rails db:schema:load
+      - restore_cache:
+          keys:
+            - rails-yarn-v1-{{ checksum "yarn.lock" }}
+            - rails-yarn-v1-
+
+      - run:
+          name: node_modules の依存関係のインストール
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+          key: rails-yarn-v1-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: データベースの起動を待機
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: データベースのセットアップ
+          command: bundle exec rails db:create db:schema:load --trace
 
       # run tests!
       - run:
           name: run tests
           command: |
-            bundle exec rspec
+            bundle exec rspec --format documentation --force-color --backtrace
 
       # run rubocop!
       - run:
@@ -93,21 +115,18 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy-staging:
+  main:
     jobs:
-      - build
+      - build_and_test
       - deploy-staging:
           requires:
-            - build
+            - build_and_test
           filters:
             branches:
               only: develop
-  build-deploy-production:
-    jobs:
-      - build
       - deploy-production:
           requires:
-            - build
+            - build_and_test
           filters:
             branches:
               only: master

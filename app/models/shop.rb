@@ -94,7 +94,7 @@ class Shop < ApplicationRecord
 
   def self.search_name_by_keyword(keyword = nil)
     search_word = keyword.present? && keyword != '店' ? "%#{keyword}%" : ''
-    where(['other_address LIKE :word OR name LIKE :word OR access LIKE :word', word: search_word])
+    where(['other_address LIKE :word OR name LIKE :word OR access LIKE :word', {word: search_word}])
   end
 
   def full_address
