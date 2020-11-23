@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '2.6.5'
+
 gem "puma_worker_killer" #pumaのworkerプロセスが規定のメモリ使用量を超えた時に自動でそのプロセスを殺して再起動する
 gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws'
@@ -19,8 +21,6 @@ gem 'kaminari'
 gem 'rack-cors'
 gem 'rails-i18n'
 gem 'order_as_specified' #Whre句の結果順にOrderする
-
-ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'

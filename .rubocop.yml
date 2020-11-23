@@ -4,6 +4,7 @@ require:
   - rubocop-rspec
 
 AllCops:
+  TargetRubyVersion: 2.6.5
   NewCops: enable
   # Include gemspec and Rakefile
   Include:
@@ -17,7 +18,6 @@ AllCops:
     - 'app/views/**/*'
     - 'front/**/*'
     - 'vendor/**/*'
-    - 'Guardfile'
     - 'tmp/**/*'
     - 'log/**/*'
     - 'coverage/**/*'
@@ -25,7 +25,6 @@ AllCops:
     - 'spec/factories/*.rb'
     - ',/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion: 2.6.5
 
 Rails:
   Enabled: true
