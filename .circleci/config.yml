@@ -35,6 +35,10 @@ jobs:
           command: sudo apt-get update; sudo apt-get install libpq-dev
 
       - run:
+          name: Bundler のインストール
+          command: gem install bundler -v 1.17.3
+
+      - run:
           name: gem の依存関係のインストール
           command: bundle check || bundle install
 
