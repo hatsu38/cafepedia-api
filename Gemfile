@@ -10,7 +10,7 @@ gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'sitemap_generator' # Sitemap作成
-gem 'aws-sdk' # s3にsitemapを設置
+gem 'aws-sdk-s3' # s3にsitemapを設置
 gem 'dotenv-rails'
 gem 'active_hash'
 gem 'sentry-raven'
