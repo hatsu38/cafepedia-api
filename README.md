@@ -4,6 +4,10 @@
 <!-- BaseURL：https://api.cafepedia.jp/ -->
 BaseURL：https://cafepedia-api.herokuapp.com/
 
+## Status Page
+
+https://stats.uptimerobot.com/A82ZVc94kX
+
 ## Relation
 <!-- 旧構成 -->
 <!-- Infrastructure：https://github.com/hatsu38/cafepedia-api-aws -->
