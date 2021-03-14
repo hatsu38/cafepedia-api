@@ -1106,7 +1106,7 @@ GEM
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
-    ffi (1.13.1)
+    ffi (1.15.0)
     flay (2.12.1)
       erubis (~> 2.7.0)
       path_expander (~> 1.0)
