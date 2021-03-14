@@ -7,7 +7,7 @@ version: 2.1
 jobs:
   build_and_test:
     docker:
-      - image: cimg/ruby:2.6.5-node
+      - image: cimg/ruby:2.7.2-node
         environment:
           RAILS_ENV: test
           BUNDLE_PATH: ./vendor/bundle
@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: Bundler のインストール
-          command: gem install bundler -v 1.17.3
+          command: gem install bundler -v 2.1.4
 
       - run:
           name: gem の依存関係のインストール
@@ -89,7 +89,7 @@ jobs:
 
   deploy-staging:
     docker:
-      - image: cimg/ruby:2.6.5-node
+      - image: cimg/ruby:2.7.2-node
         environment:
           RAILS_ENV: staging
     working_directory: ~/repo
@@ -102,7 +102,7 @@ jobs:
 
   deploy-production:
     docker:
-      - image: cimg/ruby:2.6.5-node
+      - image: cimg/ruby:2.7.2-node
         environment:
           RAILS_ENV: production
     working_directory: ~/repo
