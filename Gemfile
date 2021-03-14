@@ -10,7 +10,7 @@ gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'sitemap_generator' # Sitemap作成
-gem 'aws-sdk' # s3にsitemapを設置
+gem 'aws-sdk-s3' # s3にsitemapを設置
 gem 'dotenv-rails'
 gem 'active_hash'
 gem 'sentry-raven'
@@ -23,15 +23,15 @@ gem 'rails-i18n'
 gem 'order_as_specified' #Whre句の結果順にOrderする
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 6'
+gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
