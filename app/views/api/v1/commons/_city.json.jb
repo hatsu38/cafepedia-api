@@ -1,0 +1,10 @@
+json = {
+  id: city.id,
+  code: city.code,
+  name: city.name,
+  prefecture_name_e: city.prefecture_name_e,
+  creataed_at: ctiy.created_at,
+  updated_at: city.updated_at,
+  shops_count: city.shops.size
+}
+json
