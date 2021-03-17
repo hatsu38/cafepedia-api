@@ -3,7 +3,7 @@ json = {
   code: city.code,
   name: city.name,
   prefecture_name_e: city.prefecture_name_e,
-  creataed_at: ctiy.created_at,
+  creataed_at: city.created_at,
   updated_at: city.updated_at,
   shops_count: city.shops.size
 }

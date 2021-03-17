@@ -4,12 +4,12 @@ module Api
       PER = 10
       def index
         # TODO: Active::Hashにeager_loadが存在しないため、ここでだけN+1が起きてしまう
-        @prefectures = Prefecture.all
+        @prefectures = Prefecture.all.to_a
       end
 
       def show
         @prefecture = Prefecture.find_by!(name_e: params[:name_e])
-        @cities = @prefecture.cities.popular
+        @cities = @prefecture.cities.popular.to_a
         @main_shops = MainShop.popular
         @shops = @prefecture.shops
                             .open
