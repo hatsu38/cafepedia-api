@@ -1,0 +1,11 @@
+json = {
+  id: prefecture.id,
+  name: prefecture.name,
+  ellipsis_name: prefecture.ellipsis_name,
+  name_e: prefecture.name_e,
+  name_h: prefecture.name_h,
+  name_k: prefecture.name_k,
+  area: prefecture.area,
+  shops_count: prefecture.shops&.size,
+}
+json

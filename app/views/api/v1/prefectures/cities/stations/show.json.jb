@@ -1,0 +1,10 @@
+json = {}
+json[:prefecture] = render 'api/v1/commons/prefecture', prefecture: @prefecture
+json[:city] = render 'api/v1/commons/city', city: @city
+json[:station] = render 'api/v1/commons/station', station: @station
+json[:stations] = render partial: 'api/v1/commons/station', collection: @stations, as: :station
+json[:main_shops] = render partial: 'api/v1/commons/main_shop', collection: @main_shops, as: :main_shop
+json[:cities] = render partial: 'api/v1/commons/city', collection: @cities, as: :city
+json[:shops] = render partial: 'api/v1/commons/shop', collection: @shops, as: :shop
+json[:shops_total_count] = @shops&.total_count
+json

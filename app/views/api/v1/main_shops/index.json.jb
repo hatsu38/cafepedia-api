@@ -1,0 +1,3 @@
+json = {}
+json[:main_shops] = render partial: 'api/v1/commons/main_shop', collection: @main_shops, as: :main_shop
+json

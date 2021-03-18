@@ -1,0 +1,4 @@
+json = {}
+json[:stations] = render partial: 'api/v1/commons/station', collection: @stations, as: :station
+json[:page_num] = @stations.total_pages
+json
