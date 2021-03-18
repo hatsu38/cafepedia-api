@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::Prefectures::Cities::MainShops::ShopsController, type: :request do
   let(:shop) { shops(:test_shop) }
 
-  describe 'Get Index' do
+  describe 'Get Show' do
     it '200' do
       get api_v1_prefecture_city_main_shop_shop_path(
         prefecture_name_e: shop.prefecture_name_e,

@@ -13,7 +13,7 @@ class Prefecture < ActiveYaml::Base
                                  .count
                                  .sort_by { |_, v| -v }[0, limit]
                                  .map(&:first)
-    Prefecture.where(id: popular_prefecture_ids)
+    where(id: popular_prefecture_ids)
   end
 end
 

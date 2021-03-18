@@ -8,7 +8,7 @@ module Api
 
       def show
         @main_shop = MainShop.find_by!(eng_name: params[:eng_name])
-        @prefectures = Prefecture.popular
+        @prefectures = Prefecture.popular.to_a
         @stations = Station.popular.preload(:city).page(params[:page]).per(params[:per] || PER)
         @shops = @main_shop.shops
                            .open
