@@ -20,7 +20,8 @@ gem 'kaminari'
 gem 'rack-cors', require: false
 gem 'rails-i18n'
 gem 'order_as_specified' #Whre句の結果順にOrderする
-gem 'jb'
+gem 'jb' # jsonを生成する(jbuilderから移行した)
+gem 'scout_apm' # rails appのパフォーマスモニタリング
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'

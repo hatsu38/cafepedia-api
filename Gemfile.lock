@@ -426,6 +426,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scout_apm (4.0.4)
+      parser
     semantic_range (3.0.0)
     sentry-raven (3.1.1)
       faraday (>= 1.0)
@@ -531,6 +533,7 @@ DEPENDENCIES
   rubocop-thread_safety
   rubycritic
   sass-rails
+  scout_apm
   sentry-raven
   shoulda-matchers
   simplecov
