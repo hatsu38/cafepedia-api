@@ -5,20 +5,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem "puma_worker_killer" #pumaのworkerプロセスが規定のメモリ使用量を超えた時に自動でそのプロセスを殺して再起動する
+gem "puma_worker_killer", require: false #pumaのworkjerプロセスが規定のメモリ使用量を超えた時に自動でそのプロセスを殺して再起動する
 gem 'newrelic_rpm' # newrelicによる監視
-gem 'fog-aws'
+gem 'fog-aws', require: false
 gem 'carrierwave'
 gem 'sitemap_generator' # Sitemap作成
 gem 'aws-sdk-s3' # s3にsitemapを設置
 gem 'dotenv-rails'
 gem 'active_hash'
 gem 'sentry-raven'
-gem 'therubyracer'
 gem 'activeadmin'
 gem 'devise'
 gem 'kaminari'
-gem 'rack-cors'
+gem 'rack-cors', require: false
 gem 'rails-i18n'
 gem 'order_as_specified' #Whre句の結果順にOrderする
 gem 'jb'
