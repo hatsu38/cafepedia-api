@@ -1,7 +1,7 @@
 common: &defaults
-  name: ENV["HEROKU_APP_NAME"]
-  key: ENV["SCOUT_KEY"]
-  monitor: true
+  name: <%= ENV["HEROKU_APP_NAME"] %>
+  key: <%= ENV["SCOUT_KEY"] %>
+  monitor: <%= ENV["SCOUT_MONITOR"] || true %>
 
 test:
   monitor: false
