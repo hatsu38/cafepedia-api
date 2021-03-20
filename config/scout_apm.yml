@@ -1,12 +1,15 @@
 common: &defaults
-  name: <%= ENV["HEROKU_APP_NAME"] %>
+  name: <%= ENV["HEROKU_APP_NAME"] || cafepedia-api-staging %>
   key: <%= ENV["SCOUT_KEY"] %>
-  monitor: <%= ENV["SCOUT_MONITOR"] || true %>
+  log_level: <%= ENV["SCOUT_LOG_LEVEL"] || info %>
+  monitor: <%= ENV["SCOUT_MONITOR"] || false %>
 
 test:
+  <<: *defaults
   monitor: false
 
 development:
+  <<: *defaults
   monitor: false
 
 staging:
