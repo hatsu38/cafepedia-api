@@ -6,7 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem "puma_worker_killer", require: false #pumaのworkjerプロセスが規定のメモリ使用量を超えた時に自動でそのプロセスを殺して再起動する
-gem 'newrelic_rpm' # newrelicによる監視
+# scout_apmと競合するためコメントアウト
+# gem 'newrelic_rpm' # newrelicによる監視
 gem 'fog-aws', require: false
 gem 'carrierwave'
 gem 'sitemap_generator' # Sitemap作成
