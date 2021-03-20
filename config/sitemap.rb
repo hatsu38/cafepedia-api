@@ -1,3 +1,5 @@
+require "csv"
+require 'aws-sdk-s3'
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://cafepedia.jp"
 
@@ -11,9 +13,6 @@ if Rails.env.production?
     aws_region: 'ap-northeast-1'
   )
 end
-
-
-require "csv"
 
 SitemapGenerator::Sitemap.create do
   add root_path, changefreq: 'daily', priority: 1.0
