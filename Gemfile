@@ -23,6 +23,9 @@ gem 'rails-i18n'
 gem 'order_as_specified' #Whre句の結果順にOrderする
 gem 'jb' # jsonを生成する(jbuilderから移行した)
 gem 'scout_apm' # rails appのパフォーマスモニタリング
+gem 'redis' # キャッシュを保存する
+gem 'hiredis' # Redisのより高速なgem。hiredisが使えるときに自動で使われる
+# gem 'redis-rails' # キャッシュを保存する
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
