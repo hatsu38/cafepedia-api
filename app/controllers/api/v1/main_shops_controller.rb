@@ -20,8 +20,9 @@ module Api
       end
 
       private
+
       def fetch_main_shops
-        Rails.cache.fetch("main_shops/index_fetch_main_shops", expires_in: 24.hours) do
+        Rails.cache.fetch('main_shops/index_fetch_main_shops', expires_in: 24.hours) do
           MainShop.all.eager_load(:shops).to_a
         end
       end
