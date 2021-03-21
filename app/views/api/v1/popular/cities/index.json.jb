@@ -1,4 +1,4 @@
 json = {}
-json[:cities] = render partial: 'api/v1/commons/city', collection: @cities, as: :city
+json[:cities] = render partial: 'api/v1/commons/city', collection: @cities, as: :city, cached: true
 json[:page_num] = @cities&.total_pages
 json
