@@ -3,7 +3,7 @@ module Api
     class MainShopsController < BaseController
       PER = 20
       def index
-        @main_shops = MainShop.all.eager_load(:shops)
+        @main_shops = fetch_main_shops
       end
 
       def show
@@ -17,6 +17,13 @@ module Api
                            .eager_load(:city)
                            .page(params[:page])
                            .per(params[:per] || PER)
+      end
+
+      private
+      def fetch_main_shops
+        Rails.cache.fetch("main_shops/index_fetch_main_shops", expires_in: 12.hours) do
+          MainShop.all.eager_load(:shops).to_a
+        end
       end
     end
   end
