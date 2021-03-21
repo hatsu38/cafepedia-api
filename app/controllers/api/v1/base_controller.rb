@@ -29,6 +29,14 @@ module Api
         Raven.extra_context(params: params&.to_unsafe_h, url: request.url)
         render json: { message: 'internal error', status: 500 }
       end
+
+      def page_params
+        (params[:page] || 1).to_i
+      end
+
+      def per_params
+        (params[:per] || 10).to_i
+      end
     end
   end
 end
