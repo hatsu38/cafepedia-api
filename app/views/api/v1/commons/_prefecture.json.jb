@@ -6,6 +6,6 @@ json = {
   name_h: prefecture.name_h,
   name_k: prefecture.name_k,
   area: prefecture.area,
-  shops_count: prefecture.shops&.size,
+  shops_count: prefecture.shops&.size
 }
 json
