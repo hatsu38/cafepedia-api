@@ -3,10 +3,14 @@ require:
   - rubocop-rspec
   - rubocop-performance
 
+inherit_mode:
+  merge:
+    - Exclude
+    - AllowedMethods
+
 AllCops:
   TargetRubyVersion: 2.7.2
   NewCops: enable
-  # Include gemspec and Rakefile
   Exclude:
     - 'lib/**/*.rake'
     - 'bin/**/*'

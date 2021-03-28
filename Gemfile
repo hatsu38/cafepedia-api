@@ -55,7 +55,7 @@ group :development, :test do
   gem 'annotate' # Add Column Info To model file
   gem 'brakeman'
   gem 'bullet'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug'
   gem 'foreman'
   gem 'pry-byebug'
   gem 'pry-rails'
