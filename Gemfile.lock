@@ -136,13 +136,6 @@ GEM
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
-    database_cleaner (2.0.1)
-      database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.0)
-      activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
-    database_rewinder (0.9.4)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.7.3)
@@ -506,8 +499,6 @@ DEPENDENCIES
   capybara
   carrierwave
   ci_reporter_rspec
-  database_cleaner
-  database_rewinder
   devise
   dotenv-rails
   factory_bot-preload

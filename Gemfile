@@ -64,7 +64,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-thread_safety', require: false
-  gem 'simplecov'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -80,13 +80,12 @@ end
 group :test do
   gem 'capybara'
   gem 'ci_reporter_rspec'
-  gem 'database_cleaner'
-  gem 'database_rewinder'
   gem 'factory_bot-preload'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'rubycritic'
   gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 
 gem 'tzinfo-data'
