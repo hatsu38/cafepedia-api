@@ -22,6 +22,6 @@ json = {
   prefecture_name_e: shop.prefecture.name_e,
   city_code: shop.city&.code,
   created_at: shop.created_at,
-  updated_at: shop.updated_at,
+  updated_at: shop.updated_at
 }
 json

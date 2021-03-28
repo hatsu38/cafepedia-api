@@ -1,30 +1,28 @@
 require:
-  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
+
+inherit_mode:
+  merge:
+    - Exclude
+    - AllowedMethods
 
 AllCops:
-  TargetRubyVersion: 2.6.5
+  TargetRubyVersion: 2.7
   NewCops: enable
-  # Include gemspec and Rakefile
-  Include:
-    - 'app/**/*.rb'
-    - 'spec/**/*.rb'
-    - 'lib/**/*.rb'
   Exclude:
+    - 'lib/**/*.rake'
     - 'bin/**/*'
-    - 'config/**/*'
     - 'db/**/*'
-    - 'app/views/**/*'
-    - 'front/**/*'
     - 'vendor/**/*'
     - 'tmp/**/*'
     - 'log/**/*'
     - 'coverage/**/*'
     - 'spec/*_helper.rb'
     - 'spec/factories/*.rb'
-    - ',/**/*'
     - 'node_modules/**/*'
+    - 'config/**/**'
 
 Rails:
   Enabled: true

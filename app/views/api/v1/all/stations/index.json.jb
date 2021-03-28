@@ -1,10 +1,10 @@
 json = {}
-json[:stations] = @stations.map { |station|
+json[:stations] = @stations.map do |station|
   {
     id: station.id,
     city_code: station.city_code,
     prefecture_name_e: station.prefecture_name_e
   }
-}
+end
 json[:total_pages] = @stations.total_pages
 json
