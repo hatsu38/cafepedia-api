@@ -5,7 +5,7 @@ namespace :shops do
       begin
         Shop.where(prefecture_name: prefecture[:name]).update(prefecture_id: prefecture[:id])
       rescue => e
-        Raven.extra_context(e)
+        Sentry.capture_exception(e)
       end
     end
   end

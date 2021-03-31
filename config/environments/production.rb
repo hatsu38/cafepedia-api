@@ -1,9 +1,5 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Raven.configure do |config|
-    config.environments = %w[production]
-    config.dsn = Rails.application.credentials.sentry_dsn
-  end
   # Code is not reloaded between requests.
   config.cache_classes = true
 

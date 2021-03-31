@@ -23,7 +23,7 @@ gem 'rack-cors', require: false
 gem 'rails-i18n'
 gem 'redis' # キャッシュを保存する
 gem 'scout_apm' # rails appのパフォーマスモニタリング
-gem 'sentry-raven'
+gem 'sentry-ruby' # エラー検知
 gem 'sitemap_generator' # Sitemap作成
 # gem 'redis-rails' # キャッシュを保存する
 
