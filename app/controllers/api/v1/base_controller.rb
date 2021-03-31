@@ -13,7 +13,7 @@ module Api
       def rescue_not_found(error = nil)
         message = "message: 404 NotFound #{request.url}, #{error&.message}, #{error&.class}"
         Rails.logger.warn(message)
-        Sentry.capture_message(message)
+        # Sentry.capture_message(message)
         render json: { message: 'not found', status: 404 }
       end
 
