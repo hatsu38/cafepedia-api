@@ -11,22 +11,16 @@ module Api
       end
 
       def rescue_not_found(error = nil)
-        Rails.logger.warn(
-          "message: 404 NotFound #{request.url},
-          #{error&.message},
-          #{error&.class}"
-        )
-        Raven.extra_context(params: params&.to_unsafe_h, url: request.url)
+        message = "message: 404 NotFound #{request.url}, #{error&.message}, #{error&.class}"
+        Rails.logger.warn(message)
+        Sentry.capture_message(message)
         render json: { message: 'not found', status: 404 }
       end
 
       def rescue_internal_error(error = nil)
-        Rails.logger.error(
-          "message: 500 InternalError #{request.url},
-          #{error&.message},
-          #{error&.class}"
-        )
-        Raven.extra_context(params: params&.to_unsafe_h, url: request.url)
+        message = "message: 500 InternalError #{request.url},#{error&.message}, #{error&.class}"
+        Rails.logger.error(message)
+        Sentry.capture_message(message)
         render json: { message: 'internal error', status: 500 }
       end
 

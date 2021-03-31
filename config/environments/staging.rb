@@ -1,9 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Raven.configure do |config|
-    config.environments = %w[staging]
-    config.dsn = Rails.application.credentials.sentry_dsn
-  end
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -59,7 +56,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  if ENV.fetch('REDIS_USE') { false } && ENV['REDIS_URL']
+  if ActiveModel::Type::Boolean.new.cast(ENV.fetch('REDIS_USE') { false }) && ENV["REDIS_URL"]
     config.cache_store = :redis_cache_store, {
       url: ENV['REDIS_URL'],
       expires_in: 5.minutes,
