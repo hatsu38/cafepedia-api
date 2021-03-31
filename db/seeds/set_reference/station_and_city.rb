@@ -70,7 +70,7 @@ if stations.present?
         city_id: city&.id
       )
     rescue => error
-      Raven.extra_context(error)
+      Sentry.capture_exception(error)
     end
   end
 end
