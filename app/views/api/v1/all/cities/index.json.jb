@@ -1,9 +1,9 @@
 json = {}
-json[:cities] = @cities.map {|city|
+json[:cities] = @cities.map do |city|
   {
     id: city.id,
     code: city.code,
     prefecture_name_e: city.prefecture_name_e
   }
-}
+end
 json

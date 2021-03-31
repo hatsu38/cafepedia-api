@@ -20,9 +20,9 @@ Rails.application.configure do
 
     # config.cache_store = :memory_store
     config.cache_store = :redis_cache_store, {
-      url: ENV["REDIS_URL"],
+      url: ENV.fetch('REDIS_URL') { 'redis://localhost:6379/0/cache'} ,
       expires_in: 5.minutes,
-      namespace: ENV.fetch('REDIS_NAMESPACE', "cache"),
+      namespace: ENV.fetch('REDIS_NAMESPACE') {'cache'},
     }
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"

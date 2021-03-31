@@ -1,11 +1,11 @@
 json = {}
-json[:shops] = @shops.map { |shop|
+json[:shops] = @shops.map do |shop|
   {
     id: shop.id,
     main_shop_eng_name: shop.main_shop_eng_name,
     city_code: shop.city_code,
     prefecture_name_e: shop.prefecture_name_e
   }
-}
+end
 json[:total_pages] = @shops.total_pages
 json

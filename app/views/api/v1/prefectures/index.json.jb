@@ -1,3 +1,4 @@
 json = {}
-json[:prefectures] = render partial: "api/v1/commons/prefecture", collection: @prefectures, as: :prefecture, cached: true
+json[:prefectures] =
+  render partial: 'api/v1/commons/prefecture', collection: @prefectures, as: :prefecture
 json
