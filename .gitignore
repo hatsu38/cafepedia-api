@@ -35,3 +35,4 @@ yarn-debug.log*
 # Sitemap
 public/sitemap*
 public/images/main_shop/**
+db/datas/backups/
