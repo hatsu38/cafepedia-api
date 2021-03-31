@@ -59,7 +59,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  if ENV.fetch('REDIS_USE') { false } && ENV["REDIS_URL"]
+  if ActiveModel::Type::Boolean.new.cast(ENV.fetch('REDIS_USE') { false }) && ENV["REDIS_URL"]
     config.cache_store = :redis_cache_store, {
       url: ENV["REDIS_URL"],
       expires_in: 24.hours,
