@@ -17,13 +17,13 @@ module Api
       private
 
       def fetch_shops
-          @prefecture.shops
-                     .open
-                     .have_scocket
-                     .have_wifi
-                     .eager_load(:main_shop, :city)
-                     .page(page_params)
-                     .per(per_params)
+        @prefecture.shops
+                   .open
+                   .have_scocket
+                   .have_wifi
+                   .eager_load(:main_shop, :city)
+                   .page(page_params)
+                   .per(per_params)
       end
     end
   end
