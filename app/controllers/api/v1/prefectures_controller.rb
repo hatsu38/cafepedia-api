@@ -17,17 +17,13 @@ module Api
       private
 
       def fetch_shops
-        Rails.cache.fetch("prefectures_#{@prefecture.name_e}/#{page_params}_#{per_params}/show_fetch_shops",
-                          expires_in: 12.hours) do
-          @prefecture.shops
-                     .open
-                     .have_scocket
-                     .have_wifi
-                     .eager_load(:main_shop, :city)
-                     .page(page_params)
-                     .per(per_params)
-                     .to_a
-        end
+        @prefecture.shops
+                   .open
+                   .have_scocket
+                   .have_wifi
+                   .eager_load(:main_shop, :city)
+                   .page(page_params)
+                   .per(per_params)
       end
     end
   end

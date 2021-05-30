@@ -43,6 +43,6 @@ if ENV["ENABLE_WORKER_KILLER"] == "true"
   before_fork do
     require 'puma_worker_killer'
 
-    PumaWorkerKiller.enable_rolling_restart(12 * 3600) # 12 hours in seconds
+    PumaWorkerKiller.enable_rolling_restart(9 * 3600) # 9 hours in seconds
   end
 end
